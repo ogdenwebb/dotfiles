@@ -1,0 +1,87 @@
+# Created by 0rdy
+
+autoload -U compinit promptinit
+
+# Autocompletion
+zstyle ':completion:*' menu select
+zstyle ':completion:*' use-cache true
+
+## Options ##
+compinit
+promptinit
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt CORRECTALL
+setopt AUTOCD
+setopt NO_BEEP
+
+# Set prompt
+PROMPT="%(?.%F{green}.%F{red}) %~ ❯%f  %f" # Display a custom prompt
+
+if [ "$TERM" = "xterm" ]; then
+    export TERM=xterm-256color
+fi
+# Colors input with use dircolors
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dir_colors && eval "$(dircolors -b ~/.dir_colors)" || eval "$(dircolors -b)"
+fi
+
+# alias
+alias ls='ls -F --color=auto --group-directories-first'
+alias grep='grep --color=auto'
+alias vimrc='vim ~/.config/nvim/init.vim'
+alias maims='maim -s screenshot-$(date +%Y-%m-%d_%H-%M-%S).png'
+
+# History
+export HISTSIZE=3000
+export HISTFILE="$HOME/.zsh_history"
+export SAVEHIST=$HISTSIZE
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
+## Shortcuts ##
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^B" backward-char
+bindkey "^F" forward-char
+bindkey "^D" delete-char-or-list
+bindkey '^H' backward-delete-char
+bindkey '^W' backward-kill-word
+bindkey '^L' clear-screen
+bindkey '^V' quoted-insert
+bindkey "^T" transpose-chars
+bindkey "^U" kill-line
+bindkey "^J" backward-word
+bindkey "^K" forward-word
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+
+# completion
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+# bindkey "^p" up-line-or-beginning-search # Up
+# bindkey "^n" down-line-or-beginning-search # Down
+
+bindkey "^p" history-beginning-search-backward
+bindkey "^n" history-beginning-search-forward
+
+# Edit command
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
+# # Search backwards and forwards with a pattern
+# bindkey -M vicmd '/' history-incremental-pattern-search-backward
+# bindkey -M vicmd '?' history-incremental-pattern-search-forward
+
+# # set up for insert mode too
+# bindkey -M viins '^p' history-incremental-pattern-search-backward
+# bindkey -M viins '^n' history-incremental-pattern-search-forward
+
+# OPAM configuration
+# . /home/ordy/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# eval `opam config env`

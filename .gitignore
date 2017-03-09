@@ -1,0 +1,13 @@
+config/mpd/log
+config/mpd/pid
+config/mpd/state
+config/mpd/database
+config/nvim/.netrwhist
+config/nvim/dein
+config/mpv/watch_later
+*.log
+*.elc
+.git/
+.hg/
+.hgignore
+emacs.d/

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ -n "$1" ]; then
+    emacsclient -a "" -n -c "$@"
+else
+    emacsclient -a "" -n -c -e "(switch-to-buffer \"*dashboard*\")"
+fi

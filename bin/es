@@ -1,0 +1,3 @@
+#!/bin/bash
+emacsclient -e "(kill-emacs)"
+# emacsclient -e "(save-buffers-kill-emacs)"

@@ -1,0 +1,80 @@
+! ------------------------------------------------------------------------------
+! Fonts settings
+! ------------------------------------------------------------------------------
+Xft.dpi:       96
+Xft.antialias: 1
+Xft.rgba:      none
+Xft.autohint:  0
+Xft.lcdfilter: lcddefault
+Xft.hinting:   1
+Xft.hintstyle: hintfull
+
+Xcursor.theme: jimmac
+
+! ------------------------------------------------------------------------------
+! ROFI settings
+! ------------------------------------------------------------------------------
+! Blue theme
+! rofi.color-enabled:   true
+! rofi.color-window:    #191919, #292929, #292929
+! rofi.color-normal:    #191919, #9c9c9c, #191919, #191919, #4fbcdd
+! rofi.color-active:    #273238, #80cbc4, #273238, #394249, #80cbc4
+! rofi.color-urgent:    #273238, #ff1844, #273238, #394249, #ff1844
+
+rofi.color-enabled: true
+rofi.color-window: #191919, #292929, #292929
+rofi.color-normal: #191919, #9c9c9c, #191919, #191919, #54b685
+rofi.color-active: #273238, #54b685, #273238, #394249, #54b685
+rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+
+! Separator style (none, dash, solid)
+rofi.separator-style: dash
+rofi.fake-transparency: false
+rofi.padding: 10
+rofi.columns: 1
+rofi.bw: 3
+rofi.width: 50
+rofi.lines: 7
+rofi.opacity: 95
+rofi.sidebar-mode: true
+rofi.hide-scrollbar: true
+
+rofi.location: 0
+rofi.yoffset: 0
+
+! rofi.font: Droid Sans Mono Slashed for Powerline 11.5
+rofi.font: Roboto Mono for Powerline 12
+rofi.fuzzy: true
+
+! ------------------------------------------------------------------------------
+! Import terminal colors
+! ------------------------------------------------------------------------------
+#include "/home/ordy/.config/term-colors/sierra_Twilight.Xresources"
+
+! ------------------------------------------------------------------------------
+! urxvt settings
+! ------------------------------------------------------------------------------
+URxvt.font:              xft:Terminess\ Powerline:size=12
+
+URxvt.scrollBar:         false
+URxvt.cursorBlink:       false
+URxvt.skipBuiltinGlyphs: true
+
+URxvt.perl-ext-common:   default,clipboard,matcher,keyboard-select
+URxvt.keysym.M-Escape:   perl:keyboard-select:activate
+URxvt.urlLauncher:       chromium
+URxvt.matcher.button:    1
+
+URxvt*saveLines:         4095
+URxvt.depth:             24
+
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755:    False
+URxvt*termName:    rxvt-256color
+! Set the style of the scrollbar: rxvt (default), plain, next, xterm
+URxvt.scrollstyle: plain
+
+urxvt.jumpScroll:  true
+urxvt.fastScroll:  true
+urxvt.multiScroll: true

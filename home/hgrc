@@ -1,0 +1,11 @@
+[ui]
+username = severed <0rdy@openmailbox.org>
+verbose = True
+
+[extensions]
+color =
+churn =
+
+[color]
+# valid modes are win32, ansi, auto, off
+mode = auto

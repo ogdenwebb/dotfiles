@@ -1,0 +1,13 @@
+# vim: syntax=config
+heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &" 
+save-position-on-quit=yes
+volume=75
+alang=jpn,en
+slang=rus,en
+
+# default value of 320kB is quite low, especially on slow media
+cache-default=4000
+cache=4000
+
+# subs
+no-sub-ass

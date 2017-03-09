@@ -1,0 +1,28 @@
+! Zenburn
+*foreground: #dcdccc
+
+!black
+*color0: #3F3F3F
+*color0: #1E2320
+*color8: #709080
+!red
+*color1: #705050
+*color9: #DCA3A3
+!green
+*color2: #60B48A
+*color10: #C3BF9F
+!yellow
+*color3: #DFAF8F
+*color11: #F0DFAF
+!blue
+*color4: #506070
+*color12: #94BFF3
+!magenta
+*color5: #DC8CC3
+*color13: #EC93D3
+!cyan
+*color6: #8CD0D3
+*color14: #93E0E3
+!white
+*color7: #DCDCCC
+*color15: #FFFFFF
