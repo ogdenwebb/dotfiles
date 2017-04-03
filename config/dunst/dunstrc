@@ -7,7 +7,7 @@
     sort = yes
     indicate_hidden = yes
     show_age_threshold = 20
-    idle_threshold = 90
+    idle_threshold = 60
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
     # The geometry of the message window.

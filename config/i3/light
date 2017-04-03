@@ -133,6 +133,7 @@ bindsym $mod+r mode "resize"
 
 # new_window normal
 new_window pixel 1
+# new_window pixel 0
 new_float  pixel 0
 hide_edge_borders both
 # class border backgr indicator
