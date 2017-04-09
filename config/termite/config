@@ -3,8 +3,8 @@ clickable_url = true
 padding = 0
 # font = Droid Sans Mono Slashed for Powerline 11
 # font = Inconsolata LGC 11
-# font = Roboto Mono for Powerline 11
-font =  Fira Mono for Powerline 11
+font = Roboto Mono for Powerline 11
+# font =  Fira Mono for Powerline 11
 
 #20% background transparency (requires a compositor)
 # background = rgba(63, 63, 63, 0.8)
@@ -37,101 +37,103 @@ font =  Fira Mono for Powerline 11
 # Seems good:
 # Base16 Atelier Savanna
 
-# [colors]
-# # Base16 Atelier Plateau
-# # Author: Bram de Haan (http://atelierbramdehaan.nl)
-
-# # foreground      = #8a8585
-# # foreground_bold = #e7dfdf
-# foreground = #c5c8c6
-# foreground_bold = #c5c8c6
-# cursor          = #e7dfdf
-# # background      = #1b1818
-# background      = #1b1b1b
-
-# # 16 color space
-
-# # Black, Gray, Silver, White
-# color0  = #1b1818
-# color8  = #655d5d
-# # color7  = #8a8585
-# color7 = #dcdccc
-# color15 = #f4ecec
-
-# # Red
-# color1  = #ca4949
-# color9  = #ca4949
-
-# # Green
-# color2  = #4b8b8b
-# color10 = #4b8b8b
-
-# # Yellow
-# color3  = #a06e3b
-# color11 = #a06e3b
-
-# # Blue
-# color4  = #7272ca
-# color12 = #7272ca
-
-# # Purple
-# color5  = #8464c4
-# color13 = #8464c4
-
-# # Teal
-# color6  = #5485b6
-# color14 = #5485b6
-
-# # Extra colors
-# color15 = #f4ecec
-# color16 = #b45a3c
-# color17 = #bd5187
-# color18 = #292424
-# color19 = #585050
-# color20 = #7e7777
-# color21 = #e7dfdf
-
 [colors]
+# Base16 Atelier Plateau
+# Author: Bram de Haan (http://atelierbramdehaan.nl)
 
-# special
-foreground      = #373737
-foreground_bold = #373737
-cursor          = #373737
-background      = #f0f1f1
+# foreground      = #8a8585
+# foreground_bold = #e7dfdf
+foreground = #c5c8c6
+foreground_bold = #c5c8c6
+cursor          = #e7dfdf
+# background      = #1b1818
+background      = #1b1b1b
 
-# black
-color0  = #353535
-color8  = #353535
+# 16 color space
 
-# red
-color1  = #d75f5f
-color9  = #d75f5f
+# Black, Gray, Silver, White
+color0  = #1b1818
+color8  = #655d5d
+# color7  = #8a8585
+color7 = #dcdccc
+color15 = #f4ecec
 
-# green
-# color2   = #5d8370
-# color10  = #5d8370
-color2  = #597a6e
-color10 = #597a6e
+# Red
+color1  = #ca4949
+color9  = #ca4949
 
-# yellow
-color3  = #d2ab5d
-color11 = #d2ab5d
+# Green
+color2  = #4b8b8b
+color10 = #4b8b8b
 
-# blue
-color4  = #4682b4
-color12 = #4682b4
+# Yellow
+color3  = #a06e3b
+color11 = #a06e3b
 
-# magenta
-color5  = #6666be
-color13 = #6666be
+# Blue
+color4  = #7272ca
+color12 = #7272ca
 
-# cyan
+# Purple
+color5  = #8464c4
+color13 = #8464c4
+
+# Teal
+color6  = #5485b6
+color14 = #5485b6
+
+# Extra colors
+color15 = #f4ecec
+color16 = #b45a3c
+color17 = #bd5187
+color18 = #292424
+color19 = #585050
+color20 = #7e7777
+color21 = #e7dfdf
+
+## Light theme
+
+# [colors]
+
+# # special
+# foreground      = #373737
+# foreground_bold = #373737
+# cursor          = #373737
+# background      = #f0f1f1
+
+# # black
+# color0  = #353535
+# color8  = #353535
+
+# # red
+# color1  = #d75f5f
+# color9  = #d75f5f
+
+# # green
+# # color2   = #5d8370
+# # color10  = #5d8370
+# color2  = #597a6e
+# color10 = #597a6e
+
+# # yellow
+# color3  = #d2ab5d
+# color11 = #d2ab5d
+
+# # blue
+# color4  = #4682b4
+# color12 = #4682b4
+
+# # magenta
+# color5  = #6666be
+# color13 = #6666be
+
+# # cyan
+# # color6  = #54b6b6
+# # color14 = #54b6b6
+
 # color6  = #54b6b6
 # color14 = #54b6b6
 
-color6  = #54b6b6
-color14 = #54b6b6
-
-# white
-color7  = #e5e5e5
-color15 = #e5e5e5
+# # white
+# color7  = #e5e5e5
+# color15 = #e5e5e5
