@@ -1,7 +1,7 @@
 ;=====================================================
 ;
-;   To learn more about how to configure Lemonbuddy
-;   go to https://github.com/jaagr/lemonbuddy
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
 ;
 ;   The README contains alot of information
 ;
@@ -12,6 +12,7 @@
 ; fg = "#C5C8C6"
 fg = "#C5C8C6"
 bg = "#1e1e1e"
+; bg = "#2a292c"
 bg2 = "#333333"
 dim = "#767676"
 active = "#252525"
@@ -62,10 +63,6 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Istok Web:pixelsize=12;2
-; font-0 = Comfortaa:pixelsize=12;2
-; font-0 = Marmelad:pixelsize=12;2
-; font-0 = Exo 2:pixelsize=12;2
-; font-0 = Arsenal:pixelsize=12;2
 font-1 = IPAGothic:pixelsize=12;2
 font-2 = FontAwesome:pixelsize=14;2
 font-3 = siji:pixelsize=14;2
@@ -165,10 +162,11 @@ reverse-scroll = false
 
 ; ws-icon-[0-9]+ = label;icon
 ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
+;   
+ws-icon-1 = 2;
+ws-icon-2 = 3;
 ; ws-icon-3 = 4;
-ws-icon-3 = 4;
+ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-default = 
 
@@ -460,7 +458,7 @@ label-open-padding= 1
 label-open-foreground = ${colors.fg}
 label-open-underline = ${colors.bg2}
 ; label-open-background = #252525
-label-close = "  cancel"
+label-close = "  quit"
 label-close-foreground = ${colors.red}
 label-separator = |
 label-separator-foreground = #55
@@ -470,14 +468,14 @@ menu-0-0-exec = menu-open-1
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
 
-menu-1-0 = cancel
+menu-1-0 = back
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
 menu-1-1-exec = sudo reboot
 
 menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
+menu-2-1 = back
 menu-2-1-exec = menu-open-0
 
 [module/weather]

@@ -13,6 +13,7 @@ set background=dark
 " colorscheme welpe
 " colorscheme tender
 " set termguicolors
+" set termguicolors
 let g:sierra_Twilight = 1
 colorscheme sierra
 " colorscheme sidonia
