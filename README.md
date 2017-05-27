@@ -1,5 +1,7 @@
 # Another dotfiles repo #
 
+![desktop](https://cloud.githubusercontent.com/assets/9018005/26525016/8403341c-4351-11e7-821d-294f83fcbe44.jpg)
+
 ### My current workspace ###
 
 * Void Linux
