@@ -188,7 +188,7 @@ def_key "d"
 #def_key "delete"
 #  delete_stored_playlist
 #
-def_key "ctrl_l"
+def_key "ctrl-l"
   next_column
 #
 #def_key "right"
@@ -200,7 +200,7 @@ def_key "ctrl_l"
 #def_key "+"
 #  volume_up
 #
-def_key "ctrl_h"
+def_key "ctrl-h"
   previous_column
 #
 #def_key "left"

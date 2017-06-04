@@ -74,6 +74,10 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
+fcd(){
+  cd "$(find -type d | fzy)"
+}
+
 # # Search backwards and forwards with a pattern
 # bindkey -M vicmd '/' history-incremental-pattern-search-backward
 # bindkey -M vicmd '?' history-incremental-pattern-search-forward

@@ -16,6 +16,7 @@ call dein#add('flazz/vim-colorschemes')
 call dein#add('AlessandroYorba/Sierra')
 call dein#add('AlessandroYorba/Sidonia')
 call dein#add('jacoborus/tender.vim')
+call dein#add('trevordmiller/nova-vim')
 " call dein#add('owickstrom/vim-colors-paramount')
 "
 call dein#add('Yggdroot/indentLine')
@@ -45,6 +46,8 @@ call dein#add('junegunn/vim-easy-align', {
         \ ['nmap ga <Plug>(EasyAlign)',
         \ 'xmap ga <Plug>(EasyAlign)'], "\n")
     \ })
+
+call dein#add('cloudhead/neovim-fuzzy')
 
 " call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0})
 " call dein#add('junegunn/fzf.vim', {
@@ -169,6 +172,7 @@ call dein#add('PotatoesMaster/i3-vim-syntax', { 'on_ft' : 'i3' })
 "     \  'on_ft' : [ 'lisp', 'scheme', 'racket' ] })
 " call dein#add('MicahElliott/vrod', { 'on_ft' : 'racket' })
 "
+call dein#add('baabelfish/nvim-nim', { 'on_ft' : 'nim' })
 call dein#add('othree/html5.vim', { 'on_ft' : 'html' })
 call dein#add('hail2u/vim-css3-syntax', { 'on_ft': [ 'html', 'css' ] })
     " \ 'on_ft' : [ 'html', 'css' ],

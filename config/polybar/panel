@@ -9,8 +9,8 @@
 
 [colors]
 ; fg = "#d6d6d6"
-; fg = "#C5C8C6"
 fg = "#C5C8C6"
+; fg = "#f0e7ff"
 bg = "#1e1e1e"
 ; bg = "#2a292c"
 bg2 = "#333333"
@@ -19,6 +19,7 @@ active = "#252525"
 teal-blue = "#91b9c7"
 blue = "#5485b6"
 cyan = "#54b6b6"
+jade = "#597a6e"
 green = "#4a858c"
 green2="#5d8370"
 lime = "#85b654"
@@ -69,7 +70,7 @@ font-3 = siji:pixelsize=14;2
 
 modules-left = powermenu i3
 modules-center = mpd
-modules-right = weather date
+modules-right = vpn date
 
 ; Position of the system tray window
 ; If empty or undefined, tray support will be disabled
@@ -79,7 +80,7 @@ modules-right = weather date
 ;   left
 ;   center
 ;   right
-; tray-position = right
+tray-position = right
 
 ; If true, the bar will not shift its
 ; contents when the tray changes
@@ -363,7 +364,7 @@ label-disconnected-foreground = #55
 
 [module/date]
 type = internal/date
-; date = %%{F#666}%{F-} %Y-%m-%d  %%{F#5d8370}%%{F-} %H:%M
+; date = %%{F#666}%{F-} %Y-%m-%d  %%{F#5d8370}%%{F-} %H : %M
 date =  %%{F#857f96}%%{F-}  %a %d %H:%M
 ; date-alt = %%{F#55}%{F#ff} %Y-%m-%d  %%{F#55}%%{F#ff} %H:%M:%S
 date-alt = %Y-%m-%d  %H:%M:%S
@@ -486,3 +487,11 @@ format-prefix = "  "
 format-prefix-padding = 1
 format-prefix-foreground = ${colors.green}
 exec = ~/.config/polybar/weather
+
+;; One script for display other for run/stop or smth like display args
+[module/vpn]
+type = custom/text
+content-foreground = ${colors.jade}
+content = " "
+click-left = "~/.vpn/runvpn"
+click-right = "~/.vpn/runvpn stop"
