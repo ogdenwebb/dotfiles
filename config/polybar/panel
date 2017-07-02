@@ -176,12 +176,14 @@ ws-icon-default = 
 ;   <label-mode> (default)
 format = <label-state> <label-mode>
 
+; Uses for mode such as resize
 ; Available tokens:
 ;   %mode%
 ; Default: %mode%
 label-mode = %mode%
 label-mode-padding = 2
-label-mode-background = #e60053
+label-mode-foreground = ${colors.yellow}
+label-mode-underline = ${colors.cyan}
 
 ; Available tokens:
 ;   %name%

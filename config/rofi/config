@@ -34,8 +34,7 @@ rofi.padding: 10
 rofi.columns: 1
 rofi.bw: 3
 rofi.width: 550
-! rofi.lines: 7
-rofi.lines: 1
+rofi.lines: 7
 rofi.opacity: 95
 rofi.sidebar-mode: true
 rofi.hide-scrollbar: true

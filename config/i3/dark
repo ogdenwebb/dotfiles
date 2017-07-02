@@ -158,6 +158,9 @@ bindsym XF86AudioStop exec mpc stop
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
+# Rules
+for_window [class="Xfce4-notifyd"] border none
+
 # Autostart
 exec --no-startup-id mpd &
 exec --no-startup-id devmon &
