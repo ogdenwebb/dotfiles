@@ -9,7 +9,8 @@
 
 [colors]
 ; fg = "#d6d6d6"
-fg = "#C5C8C6"
+; fg = "#C5C8C6"
+fg = "#c8c8d0"
 ; fg = "#f0e7ff"
 bg = "#1e1e1e"
 ; bg = "#2a292c"

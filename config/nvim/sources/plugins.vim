@@ -47,7 +47,8 @@ call dein#add('junegunn/vim-easy-align', {
         \ 'xmap ga <Plug>(EasyAlign)'], "\n")
     \ })
 
-call dein#add('cloudhead/neovim-fuzzy')
+call dein#add('cloudhead/neovim-fuzzy', {
+      \ 'hook_add' : 'nmap <leader>p :FuzzyOpen<CR>' })
 
 " call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0})
 " call dein#add('junegunn/fzf.vim', {
