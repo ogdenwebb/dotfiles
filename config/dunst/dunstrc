@@ -36,6 +36,9 @@
     # browser for opening urls in context menu
     browser = /usr/bin/firefox -new-tab
 
+    show_indicators = false
+
+    max_icon_size = 48
     icon_position = left
     icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
