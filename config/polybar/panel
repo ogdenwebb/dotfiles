@@ -64,7 +64,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Roboto:pixelsize=12;2
+; font-0 = Roboto:pixelsize=12;2
+font-0 = Roboto:weight=bold:pixelsize=11;2
+; font-0 = Droid Sans:weight=bold:pixelsize=11;2
 ; font-0 = Istok Web:pixelsize=12;2
 font-1 = IPAGothic:pixelsize=12;2
 font-2 = FontAwesome:pixelsize=14;3
@@ -107,10 +109,10 @@ tray-offset-x = 0
 tray-offset-y = 0
 
 ; Pad the sides of each tray icon
-tray-padding = 0
+tray-padding = 0.0
 
 ; Scale factor for tray clients
-tray-scale = 1.0
+; tray-scale = 1.0
 
 ; Restack the bar window and put it above the
 ; selected window manager's root
@@ -229,6 +231,9 @@ label-urgent-foreground = ${colors.red}
 label-urgent-background = ${colors.bg}
 label-urgent-padding = 2
 
+[module/title]
+type = internal/xwindow
+
 [module/mpd]
 type = internal/mpd
 
@@ -260,7 +265,7 @@ icon-seekf = 
 icon-random = 
 icon-repeat = 
 
-toggle-on-foreground = ${colors.red}
+toggle-on-foreground = ${colors.cyan}
 toggle-off-foreground = #66
 
 

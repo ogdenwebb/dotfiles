@@ -9,7 +9,7 @@
 * i3 + polybar + compton
 * emacs + use-package + evil
 * GTK: Vertex Dark
-* Icons: Arc, La capitaine
+* Icons: Arc, La capitaine, Papirus dark
 * Cursor theme: jimmac
 * GUI Font: Noto Sans
 * Terminal Font: Roboto Mono for Powerline

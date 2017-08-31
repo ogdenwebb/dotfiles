@@ -38,13 +38,13 @@
 
     show_indicators = false
 
-    max_icon_size = 48
+    max_icon_size = 64
     icon_position = left
     icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
 ## Dark theme
 [frame]
-    width = 1
+    width = 2
     # color = "#DD704F"
     # color = "#459769"
     color = "#333333"
