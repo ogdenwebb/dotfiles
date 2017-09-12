@@ -3,7 +3,7 @@ clickable_url = true
 padding = 0
 # font = Droid Sans Mono Slashed for Powerline 11
 # font = Inconsolata LGC 11
-font = Roboto Mono for Powerline 11
+font = Roboto Mono for Powerline 12
 # font =  Fira Mono for Powerline 11
 
 #20% background transparency (requires a compositor)

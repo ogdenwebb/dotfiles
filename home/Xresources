@@ -12,7 +12,7 @@ Xft.lcdfilter: lcddefault
 ! Xft.hinting:   1
 Xft.hinting:   0
 ! Xft.hintstyle: hintslight
-Xft.hintstyle: hintfull
+! Xft.hintstyle: hintfull
 
 Xcursor.theme: jimmac
 
