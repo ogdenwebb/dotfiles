@@ -6,13 +6,11 @@ Xft.dpi:       92
 Xft.antialias: 1
 Xft.rgba:      none
 ! Xft.rgba:      rgba
-! try enable this
 Xft.autohint:  0
 Xft.lcdfilter: lcddefault
-! Xft.hinting:   1
 Xft.hinting:   0
-! Xft.hintstyle: hintslight
-! Xft.hintstyle: hintfull
+! hintnone, hintslight, hintmedium, hintfull
+Xft.hintstyle: hintnone
 
 Xcursor.theme: jimmac
 
