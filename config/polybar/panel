@@ -74,7 +74,7 @@ font-3 = siji:pixelsize=14;2
 
 modules-left = powermenu i3
 modules-center = mpd
-modules-right = vpn date
+modules-right = cpu memory vpn date
 
 ; Position of the system tray window
 ; If empty or undefined, tray support will be disabled
