@@ -24,7 +24,7 @@ bindsym $mod+Return exec --no-startup-id termite
 bindsym $mod+q kill
 
 # start a program launcher
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec zsh -c "rofi -show run"
 
 # change focus
 bindsym $mod+h focus left
@@ -162,6 +162,7 @@ bindsym XF86AudioPrev exec mpc prev
 for_window [class="Xfce4-notifyd"] border none
 
 # Autostart
+exec --no-startup-id start-pulseaudio-x11 &
 exec --no-startup-id mpd &
 exec --no-startup-id devmon &
 exec --no-startup-id xrdb -merge ~/.Xresources &
