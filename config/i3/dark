@@ -172,8 +172,7 @@ exec --no-startup-id polybar ordy -r &
 # exec --no-startup-id compton -cGb &
 exec --no-startup-id compton -b &
 exec --no-startup-id dropbox start &
-exec --no-startup-id setxkbmap -layout 'us, ru' -option 'grp:caps_toggle' &
-exec --no-startup-id setxkbmap -option terminate:ctrl_alt_bksp &
+exec --no-startup-id setxkbmap -layout 'us, ru' -option 'grp:caps_toggle' -option 'terminate:ctrl_alt_bksp' &
 exec --no-startup-id clipit &
 # exec --no-startup-id parcellite &
 exec --no-startup-id emacs --daemon &
