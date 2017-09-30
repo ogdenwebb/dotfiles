@@ -14,3 +14,11 @@ ao=pulse
 
 # subs
 no-sub-ass
+
+## Interface font
+osd-font="Play"
+osd-font-size=28
+
+## Subs font
+sub-font="Roboto"
+sub-font-size=48
