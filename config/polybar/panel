@@ -35,7 +35,7 @@ margin-left = 5
 margin-right = 5
 
 
-[bar/ordy]
+[bar/ogden]
 enable-ipc = true
 monitor = HDMI-0
 override-redirect = false

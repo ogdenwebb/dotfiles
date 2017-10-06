@@ -17,7 +17,7 @@ Xcursor.theme: jimmac
 ! ------------------------------------------------------------------------------
 ! Import terminal colors
 ! ------------------------------------------------------------------------------
-#include "/home/ordy/.config/term-colors/sierra_Twilight.Xresources"
+#include "/home/ogden/.config/term-colors/sierra_Twilight.Xresources"
 
 ! ------------------------------------------------------------------------------
 ! urxvt settings

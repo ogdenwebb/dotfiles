@@ -1,5 +1,3 @@
-# Created by 0rdy
-
 autoload -U compinit promptinit
 
 # Autocompletion

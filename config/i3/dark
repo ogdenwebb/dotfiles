@@ -1,4 +1,5 @@
-# i3 config file by 0rdy
+# -*- mode: i3wm-config; -*-
+# i3 config file 
 
 set $mod Mod4
 
@@ -169,7 +170,7 @@ exec --no-startup-id xrdb -merge ~/.Xresources &
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dunst &
 # exec --no-startup-id ~/.config/i3/lemonbar_top.sh &
-exec --no-startup-id polybar ordy -r &
+exec --no-startup-id polybar ogden -r &
 # exec --no-startup-id compton -cGb &
 exec --no-startup-id compton -b &
 exec --no-startup-id dropbox start &
