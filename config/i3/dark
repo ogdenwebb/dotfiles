@@ -19,7 +19,7 @@ focus_follows_mouse no
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id termite
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+q kill

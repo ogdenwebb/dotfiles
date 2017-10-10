@@ -1,7 +1,7 @@
 [global]
     # font = "Roboto 12"
     font = "Play 12"
-    allow_markup = yes
+    markup = yes
     # format = "<b>%s %p</b>\n%b"
     format = "%s %p\n%b"
     sort = yes
@@ -38,16 +38,20 @@
 
     show_indicators = false
 
+    # Frame option
+    frame_width = 2
+    frame_color = "#333333"
+
     max_icon_size = 64
     icon_position = left
     icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
 ## Dark theme
-[frame]
-    width = 2
-    # color = "#DD704F"
-    # color = "#459769"
-    color = "#333333"
+#[frame]
+#    width = 2
+#    # color = "#DD704F"
+#    # color = "#459769"
+#    color = "#333333"
 
 [shortcuts]
     close = ctrl+space

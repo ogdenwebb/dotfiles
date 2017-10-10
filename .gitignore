@@ -11,3 +11,4 @@ config/mpv/watch_later
 .hg/
 .hgignore
 emacs.d/
+elmax/

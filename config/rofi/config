@@ -44,10 +44,9 @@ rofi.location: 0
 rofi.yoffset: 0
 
 ! rofi.font: Droid Sans Mono Slashed for Powerline 11.5
-! Dark theme
 ! rofi.font: Roboto Mono for Powerline 12
-! Light theme
 rofi.font: Play 12
+! rofi.font: Roboto 12
 rofi.fuzzy: true
 
 ! vim: set filetype=xdefaults :
