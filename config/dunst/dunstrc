@@ -1,13 +1,13 @@
 [global]
     # font = "Roboto 12"
     font = "Play 12"
-    markup = yes
+    markup = full
     # format = "<b>%s %p</b>\n%b"
     format = "%s %p\n%b"
     sort = yes
     indicate_hidden = yes
     show_age_threshold = 20
-    idle_threshold = 60
+    idle_threshold = 5
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
     # The geometry of the message window.

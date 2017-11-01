@@ -165,6 +165,7 @@ bindsym XF86AudioPrev exec mpc prev
 
 # Rules
 for_window [class="Xfce4-notifyd"] border none
+for_window [instance="^copyq$" class="^Copyq$"] floating enable, border pixel 0
 
 # Autostart
 exec --no-startup-id start-pulseaudio-x11 &
@@ -179,8 +180,9 @@ exec --no-startup-id polybar ogden -r &
 exec --no-startup-id compton -b &
 exec --no-startup-id dropbox start &
 exec --no-startup-id setxkbmap -layout 'us, ru' -option 'grp:caps_toggle' -option 'terminate:ctrl_alt_bksp' &
-exec --no-startup-id clipit &
+# exec --no-startup-id clipit &
 # exec --no-startup-id parcellite &
+exec --no-startup-id copyq &
 exec --no-startup-id emacs --daemon &
 exec --no-startup-id unclutter &
 

@@ -83,3 +83,5 @@ bindkey "^X^E" edit-command-line
 # OPAM configuration
 # . /home/ordy/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 # eval `opam config env`
+#
+# eval `opam config env`

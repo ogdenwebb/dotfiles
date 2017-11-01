@@ -39,6 +39,7 @@ rofi.opacity: 95
 rofi.sidebar-mode: true
 rofi.hide-scrollbar: true
 ! rofi.disable-history: true
+# rofi.show-icons: true
 
 rofi.location: 0
 rofi.yoffset: 0
