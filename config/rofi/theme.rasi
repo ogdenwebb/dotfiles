@@ -7,12 +7,14 @@
 
     font: "Roboto 14";
 
-    fg-color: #c8c8d0;
+    /* fg-color: #c8c8d0; */
+    fg-color: #dddddd;
     bg-color: #333333;
 
     /* Make text color white and background fully transparent */
-    text-color:        White;
+    text-color:        @fg-color;
     background-color:  rgba(0,0,0,0);
+    dim-trans: #282828C5;
     accent-trans: #353535C5;
     bg-trans: #1e1e1eF0;
 
@@ -47,7 +49,6 @@
 }
 
 #entry {
-    /* font: "Open Sans Italic 11"; */
     width: 15em;
 }
 
@@ -61,6 +62,38 @@
     padding:  7px 1.5em 7px 5px;
 }
 
+#element selected normal {
+        background-color: @dim-trans;
+}
+
+#element normal active {
+        background-color: @dim-trans;
+}
+
+#element normal urgent {
+        background-color: Orange;
+}
+
+#element alternate normal {
+}
+
+#element alternate active {
+        text-color: @focus-col;
+}
+
+#element alternate urgent {
+        background-color: OrangeRed;
+}
+
+#element selected active {
+        background-color:  @dim-trans;
+}
+
+#element selected urgent {
+        background-color:  DarkOrange;
+}
+
+
 #sidebar {
     padding: 5px;
 }
@@ -71,4 +104,9 @@
 
 #button selected {
     background-color: @accent-trans;
+}
+
+/* Disable annoying mode name */
+#prompt {
+    enabled: false;
 }
