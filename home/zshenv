@@ -2,4 +2,4 @@ typeset -U path
 export EDITOR="vim"
 export BROWSER="chromium"
 LS_COLORS=$LS_COLORS:'di=1;30:' ; export LS_COLORS
-export PATH=/bin:/usr/bin:/usr/local/bin:/opt:$HOME/.bin:$HOME/.nimble/bin:$HOME/.rakudobrew/bin:$HOME/.rakudobrew/moar-nom/install/share/perl6/site/bin:$HOME/.rakudobrew/moar-master/install/share/perl6/site/bin
+export PATH=/bin:/usr/bin:/usr/local/bin:/opt:$HOME/.bin:$HOME/.nimble/bin

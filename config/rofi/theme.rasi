@@ -1,0 +1,74 @@
+/**
+ * ROFI Color theme
+ */
+
+/* global settings and color variables */
+* {
+
+    font: "Roboto 14";
+
+    fg-color: #c8c8d0;
+    bg-color: #333333;
+
+    /* Make text color white and background fully transparent */
+    text-color:        White;
+    background-color:  rgba(0,0,0,0);
+    accent-trans: #353535C5;
+    bg-trans: #1e1e1eF0;
+
+}
+
+#window {
+    /* fullscreen: true; */
+    anchor: south west;
+    location: south west;
+
+    transparency:  "real";
+
+    orientation:  horizontal;
+    children:     [mainbox];
+
+    background-color: @bg-trans;
+
+    x-offset: 0px;
+    y-offset: -44px;
+    width: 450px;
+}
+
+#mainbox {
+    /* orientation:  vertical; */
+    /* childern: [entry, listview]; */
+}
+
+#inputbar {
+        background-color: @bg-color;
+        padding: 5px;
+        spacing: 5px;
+}
+
+#entry {
+    /* font: "Open Sans Italic 11"; */
+    width: 15em;
+}
+
+#listview {
+    expand: false;
+    lines: 10;
+    /* padding: 5px; */
+}
+
+#element {
+    padding:  7px 1.5em 7px 5px;
+}
+
+#sidebar {
+    padding: 5px;
+}
+
+#button  {
+    font: "Roboto 12";
+}
+
+#button selected {
+    background-color: @accent-trans;
+}
