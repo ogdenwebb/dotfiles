@@ -3,5 +3,7 @@ rofi.sidebar-mode:  true
 rofi.theme:         theme.rasi
 rofi.show-icons: true
 rofi.fuzzy: true
+rofi.name-only: true
+# rofi.drun-icon-theme: Papirus-Dark
 
 ! vim: set filetype=xdefaults :

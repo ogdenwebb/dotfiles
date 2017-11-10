@@ -497,10 +497,31 @@ format-prefix-padding = 1
 format-prefix-foreground = ${colors.green}
 exec = ~/.config/polybar/weather
 
-;; One script for display other for run/stop or smth like display args
+; ; old static
+; [module/vpn]
+; type = custom/text
+; content-foreground = ${colors.jade}
+; ; content = " "
+; content = " "
+; click-left = "~/.vpn/runvpn"
+; click-right = "~/.vpn/runvpn stop"
+
 [module/vpn]
-type = custom/text
-content-foreground = ${colors.jade}
-content = " "
-click-left = "~/.vpn/runvpn"
+type = custom/script
+; content-foreground = ${colors.jade}
+; content = " "
+; content = " "
+interval = 1
+exec = "~/.vpn/runvpn"
+click-left = "~/.vpn/runvpn run"
 click-right = "~/.vpn/runvpn stop"
+
+
+[module/dropbox]
+type = custom/script
+exec = ~/.config/polybar/dropbox
+interval = 1
+label = %output%
+format = <label>
+click-left = "~/.config/polybar/dropbox toggle"
+tail = true
