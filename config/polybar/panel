@@ -8,15 +8,14 @@
 ;=====================================================
 
 [colors]
-; fg = "#d6d6d6"
-; fg = "#C5C8C6"
 fg = "#c8c8d0"
-; fg = "#f0e7ff"
-bg = "#1e1e1e"
-; bg = "#2a292c"
-bg2 = "#333333"
+; bg = "#1e1e1e"
+bg = "#1d1c21"
+; bg2 = "#333333"
+bg2 = "#393741"
 dim = "#767676"
 active = "#252525"
+
 teal-blue = "#91b9c7"
 blue = "#5485b6"
 cyan = "#54b6b6"
@@ -374,6 +373,7 @@ label-disconnected-foreground = #55
 [module/date]
 type = internal/date
 ; date = %%{F#666}%{F-} %Y-%m-%d  %%{F#5d8370}%%{F-} %H : %M
+; date =  %%{F#857f96}%%{F-}  %a %d %H:%M
 date =  %%{F#857f96}%%{F-}  %a %d %H:%M
 ; date-alt = %%{F#55}%{F#ff} %Y-%m-%d  %%{F#55}%%{F#ff} %H:%M:%S
 date-alt = %Y-%m-%d  %H:%M:%S
