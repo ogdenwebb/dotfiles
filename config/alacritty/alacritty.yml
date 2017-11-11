@@ -91,7 +91,10 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x1b1b1b'
+    # dark
+    # background: '0x1b1b1b'
+    # galaxy
+    background: '0x1d1c21'
     foreground: '0xc8c8d0'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
@@ -99,26 +102,54 @@ colors:
     text: '0x000000'
     cursor: '0xffffff'
 
+  # # Normal colors
+  # normal:
+  #   black:   '0x1b1818'
+  #   red:     '0xca4949'
+  #   green:   '0x4b8b8b'
+  #   yellow:  '0xa06e3b'
+  #   blue:    '0x7272ca'
+  #   magenta: '0x8464c4'
+  #   cyan:    '0x5485b6'
+  #   white:   '0xdcdccc'
+
+  # # Bright colors
+  # bright:
+  #   black:   '0x655d5d'
+  #   red:     '0xca4949'
+  #   green:   '0x4b8b8b'
+  #   yellow:  '0xa06e3b'
+  #   blue:    '0x7272ca'
+  #   magenta: '0x8464c4'
+  #   cyan:    '0x5485b6'
+  #   white:   '0xf4ecec'
+
+  # Kaolin galaxy
   # Normal colors
   normal:
     black:   '0x1b1818'
     red:     '0xca4949'
-    green:   '0x4b8b8b'
-    yellow:  '0xa06e3b'
-    blue:    '0x7272ca'
-    magenta: '0x8464c4'
-    cyan:    '0x5485b6'
+    # green:   '0x4b8b8b'
+    green:   '0x73c66c'
+    # yellow:  '0xa06e3b'
+    yellow:  '0xddc085'
+    # blue:    '0x335599'
+    blue:    '0x4CA6E8'
+    magenta: '0x835d83'
+    cyan:    '0x22aabb'
     white:   '0xdcdccc'
 
   # Bright colors
   bright:
     black:   '0x655d5d'
     red:     '0xca4949'
-    green:   '0x4b8b8b'
-    yellow:  '0xa06e3b'
-    blue:    '0x7272ca'
-    magenta: '0x8464c4'
-    cyan:    '0x5485b6'
+    # green:   '0x4b8b8b'
+    green:   '0x73c66c'
+    yellow:  '0xddc085'
+    # blue:    '0x335599'
+    blue:    '0x4CA6E8'
+    magenta: '0x835d83'
+    cyan:    '0x22aabb'
     white:   '0xf4ecec'
 
 # Visual Bell
