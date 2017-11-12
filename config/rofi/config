@@ -1,6 +1,6 @@
 rofi.terminal: alacritty
 rofi.sidebar-mode:  true
-rofi.theme:         theme.rasi
+rofi.theme:         galaxy.rasi
 rofi.show-icons: true
 rofi.fuzzy: true
 rofi.name-only: true

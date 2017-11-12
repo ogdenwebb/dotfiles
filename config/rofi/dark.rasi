@@ -10,26 +10,19 @@
     font: "Roboto 14";
 
     /* fg-color: #c8c8d0; */
-    /* fg-color: #d7d7d7; */
-    fg-color: #bac2c9;
-    /* bg-color: #333333; */
-    bg-color: #302e36;
+    fg-color: #d7d7d7;
+    bg-color: #333333;
 
     /* main bg */
-    /* bg-trans: #1e1e1eF0; */
-    bg-trans: #18171cF0;
+    bg-trans: #1e1e1eF0;
 
     /* Make text color white and background fully transparent */
     text-color:        @fg-color;
     background-color:  rgba(0,0,0,0);
 
-    /* dim-trans: #282828C5; */
-    dim-trans: #26252cC5;
-    /* bg-accent: #353535; */
-    bg-accent: #33313A;
-    /* accent-trans: #353535C5; */
-    /* accent-trans: #393741C5; */
-    accent-trans: #26252cC5;
+    dim-trans: #282828C5;
+    bg-accent: #353535;
+    accent-trans: #353535C5;
 
 }
 
@@ -56,9 +49,9 @@
 }
 
 #inputbar {
-        background-color: @bg-color;
-        padding: 5px;
-        spacing: 5px;
+    background-color: @bg-color;
+    padding: 5px;
+    spacing: 5px;
 }
 
 #entry {
@@ -77,34 +70,34 @@
 
 #element selected normal {
     /* TODO: */
-        background-color: @accent-trans;
+    background-color: @accent-trans;
 }
 
 #element normal active {
-        background-color: @dim-trans;
+    background-color: @dim-trans;
 }
 
 #element normal urgent {
-        background-color: Orange;
+    background-color: Orange;
 }
 
 #element alternate normal {
 }
 
 #element alternate active {
-        /* text-color: @focus-col; */
+    /* text-color: @focus-col; */
 }
 
 #element alternate urgent {
-        background-color: OrangeRed;
+    background-color: OrangeRed;
 }
 
 #element selected active {
-        background-color:  @dim-trans;
+    background-color:  @dim-trans;
 }
 
 #element selected urgent {
-        background-color:  DarkOrange;
+    background-color:  DarkOrange;
 }
 
 

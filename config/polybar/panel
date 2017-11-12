@@ -24,7 +24,7 @@ active = "#252525"
 ; dark theme
 ; focused = ${colors.purple}
 ; galaxy
-focused = ${colors.light-green}
+focused = ${colors.light-violet}
 
 teal-blue = "#91b9c7"
 blue = "#5485b6"
@@ -40,6 +40,8 @@ lime = "#85b654"
 purple = "#a78db5"
 pink = "#d24b83"
 red = "#d75f5f"
+violet = "#a78db5"
+light-violet = "#d1aef4"
 yellow = "#d2ab5d"
 
 [global/wm]

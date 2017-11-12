@@ -1,0 +1,32 @@
+resource/colors/galaxy.styles {
+
+  colors {
+    Focus="48 46 54 255"
+
+    // Cyan
+    Focus2="34 170 187 255"
+    // Galaxy accent color
+
+    Focus3="29 28 33 255"
+
+    Focus4="29 28 33 150"
+      //Same as Focus3 but transparent
+
+    A2TextFocus="Focus2"
+
+    A2TextFocusHover="76 166 232 255"
+
+    //THEME OVERRIDES
+    A2Background "33 32 38 255"
+    A2Ribbon "38 37 44 255"
+    A2Divider "57 55 65 255"
+    A2Bar "38 37 44 255"
+    A2Snackbar "38 37 44 255"
+    A2Menu "57 55 65 255"
+    A2MenuDivider "38 37 44 255"
+
+    A2Scroll "38 37 44 255"
+    A2ScrollHover "33 32 38 255"
+    A2ScrollGutter "57 55 68 255"
+  }
+}
