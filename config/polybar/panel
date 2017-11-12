@@ -24,7 +24,7 @@ active = "#252525"
 ; dark theme
 ; focused = ${colors.purple}
 ; galaxy
-focused = ${colors.soft-blue}
+focused = ${colors.light-green}
 
 teal-blue = "#91b9c7"
 blue = "#5485b6"
@@ -482,7 +482,10 @@ type = custom/menu
 
 label-open = "  "
 label-open-padding= 1
-label-open-foreground = ${colors.fg}
+; dark
+; label-open-foreground = ${colors.fg}
+; galaxy
+label-open-foreground = ${colors.dim}
 label-open-underline = ${colors.bg2}
 ; label-open-background = #252525
 label-close = "  quit"
