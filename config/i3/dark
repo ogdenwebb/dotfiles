@@ -149,7 +149,8 @@ set $hl #373737
 
 # class                 border  backgr. text    indicator child_border
 client.focused          $hl  #333333 #c9c9c9 $hl    $hl
-client.focused_inactive #252525 #252525 #c9c9c9 #484e50   #5f676a
+# client.focused_inactive #252525 #252525 #c9c9c9 #484e50   #5f676a
+client.focused_inactive #252525 #252525 #c9c9c9 #33323b   #3d3b46
 client.unfocused        #252525 #252525 #c9c9c9 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
