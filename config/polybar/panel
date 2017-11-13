@@ -87,7 +87,7 @@ font-1 = IPAGothic:pixelsize=12;2
 font-2 = FontAwesome:pixelsize=14;3
 font-3 = siji:pixelsize=14;2
 
-modules-left = powermenu i3 ArrowLeft
+modules-left = powermenu i3
 modules-center = mpd
 modules-right = vpn date
 
