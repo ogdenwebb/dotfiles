@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 emacsclient -a "" -n -c "$@"
 # with dashboard
