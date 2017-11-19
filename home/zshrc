@@ -14,6 +14,7 @@ setopt AUTOCD
 setopt NO_BEEP
 
 unset GIT_ASKPASS
+unset SSH_ASKPASS
 
 # Display a custom prompt
 PROMPT="%(?.%F{green}.%F{red}) %~ ❯%f  %f" 
