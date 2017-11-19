@@ -2,8 +2,8 @@
 heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 save-position-on-quit=yes
 volume=80
-alang=jpn,en
-slang=rus,en
+alang=jpn,eng,rus
+slang=rus,eng
 
 # default value of 320kB is quite low, especially on slow media
 cache-default=4000

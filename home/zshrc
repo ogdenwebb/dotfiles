@@ -13,8 +13,8 @@ setopt CORRECTALL
 setopt AUTOCD
 setopt NO_BEEP
 
-# Set prompt
-PROMPT="%(?.%F{green}.%F{red}) %~ ❯%f  %f" # Display a custom prompt
+# Display a custom prompt
+PROMPT="%(?.%F{green}.%F{red}) %~ ❯%f  %f" 
 
 if [ "$TERM" = "xterm" ]; then
     export TERM=xterm-256color
@@ -29,6 +29,7 @@ alias ls='ls -F --color=auto --group-directories-first'
 alias grep='grep --color=auto'
 alias vimrc='vim ~/.config/nvim/init.vim'
 alias maims='maim -s screenshot-$(date +%Y-%m-%d_%H-%M-%S).png'
+alias killall='pkill -x'
 
 # History
 export HISTSIZE=3000
@@ -88,7 +89,7 @@ bindkey "^X^E" edit-command-line
 #
 
 # FZF
-source /usr/share/doc/fzf/key-bindings.zsh
+# source /usr/share/doc/fzf/key-bindings.zsh
 
 # export FZF_DEFAULT_COMMAND="fd . $HOME"
 # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

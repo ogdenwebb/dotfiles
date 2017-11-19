@@ -20,13 +20,17 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
+# bindsym $mod+Return exec --no-startup-id termite
 
 # kill focused window
 bindsym $mod+q kill
 
 # start a program launcher
+bindsym $mod+d exec rofi -show run
 # bindsym $mod+d exec zsh -c "rofi -show run"
-bindsym $mod+d exec zsh -c runrofi
+#bindsym $mod+d exec zsh -c runrofi
+
+bindsym $mod+b exec chromium
 
 # change focus
 bindsym $mod+h focus left
@@ -170,9 +174,9 @@ for_window [class="Xfce4-notifyd"] border none
 for_window [instance="^copyq$" class="^Copyq$"] floating enable, border pixel 0
 
 # Autostart
-exec --no-startup-id start-pulseaudio-x11 &
+# exec --no-startup-id start-pulseaudio-x11 &
 exec --no-startup-id mpd &
-exec --no-startup-id devmon &
+# exec --no-startup-id devmon &
 exec --no-startup-id xrdb -merge ~/.Xresources &
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dunst &
