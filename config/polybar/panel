@@ -99,7 +99,7 @@ modules-right = vpn date
 ;   left
 ;   center
 ;   right
-tray-position = right
+; tray-position = right
 
 ; If true, the bar will not shift its
 ; contents when the tray changes
