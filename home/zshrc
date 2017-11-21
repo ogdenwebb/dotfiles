@@ -22,10 +22,20 @@ PROMPT="%(?.%F{green}.%F{red}) %~ ❯%f  %f"
 if [ "$TERM" = "xterm" ]; then
     export TERM=xterm-256color
 fi
+
 # Colors input with use dircolors
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dir_colors && eval "$(dircolors -b ~/.dir_colors)" || eval "$(dircolors -b)"
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
+
+# if [ -f "/etc/dircolors" ]
+# then
+#   eval $(dircolors -b /etc/dircolors)
+#   if [ -f "$HOME/.dircolors" ]
+#   then
+#     eval $(dircolors -b $HOME/.dircolors)
+#   fi
+# fi
 
 # alias
 alias ls='ls -F --color=auto --group-directories-first'

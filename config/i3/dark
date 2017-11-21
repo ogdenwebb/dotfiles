@@ -176,7 +176,6 @@ for_window [instance="^copyq$" class="^Copyq$"] floating enable, border pixel 0
 # Autostart
 # exec --no-startup-id start-pulseaudio-x11 &
 exec --no-startup-id mpd &
-# exec --no-startup-id devmon &
 exec --no-startup-id xrdb -merge ~/.Xresources &
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dunst &

@@ -1,7 +1,7 @@
 # vim: syntax=config
 heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 save-position-on-quit=yes
-volume=80
+volume=100
 alang=jpn,eng,rus
 slang=rus,eng
 

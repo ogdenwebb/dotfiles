@@ -82,7 +82,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Roboto:weight=bold:pixelsize=11;3
+font-0 = Roboto:weight=bold:pixelsize=12;2
 font-1 = IPAGothic:pixelsize=12;2
 font-2 = FontAwesome:pixelsize=14;3
 font-3 = siji:pixelsize=14;2
