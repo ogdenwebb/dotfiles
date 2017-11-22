@@ -78,7 +78,7 @@ border-top-color = ${colors.bg2}
 
 spacing = 1
 padding-left = 0
-padding-right = 2
+padding-right = 3
 module-margin-left = 1
 module-margin-right = 1
 
