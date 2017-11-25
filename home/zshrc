@@ -41,7 +41,8 @@ fi
 alias ls='ls -F --color=auto --group-directories-first'
 alias mp='ncmpcpp'
 alias grep='grep --color=auto'
-alias vimrc='vim ~/.config/nvim/init.vim'
+alias vim='nvim'
+alias vimrc='nvim ~/.config/nvim/init.vim'
 alias maims='maim -s screenshot-$(date +%Y-%m-%d_%H-%M-%S).png'
 alias killall='pkill -x'
 
