@@ -6,4 +6,7 @@ rofi.fuzzy: true
 rofi.name-only: true
 # rofi.drun-icon-theme: Papirus-Dark
 
-! vim: set filetype=xdefaults :
+# Run command to execute that runs in shell
+rofi.run-shell-command:              {terminal} -e {cmd}
+
+# vim: set filetype=xdefaults :
