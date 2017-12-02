@@ -27,8 +27,8 @@ bindsym $mod+q kill
 
 # start a program launcher
 # bindsym $mod+d exec rofi -show run
-bindsym $mod+d exec zsh -c "rofi -show run"
-#bindsym $mod+d exec zsh -c runrofi
+# bindsym $mod+d exec zsh -c "rofi -show run"
+bindsym $mod+d exec zsh -c runrofi
 
 bindsym $mod+b exec chromium
 

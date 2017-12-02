@@ -11,8 +11,9 @@
 [colors]
 ; fg = "#c8c8d0"
 ; fg = "#dedfd9"
-; fg = "#acb5bd"
-fg = "#bac2c9"
+; fg = "#bac2c9"
+fg = "#c8cfd4"
+; fg = "#d7dbdf"
 ; bg = "#1e1e1e"
 ; bg = "#1d1c21"
 bg = "#212026"
@@ -225,7 +226,7 @@ label-focused-padding = 2
 ;   %index%
 ; Default: %icon%  %name%
 label-unfocused = %icon%
-label-unfocused-foreground = ${colors.dim}
+label-unfocused-foreground = ${colors.fg}
 label-unfocused-padding = 2
 
 ; Available tokens:
@@ -305,7 +306,7 @@ label-open-padding= 1
 ; dark
 ; label-open-foreground = ${colors.fg}
 ; galaxy
-label-open-foreground = ${colors.dim}
+label-open-foreground = ${colors.fg}
 label-open-underline = ${colors.bg2}
 ; label-open-background = #252525
 label-close = "  quit"
