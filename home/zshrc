@@ -40,11 +40,12 @@ fi
 # alias
 alias ls='ls -F --color=auto --group-directories-first'
 alias mp='ncmpcpp'
+alias fm='spacefm'
 alias grep='grep --color=auto'
 alias vim='nvim'
 alias vimrc='nvim ~/.config/nvim/init.vim'
 alias maims='maim -s screenshot-$(date +%Y-%m-%d_%H-%M-%S).png'
-alias killall='pkill -x'
+# alias killall='pkill -x'
 
 # History
 export HISTSIZE=3000
