@@ -162,7 +162,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # My keybindings
-bindsym Print exec maim screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+# bindsym Print exec maim screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym Print exec scrot
 
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
@@ -180,16 +181,20 @@ exec --no-startup-id devmon &
 exec --no-startup-id xrdb -merge ~/.Xresources &
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dunst &
-# exec --no-startup-id ~/.config/i3/lemonbar_top.sh &
 exec --no-startup-id polybar ogden -r &
 # exec --no-startup-id compton -cGb &
 exec --no-startup-id compton -b &
 exec --no-startup-id dropbox start &
 exec --no-startup-id setxkbmap -layout 'us, ru' -option 'grp:caps_toggle' -option 'terminate:ctrl_alt_bksp' &
-# exec --no-startup-id clipit &
-# exec --no-startup-id copyq &
 exec --no-startup-id emacs --daemon &
 exec --no-startup-id unclutter &
-exec --no-startup-id qlipper &
+
+## Clipboard
+# exec --no-startup-id qlipper &
+# exec --no-startup-id clipit &
+# exec --no-startup-id copyq &
+exec --no-startup-id parcellite &
+
+
 
 # vim:filetype=i3
