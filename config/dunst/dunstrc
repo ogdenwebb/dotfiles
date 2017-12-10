@@ -1,6 +1,6 @@
 [global]
-    # font = "Roboto 12"
-    font = "Play 12"
+    font = "Roboto Medium 12"
+    # font = "Play 12"
     markup = full
     # format = "<b>%s %p</b>\n%b"
     format = "%s %p\n%b"
@@ -39,19 +39,24 @@
     show_indicators = false
 
     # Frame option
+    # Border options
     frame_width = 2
-    frame_color = "#333333"
+    # dark
+    # frame_color = "#333333"
+    # galaxy
+    frame_color = "#393741"
 
     max_icon_size = 64
     icon_position = left
     icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
 ## Dark theme
-#[frame]
-#    width = 2
-#    # color = "#DD704F"
-#    # color = "#459769"
-#    color = "#333333"
+[frame]
+    width = 2
+    # color = "#DD704F"
+    # color = "#459769"
+    # color = "#333333"
+    color = "#393741"
 
 [shortcuts]
     close = ctrl+space
@@ -60,19 +65,22 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#1E1E1E"
-    foreground = "#C5C8C6"
-    #foreground = "#DD704F"
+    # dark theme
+    # background = "#1E1E1E"
+    # foreground = "#C5C8C6"
+    # galaxy theme
+    background = "#212026"
+    foreground = "#c8cfd4"
     timeout = 5
 
 [urgency_normal]
-    background = "#1B1B1B"
-    foreground = "#C5C8C6"
+    background = "#212026"
+    foreground = "#c8cfd4"
     timeout = 5
 
 [urgency_critical]
-    background = "#1B1B1B"
-    foreground = "#AA0000"
+    background = "#212026"
+    foreground = "#c8cfd4"
     timeout = 5
 
 # ## Light theme
