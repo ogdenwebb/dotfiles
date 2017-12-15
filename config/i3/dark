@@ -194,6 +194,7 @@ exec --no-startup-id unclutter &
 # exec --no-startup-id clipit &
 # exec --no-startup-id copyq &
 
+exec --no-startup-id parcellite &
 
 
 # vim:filetype=i3
