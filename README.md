@@ -1,8 +1,28 @@
 # Another dotfiles repo #
 
-![desktop](https://cloud.githubusercontent.com/assets/9018005/26525016/8403341c-4351-11e7-821d-294f83fcbe44.jpg)
+![Gentoo](https://i.imgur.com/QmCcvp6.jpg)
 
-### My current workspace ###
+### Current workspace
+
+* Gentoo
+* udevil, devmon, chrony
+* i3 + polybar + compton
+* emacs + use-package + evil. Config is [here](https://github.com/ogdenwebb/elmax).
+* GTK: Arc Darker
+* Icons: Papirus 
+* Cursor theme: jimmac
+* GUI Font: Roboto
+* Terminal Font: Roboto Mono
+* mpd + ncmpcpp
+* dunst
+* mpv
+* scrot
+* parcellite
+* spacefm
+
+![Void](https://cloud.githubusercontent.com/assets/9018005/26525016/8403341c-4351-11e7-821d-294f83fcbe44.jpg)
+
+### My old workspace ###
 
 * Void Linux
 * udevil, devmon, chrony
@@ -17,4 +37,5 @@
 * dunst
 * mpv
 * maim
-* clipit
+* ~~clipit~~ copyq
+* thunar
