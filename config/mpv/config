@@ -9,8 +9,9 @@ slang=rus,eng
 cache-default=4000
 cache=4000
 
-# Pulseadio output
-ao=pulse
+# Audio output
+ao=alsa
+# ao=pulse
 
 # subs
 no-sub-ass
