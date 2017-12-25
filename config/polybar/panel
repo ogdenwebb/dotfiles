@@ -24,9 +24,7 @@ bg2 = "#393741"
 ; galaxy
 dim = "#8f9ca7"
 active = "#252525"
-; dark theme
-; focused = ${colors.purple}
-; galaxy
+
 focused = ${colors.cyan}
 
 teal-blue = "#91b9c7"
