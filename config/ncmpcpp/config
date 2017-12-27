@@ -60,7 +60,7 @@ visualizer_look = "|○"
 # song_columns_list_format = "(3f)[239]{} (35)[246]{t|f} (30)[blue]{a} (30)[green]{b} (5f)[240]{l}"
 # song_columns_list_format = "(3f)[239]{} (35)[cyan]{a} (30)[green]{t|f} (5f)[magenta]{l}"
 song_columns_list_format = "(3f)[239]{} (35)[magenta]{a} (30)[yellow]{t|f}"
-song_list_format = "{$5 %a$9 $8│$9 $0%t$9 }|{ $0%f$9}$R{$5%b $7}"
+ song_list_format = "{$5 %a$9 $8│$9 $0%t$9 }|{ $0%f$9}$R{$5%b $7}"
 # song_status_format = "{{{$5%a$9}} $0-$9 {$2%t$9}|{$0%f$9}{ $0-$9 $3%b$9{ $0-$9 $5%y$9}}}"
 # song_status_format = "{$2%t$9}|{$0%f$9}"
 song_status_format = "{$0%t$9}"
@@ -69,7 +69,8 @@ song_library_format = "{%n $3-$9 }{%t}|{%f}"
 browser_playlist_prefix = "playlist"
 selected_item_prefix = "$5"
 selected_item_suffix = "$9"
-song_window_title_format = "{%t}|{%f} - {%a}"
+# song_window_title_format = "{%t}|{%f} - {%a}"
+song_window_title_format = " {%a} - {%t}"
 
 # Various
 playlist_show_remaining_time = "no"
@@ -132,3 +133,7 @@ current_item_inactive_column_suffix = "$/r$(end)"
 active_window_border = "blue"
 
 ask_before_clearing_playlists = "no"
+
+## notification
+#execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"
+

@@ -21,7 +21,8 @@
 
     /* dim-trans: #282828C5; */
     dim-trans: #26252cC5;
-    bg-accent: #26252c;
+    /* bg-accent: #26252c; */
+    bg-accent: #383446;
     accent-trans: #26252cC5;
 
 }

@@ -233,7 +233,7 @@ label-unfocused-padding = 2
 ;   %index%
 ; Default: %icon%  %name%
 label-visible = %icon%
-label-visible-foreground = ${colors.blue}
+label-visible-foreground = ${colors.violet}
 ; label-visible-underline = #555555
 label-visible-padding = 2
 
