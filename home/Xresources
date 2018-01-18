@@ -22,7 +22,7 @@ Xcursor.theme: jimmac
 ! ------------------------------------------------------------------------------
 ! urxvt settings
 ! ------------------------------------------------------------------------------
-URxvt.font:              xft:Play:size=12
+URxvt*.font:              xft:Roboto/ Mono:size=12
 
 URxvt.scrollBar:         false
 URxvt.cursorBlink:       false

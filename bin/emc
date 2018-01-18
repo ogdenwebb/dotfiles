@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 emacsclient -a "" -n -c "$@"
+
 # with dashboard
 # if [ -n "$1" ]; then
 #     emacsclient -a "" -n -c "$@"
