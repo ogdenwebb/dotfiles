@@ -12,6 +12,7 @@
 ; fg = "#C5C8C6"
 fg = "#C5C8C6"
 bg = "#1e1e1e"
+bg = "#1e1e1e"
 bg2 = "#333333"
 dim = "#767676"
 teal-blue = "#91b9c7"

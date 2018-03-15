@@ -8,26 +8,76 @@
 ;
 ;=====================================================
 
-[colors]
-; fg = "#c8c8d0"
-; fg = "#dedfd9"
-; fg = "#bac2c9"
-; fg = "#c8cfd4"
-fg = "#d4d4d6"
-; fg = "#d7dbdf"
-; bg = "#1e1e1e"
-; bg = "#1d1c21"
+; ; Galaxy theme
+; [colors]
+; ; fg = "#c8c8d0"
+; ; fg = "#dedfd9"
+; ; fg = "#bac2c9"
+; ; fg = "#c8cfd4"
+; fg = "#d4d4d6"
+; ; fg = "#d7dbdf"
+; ; bg = "#1e1e1e"
+; ; bg = "#1d1c21"
+; ; bg = "#212026"
 ; bg = "#212026"
-bg = "#212026"
+; segment = "#26252c"
+; ; bg2 = "#333333"
+; bg2 = "#393741"
+; ; dim = "#767676"
+; ; galaxy
+; dim = "#8f9ca7"
+; active = "#252525"
+
+; focused = ${colors.cyan}
+
+; teal-blue = "#91b9c7"
+; blue = "#5485b6"
+; soft-blue = "#4CA6E8"
+; cyan = "#54b6b6"
+; jade = "#597a6e"
+; green = "#4a858c"
+; green2= "#5d8370"
+; light-green = "#6dd797"
+; lime = "#85b654"
+; ; purple = "#835d83"
+
+; purple = "#a78db5"
+; pink = "#d24b83"
+; red = "#d75f5f"
+; violet = "#a78db5"
+; light-violet = "#d1aef4"
+; yellow = "#d2ab5d"
+
+; Aurora theme
+[colors]
+; fg = "#d4d4d6"
+; bg = "#171D23"
+; segment = "#26252c"
+; ; bg2 = "#333333"
+; bg2 = "#393741"
+; ; dim = "#767676"
+; ; galaxy
+; dim = "#8f9ca7"
+; active = "#252525"
+
+; Valley-dark
+fg = "#EEE6D3"
+bg = "#262121"
 segment = "#26252c"
 ; bg2 = "#333333"
-bg2 = "#393741"
+bg2 = "#352D2D"
 ; dim = "#767676"
 ; galaxy
 dim = "#8f9ca7"
 active = "#252525"
 
-focused = ${colors.cyan}
+amber = "#eed891"
+orange = "#f5c791"
+
+focused = ${colors.orange}
+
+teal = "#0E9E97"
+aqua = "#63E8C1"
 
 teal-blue = "#91b9c7"
 blue = "#5485b6"
@@ -79,7 +129,7 @@ border-top-color = ${colors.bg2}
 
 spacing = 1
 padding-left = 0
-padding-right = 3
+padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
@@ -289,9 +339,11 @@ toggle-off-foreground = #66
 
 [module/date]
 type = internal/date
-; date = %%{F#666}%{F-} %Y-%m-%d  %%{F#5d8370}%%{F-} %H : %M
 ; date =  %%{F#857f96}%%{F-}  %a %d %H:%M
-date =  %%{F#d2ab5d} %%{F-}  %a %d %H:%M
+; galaxy
+; date =  %%{F#d2ab5d} %%{F-}  %a %d %H:%M
+; aurora
+date =  %%{F#f5c791} %%{F-}  %a %d %H:%M
 ; date-alt = %%{F#55}%{F#ff} %Y-%m-%d  %%{F#55}%%{F#ff} %H:%M:%S
 date-alt = %Y-%m-%d  %H:%M:%S
 interval = 5

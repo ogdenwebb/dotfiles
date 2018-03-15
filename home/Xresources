@@ -17,12 +17,19 @@ Xcursor.theme: jimmac
 ! ------------------------------------------------------------------------------
 ! Import terminal colors
 ! ------------------------------------------------------------------------------
-#include "/home/ogden/.config/term-colors/sierra_Twilight.Xresources"
+! #include "/home/ogden/.config/term-colors/sierra_Twilight.Xresources"
+#include "/home/ogden/dev/kaolin-palette/xresources/kaolin-aurora.Xresources"
 
 ! ------------------------------------------------------------------------------
 ! urxvt settings
 ! ------------------------------------------------------------------------------
-URxvt*.font:              xft:Roboto/ Mono:size=12
+! URxvt.font:             xft:Roboto/ Mono:size=12
+! URxvt*letterSpace: -1
+
+! -- Fonts -- !
+URxvt.font:xft:droid sans mono slashed:medium:pixelsize=11
+URxvt.boldFont:xft:droid sans mono slashed:medium:pixelsize=11
+
 
 URxvt.scrollBar:         false
 URxvt.cursorBlink:       false
