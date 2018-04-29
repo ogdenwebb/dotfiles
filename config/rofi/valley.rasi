@@ -1,0 +1,119 @@
+/* -*- mode: css; -*- */
+
+/**
+ * ROFI Color theme
+ */
+
+/* global settings and color variables */
+* {
+
+    font: "Roboto 14";
+
+    fg-color: #EEE6D3;
+    bg-color: #352D2D;
+
+    /* main bg */
+    bg-trans: #262121F0;
+
+    /* Make text color white and background fully transparent */
+    text-color:        @fg-color;
+    background-color:  rgba(0,0,0,0);
+
+    dim-trans: #3A3130C5;
+    bg-accent: #463634;
+    accent-trans: #3A3130C5;
+
+}
+
+#window {
+    /* fullscreen: true; */
+    anchor: south west;
+    location: south west;
+
+    transparency:  "real";
+
+    orientation:  horizontal;
+    children:     [mainbox];
+
+    background-color: @bg-trans;
+
+    x-offset: 0px;
+    y-offset: -44px;
+    width: 450px;
+}
+
+#mainbox {
+    /* orientation:  vertical; */
+    /* childern: [entry, listview]; */
+}
+
+#inputbar {
+    background-color: @bg-color;
+    padding: 5px;
+    spacing: 5px;
+}
+
+#entry {
+    width: 15em;
+}
+
+#listview {
+    expand: false;
+    lines: 12;
+    /* padding: 5px; */
+}
+
+#element {
+    padding:  8px 1.6em 8px 5px;
+}
+
+#element selected normal {
+    background-color: @bg-accent;
+}
+
+#element normal active {
+    background-color: @dim-trans;
+}
+
+#element normal urgent {
+    background-color: Orange;
+}
+
+#element alternate normal {
+}
+
+#element alternate active {
+    /* text-color: @focus-col; */
+}
+
+#element alternate urgent {
+    background-color: OrangeRed;
+}
+
+#element selected active {
+    background-color:  @dim-trans;
+}
+
+#element selected urgent {
+    background-color:  DarkOrange;
+}
+
+
+#sidebar {
+    padding: 5px;
+}
+
+#button  {
+    font: "Roboto Medium 11";
+}
+
+#button selected {
+    background-color: @accent-trans;
+}
+
+/* Disable annoying mode name */
+#prompt {
+    enabled: false;
+}
+
+/* vim:ft=css */

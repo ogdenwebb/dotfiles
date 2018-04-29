@@ -10,8 +10,12 @@ cache-default=4000
 cache=4000
 
 # Audio output
-ao=alsa
-# ao=pulse
+# ao=alsa
+ao=pulse
+
+# Video output
+vo=vdpau
+hwdec=vdpau
 
 # subs
 no-sub-ass
