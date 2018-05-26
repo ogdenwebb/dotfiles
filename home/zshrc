@@ -1,4 +1,5 @@
-autoload -U compinit promptinit
+autoload -U +X promptinit && promptinit
+autoload -U +X compinit && compinit
 
 # Autocompletion
 zstyle ':completion:*' menu select
@@ -44,7 +45,6 @@ alias fm='spacefm'
 alias grep='grep --color=auto'
 alias vim='nvim'
 alias vimrc='nvim ~/.config/nvim/init.vim'
-alias maims='maim -s screenshot-$(date +%Y-%m-%d_%H-%M-%S).png'
 # alias killall='pkill -x'
 
 # History
@@ -98,11 +98,8 @@ bindkey "^X^E" edit-command-line
 # bindkey -M viins '^n' history-incremental-pattern-search-forward
 
 # OPAM configuration
-# . /home/ordy/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-# eval `opam config env`
-#
-# eval `opam config env`
-#
+. /home/ogden/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+eval `opam config env`
 
 # Enable FZF
 
