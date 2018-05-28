@@ -1,6 +1,11 @@
 # -*- mode: i3wm-config; -*-
 # i3 config file
 
+# i3-gaps
+gaps inner 10
+gaps outer 3
+smart_gaps on
+
 set $mod Mod4
 
 set $WS1 1
@@ -145,9 +150,7 @@ hide_edge_borders smart
 ## Colors ##
 set $fg #FFFF00
 set $green #4a858c
-# set $hl #433939
-# set $hl #393e43
-set $hl #393943 
+set $hl #3E3943
 
 # client.focused $fg #333333 #c9c9c9
 # client.unfocused #252525 #252525 #c9c9c9
