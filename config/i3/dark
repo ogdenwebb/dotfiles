@@ -142,7 +142,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # new_window normal
-new_window pixel 2
+new_window pixel 3
 new_float  pixel 0
 # hide_edge_borders none|vertical|horizontal|both|smart
 hide_edge_borders smart
@@ -150,7 +150,13 @@ hide_edge_borders smart
 ## Colors ##
 set $fg #FFFF00
 set $green #4a858c
-set $hl #3E3943
+# set $hl #3E3943
+# set $hl #463F4C
+# set $hl #48B9C7
+# set $hl #54b6b6
+# set $hl #a0586c
+# set $hl #f5c791
+set $hl #cd9575
 
 # client.focused $fg #333333 #c9c9c9
 # client.unfocused #252525 #252525 #c9c9c9
@@ -195,7 +201,7 @@ exec --no-startup-id grive -p ~/Drive &
 exec --no-startup-id setxkbmap -layout 'us, ru' -option 'grp:caps_toggle' -option 'terminate:ctrl_alt_bksp' &
 exec --no-startup-id emacs --daemon &
 exec --no-startup-id unclutter &
-exec --no-startup-id volctl &
+# exec --no-startup-id volctl &
 
 ## Clipboard
 # exec --no-startup-id qlipper &

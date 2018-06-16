@@ -49,7 +49,7 @@
 ; yellow = "#d2ab5d"
 
 ; Aurora theme
-[colors]
+; [colors]
 ; fg = "#d4d4d6"
 ; bg = "#171D23"
 ; segment = "#26252c"
@@ -61,6 +61,7 @@
 ; active = "#252525"
 
 ; Valley-dark
+[colors]
 fg = "#EEE6D3"
 bg = "#262121"
 segment = "#26252c"
@@ -71,10 +72,25 @@ bg2 = "#352D2D"
 dim = "#8f9ca7"
 active = "#252525"
 
+; ; Valley-light
+; [colors]
+; ; fg = "#B08C77"
+; fg = "#687184"
+; bg = "#F8F0E9"
+; segment = "#26252c"
+; ; bg2 = "#333333"
+; bg2 = "#E8E1DB"
+; ; dim = "#767676"
+; ; galaxy
+; dim = "#8f9ca7"
+; active = "#252525"
+
+
 amber = "#eed891"
 orange = "#f5c791"
 
 focused = ${colors.orange}
+; focused = ${colors.violet}
 
 teal = "#0E9E97"
 aqua = "#63E8C1"
@@ -134,6 +150,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Roboto:weight=bold:pixelsize=12;2
+; font-0 = Input Sans:weight=bold:pixelsize=11;2
 font-1 = IPAGothic:pixelsize=12;2
 font-2 = FontAwesome:pixelsize=14;3
 font-3 = siji:pixelsize=14;2
@@ -355,12 +372,9 @@ type = custom/menu
 
 label-open = "  "
 label-open-padding= 1
-; dark
-; label-open-foreground = ${colors.fg}
-; galaxy
+; label-open-background = #252525
 label-open-foreground = ${colors.fg}
 label-open-underline = ${colors.bg2}
-; label-open-background = #252525
 label-close = "  quit"
 label-close-foreground = ${colors.red}
 label-separator = |

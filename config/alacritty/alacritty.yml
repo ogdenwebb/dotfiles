@@ -44,6 +44,7 @@ font:
   # The normal (roman) font face to use.
   normal:
     family: Roboto Mono # should be "Menlo" or something on macOS.
+    # family: Input Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Medium
 
@@ -100,11 +101,15 @@ colors:
     # Valley dark
     background: '0x211D1D'
     foreground: '0xEEE6D3'
+    # Valey-light
+    # background: '0xFDF9F5'
+    # foreground: '0x303035'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x000000'
-    cursor: '0xEEE6D3'
+    text: '0xFDF9F5'
+    # cursor: '0xEEE6D3'
+    cursor: '0x60696b'
 
   # # Normal colors
   # normal:
