@@ -7,7 +7,7 @@
 /* global settings and color variables */
 * {
 
-    font: "Roboto 14";
+    font: "Roboto 12";
 
     fg-color: #EEE6D3;
     bg-color: #352D2D;
@@ -27,8 +27,8 @@
 
 #window {
     /* fullscreen: true; */
-    anchor: south west;
-    location: south west;
+    anchor: north;
+    location: north;
 
     transparency:  "real";
 
@@ -37,9 +37,12 @@
 
     background-color: @bg-trans;
 
-    x-offset: 0px;
-    y-offset: -44px;
-    width: 450px;
+    /* x-offset: 590px; */
+    y-offset: 100px;
+    width: 920px;
+    border: 3;
+    padding: 12px;
+    border-color: @dim-trans;
 }
 
 #mainbox {
@@ -59,8 +62,9 @@
 
 #listview {
     expand: false;
-    lines: 12;
-    /* padding: 5px; */
+    lines: 7;
+    columns: 3;
+    padding: 15px;
 }
 
 #element {

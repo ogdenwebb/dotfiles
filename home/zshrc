@@ -98,8 +98,8 @@ bindkey "^X^E" edit-command-line
 # bindkey -M viins '^n' history-incremental-pattern-search-forward
 
 # OPAM configuration
-. /home/ogden/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-eval `opam config env`
+# . /home/ogden/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# eval `opam config env`
 
 # Enable FZF
 

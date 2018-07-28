@@ -370,10 +370,13 @@ interval = 5
 [module/powermenu]
 type = custom/menu
 
-label-open = "  "
+; label-open = "  "
+; label-open = "  "
+label-open = " "
 label-open-padding= 1
 ; label-open-background = #252525
-label-open-foreground = ${colors.fg}
+; label-open-foreground = #A56F6C
+label-open-foreground = #BA7975
 label-open-underline = ${colors.bg2}
 label-close = "  quit"
 label-close-foreground = ${colors.red}
