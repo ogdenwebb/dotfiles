@@ -104,4 +104,4 @@ bindkey "^X^E" edit-command-line
 # Enable FZF
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag --path-to-ignore=~/.ignore --hidden -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,.cargo,.cache,.icons,.wine,.mix,.ghc,.ocp,.npm,.dbus,.local,.mozilla,.steam}/*" 2> /dev/null'
