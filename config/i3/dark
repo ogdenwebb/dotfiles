@@ -192,6 +192,7 @@ exec --no-startup-id devmon &
 exec --no-startup-id xrdb -merge ~/.Xresources &
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dunst &
+# exec --no-startup-id ~/.bin/rofication-daemon &
 exec_always --no-startup-id polybar ogden -r &
 # exec --no-startup-id compton -cGb &
 exec --no-startup-id compton -b &

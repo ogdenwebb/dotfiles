@@ -280,11 +280,11 @@ label-mode-underline = ${colors.cyan}
 ; Default: %icon%  %name%
 label-focused = %icon%
 ; dark theme
-label-focused-foreground = ${colors.focused}
+; label-focused-foreground = ${colors.fg}
 
 ; label-focused-background = ${colors.active}
 ; label-focused-underline = #fba922
-label-focused-underline = ${colors.bg2}
+label-focused-underline = ${colors.focused}
 label-focused-padding = 2
 
 ; Available tokens:
@@ -372,11 +372,12 @@ type = custom/menu
 
 ; label-open = "  "
 ; label-open = "  "
-label-open = " "
+; label-open = " "
+label-open = " "
 label-open-padding= 1
 ; label-open-background = #252525
 ; label-open-foreground = #A56F6C
-label-open-foreground = #BA7975
+label-open-foreground = ${colors.purple}
 label-open-underline = ${colors.bg2}
 label-close = "  quit"
 label-close-foreground = ${colors.red}
@@ -426,6 +427,13 @@ exec = "~/.vpn/runvpn"
 click-left = "~/.vpn/runvpn run"
 click-right = "~/.vpn/runvpn stop"
 
+[module/rofication]
+type = custom/script
+; content-foreground = ${colors.jade}
+; content = " "
+interval = 1
+exec = "~/.bin/rofication-status"
+click-left = "~/.bin/rofication-gui"
 
 [module/dropbox]
 type = custom/script
