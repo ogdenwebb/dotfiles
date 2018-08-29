@@ -176,6 +176,8 @@ client.background       #ffffff
 # bindsym Print exec maim screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
 bindsym Print exec scrot
 
+bindsym $mod+m exec tdrop -ma -h 300 alacritty
+
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
 bindsym XF86AudioNext exec mpc next

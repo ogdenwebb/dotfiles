@@ -5,6 +5,7 @@ config/mpd/database
 config/nvim/.netrwhist
 config/nvim/dein
 config/mpv/watch_later
+config/polybar/access.token
 *.log
 *.elc
 .git/

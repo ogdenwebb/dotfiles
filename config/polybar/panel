@@ -153,7 +153,7 @@ font-3 = siji:pixelsize=14;2
 
 modules-left = powermenu i3
 modules-center = mpd
-modules-right = vpn date
+modules-right = github vpn date
 
 ; Position of the system tray window
 ; If empty or undefined, tray support will be disabled
@@ -400,5 +400,32 @@ exec = ~/.config/polybar/dropbox
 interval = 1
 label = %output%
 format = <label>
-click-left = "~/.config/polybar/dropbox toggle"
 tail = true
+
+
+[module/github]
+type = internal/github
+
+; Accessing an access token stored in file
+token = ${file:$HOME/.config/polybar/access.token}
+
+; Accessing an access token stored in an environment variable
+; token = ${env:GITHUB_ACCESS_TOKEN}
+
+; Whether empty notifications should be displayed or not
+empty-notifications = true
+
+; Number of seconds in between requests
+interval = 10
+
+; Available tags:
+;   <label> (default)
+format = <label>
+; format-prefix = " "
+format-prefix = "  "
+format-prefix-foreground = ${colors.fg}
+
+; Available tokens:
+;   %notifications% (default)
+; Default: Notifications: %notifications%
+label = %notifications%
