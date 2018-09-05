@@ -109,7 +109,9 @@ colors:
     green:   '0x47ba99'
     yellow:  '0xf5c791'
     blue:    '0x41b0f3'
-    magenta: '0xcea2ca'
+    # magenta: '0xef6787'
+    # magenta: '0xcea2ca'
+    magenta: '0xc79af4'
     cyan:    '0x6bd9db'
     white:   '0xdcdccc'
 
@@ -120,7 +122,7 @@ colors:
     green:   '0x47ba99'
     yellow:  '0xf5c791'
     blue:    '0x41b0f3'
-    magenta: '0xcea2ca'
+    magenta: '0xc79af4'
     cyan:    '0x6bd9db'
     white:   '0xf4ecec'
 

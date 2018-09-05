@@ -34,29 +34,20 @@
     startup_notification = false
     # transparency = 5
     # browser for opening urls in context menu
-    browser = /usr/bin/firefox -new-tab
+    browser = /usr/bin/firefox-bin -new-tab
 
     show_indicators = false
 
     # Frame option
     # Border options
-    frame_width = 2
-    # dark
-    # frame_color = "#333333"
-    # galaxy
-    frame_color = "#393741"
+    frame_width = 4
+    # frame_color = "#352D2D"
+    # frame_color = "#7a6767"
+    frame_color = "#453947"
 
     max_icon_size = 64
     icon_position = left
-    icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
-
-## Dark theme
-[frame]
-    width = 2
-    # color = "#DD704F"
-    # color = "#459769"
-    # color = "#333333"
-    color = "#393741"
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
 [shortcuts]
     close = ctrl+space
@@ -65,21 +56,17 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    # dark theme
-    # background = "#1E1E1E"
-    # foreground = "#C5C8C6"
-    # galaxy theme
-    background = "#212026"
+    background = "#262121"
     foreground = "#c8cfd4"
     timeout = 5
 
 [urgency_normal]
-    background = "#212026"
+    background = "#262121"
     foreground = "#c8cfd4"
     timeout = 5
 
 [urgency_critical]
-    background = "#212026"
+    background = "#262121"
     foreground = "#c8cfd4"
     timeout = 5
 
