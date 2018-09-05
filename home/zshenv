@@ -1,5 +1,5 @@
 typeset -U path
 export EDITOR="nvim"
-export BROWSER="firefox"
+export BROWSER="firefox-bin"
 LS_COLORS=$LS_COLORS:'di=1;30:' ; export LS_COLORS
 export PATH=$PATH:/bin:/usr/bin:/usr/sbin:/usr/local/bin:/opt:$HOME/.bin:$HOME/.nimble/bin:$HOME/.local/bin:$HOME/.cargo/bin
