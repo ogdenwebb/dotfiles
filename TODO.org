@@ -1,2 +1,0 @@
-* Tasks
-** TODO setup i3 with color vars
