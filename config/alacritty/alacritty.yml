@@ -16,14 +16,14 @@ env:
 
 # Window dimensions in character columns and lines
 # (changes require restart)
-dimensions:
+window.dimensions:
   columns: 80
   lines: 24
 
 # Adds this many blank pixels of padding around the window
 # Units are physical pixels; this is not DPI aware.
 # (change requires restart)
-padding:
+window.padding:
   x: 0
   y: 0
 
@@ -43,20 +43,21 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Roboto Mono # should be "Menlo" or something on macOS.
+    family: Roboto Mono
+    # family: Noto Mono
     # family: Input Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Medium
 
   # The bold font face
   bold:
-    family: Roboto Mono # should be "Menlo" or something on macOS.
+    family: Roboto Mono
     # Style can be specified to pick a specific face.
     style: Bold
 
   # The italic font face
   italic:
-    family: Roboto # should be "Menlo" or something on macOS.
+    family: Roboto
     # Style can be specified to pick a specific face.
     style: Italic
 
@@ -109,8 +110,6 @@ colors:
     green:   '0x47ba99'
     yellow:  '0xf5c791'
     blue:    '0x41b0f3'
-    # magenta: '0xef6787'
-    # magenta: '0xcea2ca'
     magenta: '0xc79af4'
     cyan:    '0x6bd9db'
     white:   '0xdcdccc'
@@ -269,7 +268,7 @@ mouse:
   # scrolling for applications like `man`.
   #
   # To disable this completely, set `faux_scrollback_lines` to 0.
-  faux_scrollback_lines: 1
+  faux_scrolling_lines: 1
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"

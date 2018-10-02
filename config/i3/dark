@@ -23,9 +23,10 @@ focus_follows_mouse no
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+set $TERMINAL kitty
+
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
-# bindsym $mod+Return exec --no-startup-id termite
+bindsym $mod+Return exec --no-startup-id $TERMINAL
 
 # kill focused window
 bindsym $mod+q kill
