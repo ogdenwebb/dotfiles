@@ -124,7 +124,7 @@ enable-ipc = true
 ; monitor = HDMI-0
 override-redirect = false
 width = 100%
-height = 40
+height = 36
 offset-x = 0
 offset-y = 0
 bottom = true
@@ -146,10 +146,10 @@ window.padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Roboto:weight=bold:pixelsize=12;2
+font-0 = Roboto:weight=medium:pixelsize=12;2
 font-1 = IPAGothic:pixelsize=12;2
-font-2 = FontAwesome:pixelsize=14;3
-font-3 = siji:pixelsize=14;2
+font-2 = FontAwesome:pixelsize=13;3
+font-3 = siji:pixelsize=13;2
 
 modules-left = powermenu i3
 modules-center = mpd

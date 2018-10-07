@@ -9,7 +9,7 @@
 * i3 + polybar + compton
 * emacs + use-package + evil. Config is [here](https://github.com/ogdenwebb/elmax).
 * GTK: Arc Darker
-* Icons: Papirus 
+* Icons: Papirus
 * Cursor theme: jimmac
 * GUI Font: Roboto
 * Terminal Font: Roboto Mono
