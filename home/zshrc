@@ -4,6 +4,8 @@ autoload -U +X compinit && compinit
 # Autocompletion
 zstyle ':completion:*' menu select
 zstyle ':completion:*' use-cache true
+zstyle ':completion:*' rehash true
+setopt COMPLETE_ALIASES
 
 ## Options ##
 compinit
@@ -97,10 +99,13 @@ bindkey "^X^E" edit-command-line
 # bindkey -M viins '^p' history-incremental-pattern-search-backward
 # bindkey -M viins '^n' history-incremental-pattern-search-forward
 
-# OPAM configuration
-# . /home/ogden/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-# eval `opam config env`
 
 # Enable FZF
 
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,.cargo,.cache,.icons,.wine,.mix,.ghc,.ocp,.npm,.dbus,.local,.mozilla,.steam}/*" 2> /dev/null'
+# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,.cargo,.cache,.icons,.wine,.mix,.ghc,.ocp,.npm,.dbus,.local,.mozilla,.steam}/*" 2> /dev/null'
+
+# opam configuration
+test -r /home/ogden/.opam/opam-init/init.zsh && . /home/ogden/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# OPAM configuration
+# . /home/ogden/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# eval `opam config env`

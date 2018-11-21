@@ -41,6 +41,8 @@
     # Frame option
     # Border options
     frame_width = 4
+
+    corner_radius = 10
     # frame_color = "#352D2D"
     # frame_color = "#7a6767"
     frame_color = "#453947"

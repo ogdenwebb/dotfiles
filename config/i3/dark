@@ -194,25 +194,20 @@ for_window [class="(?i)glava"] border pixel 0
 exec --no-startup-id devmon &
 exec --no-startup-id xrdb -merge ~/.Xresources &
 exec --no-startup-id nitrogen --restore &
-exec --no-startup-id dunst &
-# exec --no-startup-id ~/.bin/rofication-daemon &
-exec_always --no-startup-id polybar ogden -r &
-# exec --no-startup-id compton -cGb &
 exec --no-startup-id compton -b &
 # exec --no-startup-id redshift-gtk &
 exec --no-startup-id mpd &
-exec --no-startup-id dropbox start &
-exec --no-startup-id grive -p ~/Drive &
+exec_always --no-startup-id polybar ogden -r &
 exec --no-startup-id setxkbmap -layout 'us, ru' -option 'grp:caps_toggle' -option 'terminate:ctrl_alt_bksp' &
 exec --no-startup-id emacs --daemon &
 exec --no-startup-id unclutter &
+# exec --no-startup-id ~/.bin/rofication-daemon &
+exec --no-startup-id dunst &
+exec --no-startup-id grive -p ~/Drive &
+exec --no-startup-id dropbox start &
 # exec --no-startup-id volctl &
 
 ## Clipboard
-# exec --no-startup-id qlipper &
-# exec --no-startup-id clipit &
-# exec --no-startup-id copyq &
-
 exec --no-startup-id parcellite -n &
 
 
