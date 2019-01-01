@@ -6,58 +6,6 @@
 ;
 ;=====================================================
 
-; ; Galaxy theme
-; [colors]
-; ; fg = "#c8c8d0"
-; ; fg = "#dedfd9"
-; ; fg = "#bac2c9"
-; ; fg = "#c8cfd4"
-; fg = "#d4d4d6"
-; ; fg = "#d7dbdf"
-; ; bg = "#1e1e1e"
-; ; bg = "#1d1c21"
-; ; bg = "#212026"
-; bg = "#212026"
-; segment = "#26252c"
-; ; bg2 = "#333333"
-; bg2 = "#393741"
-; ; dim = "#767676"
-; ; galaxy
-; dim = "#8f9ca7"
-; active = "#252525"
-
-; focused = ${colors.cyan}
-
-; teal-blue = "#91b9c7"
-; blue = "#5485b6"
-; soft-blue = "#4CA6E8"
-; cyan = "#54b6b6"
-; jade = "#597a6e"
-; green = "#4a858c"
-; green2= "#5d8370"
-; light-green = "#6dd797"
-; lime = "#85b654"
-; ; purple = "#835d83"
-
-; purple = "#a78db5"
-; pink = "#d24b83"
-; red = "#d75f5f"
-; violet = "#a78db5"
-; light-violet = "#d1aef4"
-; yellow = "#d2ab5d"
-
-; Aurora theme
-; [colors]
-; fg = "#d4d4d6"
-; bg = "#171D23"
-; segment = "#26252c"
-; ; bg2 = "#333333"
-; bg2 = "#393741"
-; ; dim = "#767676"
-; ; galaxy
-; dim = "#8f9ca7"
-; active = "#252525"
-
 ; Valley-dark
 [colors]
 fg = "#EEE6D3"
@@ -70,20 +18,6 @@ bg2 = "#453947"
 ; galaxy
 dim = "#8f9ca7"
 active = "#252525"
-
-; ; Valley-light
-; [colors]
-; ; fg = "#B08C77"
-; fg = "#687184"
-; bg = "#F8F0E9"
-; segment = "#26252c"
-; ; bg2 = "#333333"
-; bg2 = "#E8E1DB"
-; ; dim = "#767676"
-; ; galaxy
-; dim = "#8f9ca7"
-; active = "#252525"
-
 
 amber = "#eed891"
 orange = "#f5c791"
