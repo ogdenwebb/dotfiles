@@ -14,16 +14,13 @@ segment = "#26252c"
 ; bg2 = "#333333"
 ; bg2 = "#352D2D"
 bg2 = "#453947"
-; dim = "#767676"
-; galaxy
-dim = "#8f9ca7"
+dim = "#767676"
 active = "#252525"
 
 amber = "#eed891"
 orange = "#f5c791"
 
 focused = ${colors.orange}
-; focused = ${colors.violet}
 
 teal = "#0E9E97"
 aqua = "#63E8C1"
@@ -38,7 +35,6 @@ green2= "#5d8370"
 light-green = "#6dd797"
 lime = "#85b654"
 ; purple = "#835d83"
-
 purple = "#a78db5"
 pink = "#d24b83"
 red = "#d75f5f"
@@ -52,7 +48,6 @@ margin-bottom = 5
 margin-left = 5
 margin-right = 5
 
-
 [bar/ogden]
 enable-ipc = true
 ; monitor = HDMI-0
@@ -61,18 +56,20 @@ width = 100%
 height = 36
 offset-x = 0
 offset-y = 0
-bottom = true
+bottom = false
 
 background = ${colors.bg}
 foreground = ${colors.fg}
 
 underline-size = 2
 
-border-top-size = 2
-border-top-color = ${colors.bg2}
+; top border
+; border-top-size = 2
+; border-top-color = ${colors.bg2}
 
-; border-bottom-size = 2
-; border-bottom-color = ${colors.bg2}
+; bottom border
+border-bottom-size = 2
+border-bottom-color = ${colors.bg2}
 
 spacing = 1
 window.padding-left = 0
@@ -82,12 +79,12 @@ module-margin-right = 1
 
 font-0 = Roboto:weight=medium:pixelsize=12;2
 font-1 = IPAGothic:pixelsize=12;2
-font-2 = FontAwesome:pixelsize=13;3
+font-2 = FontAwesome:pixelsize=12.5;3
 font-3 = siji:pixelsize=13;2
 
 modules-left = powermenu i3
-modules-center = mpd
-modules-right = vpn date reddit github
+modules-center = date
+modules-right = mpd reddit github
 
 ; Position of the system tray window
 ; If empty or undefined, tray support will be disabled
@@ -231,7 +228,7 @@ type = internal/xwindow
 [module/mpd]
 type = internal/mpd
 
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>
+format-online = <toggle> <label-song>
 
 label-song-maxlen = 90
 label-song-ellipsis = true
@@ -260,7 +257,7 @@ icon-random = 
 icon-repeat = 
 
 toggle-on-foreground = ${colors.cyan}
-toggle-off-foreground = #66
+toggle-off-foreground = ${colors.dim}
 
 
 [module/date]
@@ -269,7 +266,8 @@ type = internal/date
 ; galaxy
 ; date =  %%{F#d2ab5d} %%{F-}  %a %d %H:%M
 ; aurora
-date =  %%{F#f5c791} %%{F-}  %a %d %H:%M
+; date =  %%{F#f5c791} %%{F-}  %a %d %H:%M
+date =  %%{F-}  %a %d %H:%M
 date-alt = %Y-%m-%d  %H:%M:%S
 interval = 5
 
