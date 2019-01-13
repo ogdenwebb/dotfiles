@@ -20,8 +20,8 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    # geometry = "300x5-30+40"
-    geometry = "300x5-30+45"
+    # geometry = "300x5-30+45"
+    geometry = "300x5-30+50"
     alignment = center
     sticky_history = yes
     follow = mouse
