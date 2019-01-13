@@ -8,7 +8,8 @@
 
 ; Valley-dark
 [colors]
-fg = "#EEE6D3"
+fg = "#F5EDD9"
+; fg = "#F1DFFA"
 bg = "#262121"
 segment = "#26252c"
 ; bg2 = "#333333"
@@ -68,7 +69,9 @@ underline-size = 2
 ; border-top-color = ${colors.bg2}
 
 ; bottom border
-border-bottom-size = 2
+border-top-size = 1
+border-top-color = ${colors.bg}
+border-bottom-size = 3
 border-bottom-color = ${colors.bg2}
 
 spacing = 1
@@ -194,12 +197,11 @@ label-mode-underline = ${colors.cyan}
 label-focused = %icon%
 ; label-focused = ■
 ; label-focused = 
-; dark theme
-; label-focused-foreground = ${colors.fg}
+label-focused-foreground = ${colors.focused}
 
 ; label-focused-background = ${colors.active}
 ; label-focused-underline = #fba922
-label-focused-underline = ${colors.focused}
+; label-focused-underline = ${colors.focused}
 label-focused-padding = 2
 
 ; Available tokens: %name% %icon% %index%
@@ -267,7 +269,7 @@ type = internal/date
 ; date =  %%{F#d2ab5d} %%{F-}  %a %d %H:%M
 ; aurora
 ; date =  %%{F#f5c791} %%{F-}  %a %d %H:%M
-date =  %%{F-}  %a %d %H:%M
+date =    %a %d %H:%M
 date-alt = %Y-%m-%d  %H:%M:%S
 interval = 5
 
