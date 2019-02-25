@@ -3,6 +3,6 @@ typeset -U path
 export EDITOR="nvim"
 export BROWSER="firefox-bin"
 LS_COLORS=$LS_COLORS:'di=1;30:' ; export LS_COLORS
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/bin:/usr/sbin:/usr/local/bin:/opt:/usr/bin:/usr/sbin:/usr/local/bin:/opt:$HOME/.bin:$HOME/.nimble/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/dev/go/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/bin:/usr/sbin:/usr/local/bin:/opt:/usr/bin:/usr/sbin:/usr/local/bin:/opt:$HOME/.bin:$HOME/.nimble/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/dev/go/bin:/usr/lib/llvm/6/bin
 export GOPATH=$HOME/dev/go
 
