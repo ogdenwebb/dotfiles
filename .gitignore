@@ -6,6 +6,10 @@ config/nvim/.netrwhist
 config/nvim/dein
 config/mpv/watch_later
 config/polybar/access.token
+config/awesome/freedesktop
+config/awesome/lain
+config/awesome/themes
+config/awesome/wallpapers
 *.log
 *.elc
 .git/
