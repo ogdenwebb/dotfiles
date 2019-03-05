@@ -82,9 +82,8 @@ local altkey       = "Mod1"
 local terminal     = "kitty"
 local rofi         = "rofi -show drun -sidebar-mode -modi \"window,ssh,drun\" -name-only"
 local editor       = os.getenv("EDITOR") or "vim"
-local gui_editor   = "gvim"
+local gui_editor   = "emc"
 local browser      = "firefox-bin"
-local guieditor    = "emc"
 local scrlocker    = "slock"
 
 -- TODO: gap_single_client
@@ -100,8 +99,8 @@ awful.layout.layouts = {
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
-    --awful.layout.suit.max,
-    --awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.max,
+    awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier,
     --awful.layout.suit.corner.nw,
     --awful.layout.suit.corner.ne,

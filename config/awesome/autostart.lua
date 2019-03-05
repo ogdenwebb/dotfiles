@@ -1,7 +1,7 @@
 -- startup applications
 --
 -- Standard awesome library
-local awful         = require("awful")
+local awful = require("awful")
 
 awful.spawn.with_shell("setxkbmap -layout 'us, ru' -option 'grp:caps_toggle' -option 'terminate:ctrl_alt_bksp'")
 awful.spawn.with_shell("xrdb -merge")
@@ -16,5 +16,4 @@ local function run_once(cmd_arr)
 end
 
 -- entries must be separated by commas
--- run_once({ "devmon", "compton -b", "mpd", "unclutter", "dropbox start", "parcellite -n"})
-run_once({ "devmon", "mpd", "unclutter", "dropbox start", "parcellite -n"})
+run_once({ "devmon", "compton -b", "mpd", "unclutter", "dropbox start", "parcellite -n"})
