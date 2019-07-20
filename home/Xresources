@@ -8,9 +8,11 @@ Xft.rgba:      none
 ! Xft.rgba:      rgba
 Xft.autohint:  0
 Xft.lcdfilter: lcddefault
-Xft.hinting:   0
+! Xft.hinting:   0
+! Xft.hintstyle: hintnone
 ! hintnone, hintslight, hintmedium, hintfull
-Xft.hintstyle: hintnone
+Xft.hinting:   1
+Xft.hintstyle: hintfull
 
 Xcursor.theme: jimmac
 
