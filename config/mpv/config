@@ -16,6 +16,7 @@ ao=pulse
 # Video output
 vo=vdpau
 hwdec=vdpau
+# hwdec=vaapi
 
 # subs
 no-sub-ass

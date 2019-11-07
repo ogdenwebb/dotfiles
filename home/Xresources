@@ -20,7 +20,45 @@ Xcursor.theme: jimmac
 ! Import terminal colors
 ! ------------------------------------------------------------------------------
 ! #include "/home/ogden/.config/term-colors/sierra_Twilight.Xresources"
-#include "/home/ogden/dev/kaolin-palette/xresources/kaolin-aurora.Xresources"
+! #include "/home/ogden/dev/kaolin-palette/xresources/kaolin-aurora.Xresources"
+
+! special
+*.foreground:   #e3e3e7 
+*.background:   #202024
+*.cursorColor:  #c4c4c4
+
+! black
+*.color0:       #2b303b
+*.color8:       #65737e
+
+! red
+*.color1:       #f05b6a
+*.color9:       #fb7c88
+
+! green
+*.color2:       #60eb7c
+*.color10:      #85e698
+
+! yellow
+*.color3:       #dcda4c
+*.color11:      #ebe971
+
+! blue
+*.color4:       #5393d4
+*.color12:      #86b2df
+
+! magenta
+*.color5:       #c776f5
+*.color13:      #d4adea
+
+! cyan
+*.color6:       #69dfe5
+*.color14:      #9ff3f8
+
+! white
+*.color7:       #c0c5ce
+*.color15:      #eff1f5
+
 
 ! ------------------------------------------------------------------------------
 ! urxvt settings

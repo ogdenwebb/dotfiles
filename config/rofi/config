@@ -1,6 +1,6 @@
 rofi.terminal: alacritty
 rofi.sidebar-mode: true
-rofi.theme: valley.rasi
+rofi.theme: ocean.rasi
 rofi.show-icons: true
 rofi.fuzzy: true
 rofi.name-only: true

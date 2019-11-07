@@ -112,3 +112,7 @@ test -r /home/ogden/.opam/opam-init/init.zsh && . /home/ogden/.opam/opam-init/in
 # OPAM configuration
 # . /home/ogden/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 # eval `opam config env`
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="/home/ogden/.sdkman"
+# [[ -s "/home/ogden/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ogden/.sdkman/bin/sdkman-init.sh"
