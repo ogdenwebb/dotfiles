@@ -1,0 +1,26 @@
+/* -*- mode: css; -*- */
+
+/**
+ * ROFI Color theme
+ */
+
+/* global settings and color variables */
+* {
+
+    font: "Roboto 12";
+
+    fg-color: #e6e6e8;
+    bg-color: #383e3f;
+
+    /* main bg */
+    bg-trans: #29292FF0;
+
+    text-color:        @fg-color;
+    background-color:  rgba(0,0,0,0);
+
+    dim-trans: #2F2F35C5;
+    bg-accent: #545c5e;
+    accent-trans: #2E403BC5;
+    hl: #0ed49b;
+    prep: #9587DD;
+}

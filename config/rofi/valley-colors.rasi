@@ -1,0 +1,26 @@
+/* -*- mode: css; -*- */
+
+/**
+ * ROFI Color theme
+ */
+
+/* global settings and color variables */
+* {
+
+    font: "Roboto 12";
+
+    fg-color: #EEE6D3;
+    bg-color: #352D2D;
+
+    /* main bg */
+    bg-trans: #262121F0;
+
+    /* Make text color white and background fully transparent */
+    text-color:        @fg-color;
+    background-color:  rgba(0,0,0,0);
+
+    dim-trans: #3A3130C5;
+    bg-accent: #463634;
+    accent-trans: #3A3130C5;
+
+}

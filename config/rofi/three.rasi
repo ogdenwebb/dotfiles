@@ -1,0 +1,108 @@
+/* -*- mode: css; -*- */
+
+/**
+ * ROFI Color theme
+ */
+
+/* Load color scheme */
+@import "ocean-colors.rasi"
+@import "galaxy-colors.rasi"
+
+#window {
+    /* fullscreen: true; */
+    anchor: north;
+    location: north;
+
+    transparency:  "real";
+
+    orientation:  horizontal;
+    children:     [mainbox];
+
+    background-color: @bg-trans;
+
+    /* x-offset: 590px; */
+    y-offset: 100px;
+    width: 920px;
+    border: 3;
+    padding: 12px;
+    border-color: @dim-trans;
+}
+
+#mainbox {
+    /* orientation:  vertical; */
+    /* childern: [entry, listview]; */
+}
+
+#inputbar {
+    background-color: @bg-color;
+    padding: 5px;
+    spacing: 5px;
+}
+
+#entry {
+    width: 15em;
+}
+
+#listview {
+    expand: false;
+    lines: 7;
+    columns: 3;
+    padding: 15px;
+}
+
+#element {
+    padding:  8px 1.6em 8px 5px;
+}
+
+#element selected normal {
+    color: @hl;
+}
+
+#element normal active {
+    background-color: @dim-trans;
+}
+
+#element normal urgent {
+    background-color: Orange;
+}
+
+#element alternate normal {
+}
+
+#element alternate active {
+    /* text-color: @focus-col; */
+}
+
+#element alternate urgent {
+    background-color: OrangeRed;
+}
+
+#element selected active {
+    background-color:  @dim-trans;
+}
+
+#element selected urgent {
+    background-color:  DarkOrange;
+}
+
+
+#sidebar {
+    padding: 5px;
+}
+
+#button  {
+    font: "Roboto Medium 11";
+    color: #697375;
+}
+
+#button selected {
+    /* background-color: @accent-trans; */
+    color: @fg-color;
+}
+
+/* Disable annoying mode name */
+#prompt {
+    enabled: false;
+}
+
+/* vim:ft=css */
