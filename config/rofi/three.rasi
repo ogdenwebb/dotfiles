@@ -6,7 +6,7 @@
 
 /* Load color scheme */
 @import "ocean-colors.rasi"
-@import "galaxy-colors.rasi"
+@import "temple-colors.rasi"
 
 #window {
     /* fullscreen: true; */
