@@ -1,3 +1,17 @@
+local gears         = require("gears")
+local awful         = require("awful")
+require("awful.autofocus")
+-- Widget and layout library
+local wibox         = require("wibox")
+-- Theme handling library
+local beautiful     = require("beautiful")
+-- Notification library
+local naughty       = require("naughty")
+local menubar       = require("menubar")
+
+local hotkeys_popup = require("awful.hotkeys_popup").widget
+require("awful.hotkeys_popup.keys")
+
 -- {{{ Key bindings
 globalkeys = my_table.join(
     -- Take a screenshot
@@ -64,7 +78,7 @@ globalkeys = my_table.join(
             if client.focus then client.focus:raise() end
         end,
         {description = "focus right", group = "client"}),
-    awful.key({ modkey,           }, "w", function () awful.util.mymainmenu:show() end,
+    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation

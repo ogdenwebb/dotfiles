@@ -1,26 +1,36 @@
 --[[
 
-     Awesome WM configuration template
-     github.com/lcpz
+    Awesome WM configuration
+    ./widgets/
+    ./themes/
 
 --]]
 
 -- {{{ Required libraries
-local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
-local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
+-- local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
+-- local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
 
-gears         = require("gears")
-awful         = require("awful")
-                      require("awful.autofocus")
-wibox         = require("wibox")
-beautiful     = require("beautiful")
-naughty       = require("naughty")
-lain          = require("lain")
---local menubar       = require("menubar")
-freedesktop   = require("freedesktop")
-hotkeys_popup = require("awful.hotkeys_popup").widget
-                      require("awful.hotkeys_popup.keys")
+-- Standard awesome library
+local gears         = require("gears")
+local awful         = require("awful")
+require("awful.autofocus")
+-- Widget and layout library
+local wibox         = require("wibox")
+-- Theme handling library
+local beautiful     = require("beautiful")
+-- Notification library
+local naughty       = require("naughty")
+local menubar       = require("menubar")
+
+local hotkeys_popup = require("awful.hotkeys_popup").widget
+require("awful.hotkeys_popup.keys")
 my_table      = awful.util.table or gears.table -- 4.{0,1} compatibility
+
+local xresources = require("beautiful.xresources")
+
+-- Helper functions
+local helpers = require("helpers")
+
 -- }}}
 
 -- {{{ Error handling
@@ -47,44 +57,29 @@ do
 end
 -- }}}
 
--- {{{ Autostart windowless processes
-
--- This function implements the XDG autostart specification
---[[
-awful.spawn.with_shell(
-    'if (xrdb -query | grep -q "^awesome\\.started:\\s*true$"); then exit; fi;' ..
-    'xrdb -merge <<< "awesome.started:true";' ..
-    -- list each of your autostart commands, followed by ; inside single quotes, followed by ..
-    'dex --environment Awesome --autostart --search-paths "$XDG_CONFIG_DIRS/autostart:$XDG_CONFIG_HOME/autostart"' -- https://github.com/jceb/dex
-)
---]]
-
--- }}}
-
 -- {{{ Variable definitions
 
 local themes = {
-    "blackburn",       -- 1
-    "copland",         -- 2
-    "dremora",         -- 3
-    "holo",            -- 4
-    "multicolor",      -- 5
-    "powerarrow",      -- 6
-    "powerarrow-dark", -- 7
-    "rainbow",         -- 8
-    "steamburn",       -- 9
-    "vertex",          -- 10
+    "ocean",            -- 1
 }
 
-local chosen_theme = themes[4]
+-- local panel_themes = {
+-- }
+
+-- local bar_theme_name = panel_themes[1]
+
+local chosen_theme = themes[1]
 modkey       = "Mod4"
 altkey       = "Mod1"
+
 terminal     = "kitty"
 rofi         = "rofi -show drun -sidebar-mode -modi \"window,ssh,drun\" -name-only"
 editor       = os.getenv("EDITOR") or "vim"
 gui_editor   = "emc"
 browser      = "firefox-bin"
+file_manager = "spacefm"
 scrlocker    = "slock"
+
 
 -- TODO: gap_single_client
 awful.util.terminal = terminal
@@ -106,12 +101,6 @@ awful.layout.layouts = {
     --awful.layout.suit.corner.ne,
     --awful.layout.suit.corner.sw,
     --awful.layout.suit.corner.se,
-    --lain.layout.cascade,
-    --lain.layout.cascade.tile,
-    --lain.layout.centerwork,
-    --lain.layout.centerwork.horizontal,
-    --lain.layout.termfair,
-    --lain.layout.termfair.center,
 }
 
 awful.util.taglist_buttons = my_table.join(
@@ -167,40 +156,91 @@ awful.util.tasklist_buttons = my_table.join(
     awful.button({ }, 5, function () awful.client.focus.byidx(-1) end)
 )
 
-lain.layout.termfair.nmaster           = 3
-lain.layout.termfair.ncol              = 1
-lain.layout.termfair.center.nmaster    = 3
-lain.layout.termfair.center.ncol       = 1
-lain.layout.cascade.tile.offset_x      = 2
-lain.layout.cascade.tile.offset_y      = 32
-lain.layout.cascade.tile.extra_padding = 5
-lain.layout.cascade.tile.nmaster       = 5
-lain.layout.cascade.tile.ncol          = 2
-
 beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
 -- }}}
 
+-- Notification
+
+-- -----------------------------------------------------
+-- -- TODO: some options are not respected when the notification is created
+-- -- through lib-notify. Naughty works as expected.
+
+-- -- Icon size
+-- naughty.config.defaults['icon_size'] = beautiful.notification_icon_size
+
+-- -- Timeouts (set 0 for permanent)
+-- naughty.config.defaults.timeout = 5
+-- naughty.config.presets.low.timeout = 2
+-- naughty.config.presets.critical.timeout = 0
+
+-- -- Apply theme variables
+-- naughty.config.defaults.padding = beautiful.notification_padding
+-- naughty.config.defaults.spacing = beautiful.notification_spacing
+-- naughty.config.defaults.margin = beautiful.notification_margin
+-- naughty.config.defaults.border_width = beautiful.notification_border_width
+-- -- Apply rounded rectangle shape
+-- beautiful.notification_shape = function(cr, width, height)
+--     gears.shape.rounded_rect(cr, width, height, beautiful.notification_border_radius)
+-- end
+
+-- naughty.config.presets.normal = {
+--     font         = beautiful.notification_font,
+--     fg           = beautiful.notification_fg,
+--     bg           = beautiful.notification_bg,
+--     border_width = beautiful.notification_border_width,
+--     margin       = beautiful.notification_margin,
+--     position     = beautiful.notification_position
+-- }
+
+-- naughty.config.presets.low = {
+--     font         = beautiful.notification_font,
+--     fg           = beautiful.notification_fg,
+--     bg           = beautiful.notification_bg,
+--     border_width = beautiful.notification_border_width,
+--     margin       = beautiful.notification_margin,
+--     position     = beautiful.notification_position
+-- }
+
+-- naughty.config.presets.ok = naughty.config.presets.low
+-- naughty.config.presets.info = naughty.config.presets.low
+-- naughty.config.presets.warn = naughty.config.presets.normal
+
+-- naughty.config.presets.critical = {
+--     font         = beautiful.notification_font,
+--     fg           = beautiful.notification_crit_fg,
+--     bg           = beautiful.notification_crit_bg,
+--     border_width = beautiful.notification_border_width,
+--     margin       = beautiful.notification_margin,
+--     position     = beautiful.notification_position
+-- }
+
 -- {{{ Menu
-local myawesomemenu = {
+myawesomemenu = {
     { "hotkeys", function() return false, hotkeys_popup.show_help end },
     { "manual", terminal .. " -e man awesome" },
     { "edit config", string.format("%s -e %s %s", terminal, editor, awesome.conffile) },
     { "restart", awesome.restart },
     { "quit", function() awesome.quit() end }
 }
-awful.util.mymainmenu = freedesktop.menu.build({
-    icon_size = beautiful.menu_height or 16,
-    before = {
+
+mymainmenu = awful.menu({
+    -- icon_size = beautiful.menu_height or 16,
+    items = {
         { "Awesome", myawesomemenu, beautiful.awesome_icon },
-        -- other triads can be put here
-    },
-    after = {
-        -- { "Open terminal", terminal },
-        -- other triads can be put here
+        { "Terminal", terminal },
+        { "File manager", file_namager },
+        { "Run", rofi },
         { "Reboot", "sudo reboot" },
-        { "Poweroff", "sudo poweroff" }
+        { "Poweroff", "sudo poweroff" },
+        
     }
 })
+
+mylauncher = awful.widget.launcher({
+    image = beautiful.awesome_icon,
+    menu = mymainmenu
+})
+
 -- hide menu when mouse leaves it
 --awful.util.mymainmenu.wibox:connect_signal("mouse::leave", function() awful.util.mymainmenu:hide() end)
 
@@ -220,17 +260,21 @@ awful.util.mymainmenu = freedesktop.menu.build({
 --         gears.wallpaper.maximized(wallpaper, s, true)
 --     end
 -- end)
+
 -- Create a wibox for each screen and add it
 awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) end)
 -- }}}
 
 -- {{{ Mouse bindings
 root.buttons(my_table.join(
-    awful.button({ }, 3, function () awful.util.mymainmenu:toggle() end),
+    awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
 -- }}}
+
+-- Load key bindings
+require("keys")
 
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
@@ -251,7 +295,7 @@ awful.rules.rules = {
 
     -- Titlebars
     { rule_any = { type = { "dialog", "normal" } },
-      properties = { titlebars_enabled = true } },
+      properties = { titlebars_enabled = false } },
 
     -- Set Firefox to always map on the first tag on screen 1.
     -- { rule = { class = "Firefox" },
@@ -385,5 +429,4 @@ end)
 
 -- {{{ Autostart
 require("autostart")
-require("keys")
 -- }}}

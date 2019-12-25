@@ -16,4 +16,4 @@ local function run_once(cmd_arr)
 end
 
 -- entries must be separated by commas
-run_once({ "devmon", "compton -b", "mpd", "unclutter", "dropbox start", "parcellite -n"})
+run_once({ "devmon", "picom -b", "mpd", "unclutter", "parcellite -n", "radeon-profile", "dropbox start"})
