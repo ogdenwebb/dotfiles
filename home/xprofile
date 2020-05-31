@@ -9,6 +9,8 @@ fi
 
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
+# Fix font size in QT apllications
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 ## Where the default Home folders have not already been created, generate them
 
