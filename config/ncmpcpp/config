@@ -120,7 +120,6 @@ titles_visibility = "no"
 statusbar_visibility = "no"
 cyclic_scrolling = "no"
 lines_scrolled = "2"
-follow_now_playing_lyrics = "yes"
 show_hidden_files_in_local_browser = "no"
 jump_to_now_playing_song_at_start = "yes"
 clock_display_seconds = "no"
@@ -152,6 +151,12 @@ active_window_border = "blue"
 
 ask_before_clearing_playlists = "no"
 
+# Lyrics
+lyrics_fetchers = lyricwiki, azlyrics, genius, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
+follow_now_playing_lyrics = "yes"
+
+
 ## notification
 #execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"
+execute_on_song_change = "~/.config/ncmpcpp/kitty_ncmpcpp_cover.sh &> /dev/null"
 

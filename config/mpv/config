@@ -1,22 +1,23 @@
 # vim: syntax=config
-heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
+# heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 save-position-on-quit=yes
 volume=100
 alang=jpn,eng,rus
 slang=rus,eng
 
 # default value of 320kB is quite low, especially on slow media
-cache-default=4000
-cache=4000
+# TODO:
+#cache-default=4000
+#cache=4000
 
 # Audio output
 # ao=alsa
 ao=pulse
 
 # Video output
-vo=vdpau
-hwdec=vdpau
-# hwdec=vaapi
+# vo=vdpau
+#hwdec=vdpau
+hwdec=vaapi
 
 # subs
 no-sub-ass

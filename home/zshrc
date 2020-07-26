@@ -19,12 +19,13 @@ setopt NO_BEEP
 unset GIT_ASKPASS
 unset SSH_ASKPASS
 
+#if [ "$TERM" = "xterm" ]; then
+#    export TERM=xterm-256color
+#fi
+
 # Display a custom prompt
 PROMPT="%(?.%F{green}.%F{red}) %~ ❯%f  %f"
 
-if [ "$TERM" = "xterm" ]; then
-    export TERM=xterm-256color
-fi
 
 # Colors input with use dircolors
 if [ -x /usr/bin/dircolors ]; then

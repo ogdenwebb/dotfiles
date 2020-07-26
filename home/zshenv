@@ -1,8 +1,15 @@
-typeset -U path
+# Ensure locale settings are properly set-up.
+if [[ -z "$LANG" ]]; then
+  export LANG='en_US.UTF-8'
+fi
+
+# Keep only the first occurence in path, cdpath etc.
+# typeset -gU path
+typeset -gU cdpath fpath mailpath path
 
 export EDITOR="nvim"
 export BROWSER="firefox-bin"
 LS_COLORS=$LS_COLORS:'di=1;30:' ; export LS_COLORS
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/bin:/usr/sbin:/usr/local/bin:/opt:/usr/bin:/usr/sbin:/usr/local/bin:/opt:$HOME/.bin:$HOME/.nimble/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/dev/go/bin:/usr/lib/llvm/7/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/bin:/usr/sbin:/usr/local/bin:/opt:/usr/bin:/usr/sbin:/usr/local/bin:/opt:$HOME/.bin:$HOME/.nimble/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/dev/go/bin:/usr/lib/llvm/8/bin:/usr/lib/llvm/9/bin:/usr/lib/llvm/10/bin
 export GOPATH=$HOME/dev/go
 

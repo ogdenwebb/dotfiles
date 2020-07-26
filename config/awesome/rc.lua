@@ -27,9 +27,13 @@ require("awful.hotkeys_popup.keys")
 my_table      = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local xresources = require("beautiful.xresources")
+local dpi = xresources.apply_dpi
 
 -- Helper functions
 local helpers = require("helpers")
+
+-- Dynamic layout & other stuff
+-- local dynamic = require("dynamic")
 
 -- }}}
 

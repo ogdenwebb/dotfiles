@@ -8,14 +8,19 @@ local beautiful     = require("beautiful")
 -- Notification library
 local naughty       = require("naughty")
 local menubar       = require("menubar")
+local lain          = require("lain")
 
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 require("awful.hotkeys_popup.keys")
 
 -- {{{ Key bindings
 globalkeys = my_table.join(
+
     -- Take a screenshot
     awful.key({ }, "Print", function() os.execute("scrot") end,
+              {description = "take a screenshot", group = "hotkeys"}),
+
+    awful.key({ "Shift" }, "Print", function() os.execute("scrot \"$(date)\".jpg -q 92") end,
               {description = "take a screenshot", group = "hotkeys"}),
 
     -- X screen locker

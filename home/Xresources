@@ -86,7 +86,7 @@ URxvt.depth:             24
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755:    False
-URxvt*termName:    rxvt-256color
+! URxvt*termName:    rxvt-256color
 ! Set the style of the scrollbar: rxvt (default), plain, next, xterm
 URxvt.scrollstyle: plain
 

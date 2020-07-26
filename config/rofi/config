@@ -1,4 +1,4 @@
-rofi.terminal: alacritty
+rofi.terminal: kitty
 rofi.sidebar-mode: true
 #rofi.theme: ocean.rasi
 rofi.theme: three.rasi
