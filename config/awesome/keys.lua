@@ -267,6 +267,10 @@ globalkeys = my_table.join(
     awful.key({ modkey }, "v", function () awful.spawn.with_shell("xsel -b | xsel") end,
               {description = "copy gtk to terminal", group = "hotkeys"}),
 
+    awful.key({ modkey }, "p", function () awful.spawn("rofi -modi \"clipboard:greenclip print\" -show clipboard -run-command '{cmd}'") end,
+              {description = "copy gtk to terminal", group = "hotkeys"}),
+
+
     -- User programs
     -- awful.key({ modkey }, "q", function () awful.spawn(browser) end,
     --           {description = "run browser", group = "launcher"}),
@@ -275,8 +279,8 @@ globalkeys = my_table.join(
 
     -- Default
     --[[ Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+    -- awful.key({ modkey }, "p", function() menubar.show() end,
+    --           {description = "show the menubar", group = "launcher"})
     --]]
     --[[ dmenu
     awful.key({ modkey }, "x", function ()

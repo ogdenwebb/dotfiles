@@ -29,3 +29,6 @@ osd-font-size=28
 ## Subs font
 sub-font="Roboto"
 sub-font-size=48
+
+## Repeat
+loop-playlist=inf

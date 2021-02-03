@@ -16,4 +16,4 @@ local function run_once(cmd_arr)
 end
 
 -- entries must be separated by commas
-run_once({ "devmon", "picom -b --experimental-backends", "mpd", "unclutter", "parcellite -n", "radeon-profile", "dropbox-cli start"})
+run_once({ "devmon", "picom -b --experimental-backends", "mpd", "unclutter", "greenclip daemon", "radeon-profile", "dropbox-cli start"})

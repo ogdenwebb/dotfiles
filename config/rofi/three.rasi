@@ -53,6 +53,16 @@
     padding:  8px 1.6em 8px 5px;
 }
 
+/* Icon Size */
+element-text,element-icon {
+   text-color: inherit;
+}
+
+element-icon {
+   size: 16px;
+}
+
+
 #element selected normal {
     color: @hl;
 }

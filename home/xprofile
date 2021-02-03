@@ -1,9 +1,10 @@
 ## Ensure that the D-Bus Communication System is running properly to fix
 ## File management, authentication, and other essential system processes
 
-if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
-    eval "$(dbus-launch --sh-syntax --exit-with-session)"
-fi
+# TODO: ?
+# if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+#     eval "$(dbus-launch --sh-syntax --exit-with-session)"
+# fi
 
 ## Ensure that GTK themes are applied uniformly in the Desktop Environment
 
