@@ -48,9 +48,9 @@ mpd_connection_timeout = "5"
 mpd_crossfade_time = "1"
 
 # Visualizer
-visualizer_fifo_path = "/tmp/mpd.fifo"
+# visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "FIFO"
-visualizer_sync_interval = "30"
+# visualizer_sync_interval = "30"
 visualizer_in_stereo = "yes"
 # Available values: spectrum, wave.
 visualizer_type = "spectrum"
@@ -58,42 +58,37 @@ visualizer_type = "spectrum"
 # visualizer_look = "|○"
 visualizer_look = "●▮"
 
-# Columns
-# song_columns_list_format = "(3f)[239]{} (35)[246]{t|f} (30)[blue]{a} (30)[green]{b} (5f)[240]{l}"
-# song_columns_list_format = "(3f)[239]{} (35)[cyan]{a} (30)[green]{t|f} (5f)[magenta]{l}"
-# song_columns_list_format = "(3f)[239]{} (35)[green]{a} (30)[magenta]{t|f}"
+[header]
+# header_visibility = "no"
+# header_window_color = "default"
+header_visibility = "yes"
+header_text_scrolling = "yes"
+header_window_color = "magenta"
+volume_color = "green"
+state_line_color = "9"
+
+[playlist]
+# classic or columns
+playlist_display_mode = "columns"
+titles_visibility = "no" # disable column headers
+song_list_format = "$6%a $5%t "
 song_columns_list_format = "(3f)[239]{} (35)[blue]{a} (30)[magenta]{t|f}"
-song_list_format = "{$5 %a$9 $8│$9 $0%t$9 }|{ $0%f$9}$R{$5%b $7}"
-# song_status_format = "{{{$5%a$9}} $0-$9 {$2%t$9}|{$0%f$9}{ $0-$9 $3%b$9{ $0-$9 $5%y$9}}}"
-# song_status_format = "{$2%t$9}|{$0%f$9}"
-song_status_format = "{$0%t$9}"
-# song_library_format = "{%n $3-$9 }{%t}|{%f}"
-song_library_format = "{%n $5-$7 }{%t}|{%f}"
-now_playing_suffix = "↤"
-browser_playlist_prefix = "playlist"
+now_playing_prefix = "$b"
+now_playing_suffix = "$/b"
+browser_playlist_prefix = "$1»$1 "
 selected_item_prefix = "$5"
 selected_item_suffix = "$9"
-# song_window_title_format = "{%t}|{%f} - {%a}"
-song_window_title_format = " {%a} - {%t}"
+ask_before_clearing_playlists = "no"
 
-# Various
-playlist_show_remaining_time = "no"
-playlist_shorten_total_times = "yes"
-playlist_separate_albums = "no"
-playlist_display_mode = "columns"
-browser_display_mode = "columns"
-search_engine_display_mode = "columns"
-discard_colors_if_item_is_selected = "no"
-incremental_seeking = "yes"
-seek_time = "1"
-autocenter_mode = "yes"
-centered_cursor = "yes"
-# progressbar_look = "─╼─"
-progressbar_color = 240
-# progressbar_elapsed_color = 250
+[statusbar]
+statusbar_visibility = "yes"
+statusbar_color = "5"
+#song_status_format = "{%t - %a}"
+song_status_format = "{$0%t$9}"
+
+progressbar_color = "240"
 progressbar_elapsed_color = "blue"
-# progressbar_boldness = "yes"
-#progressbar_look = "─⊙ "
+progressbar_look = "─⊙ "
 ##progressbar_look = "=>"
 #progressbar_look = "─- "
 #progressbar_look = "▒▒░"
@@ -109,54 +104,32 @@ progressbar_elapsed_color = "blue"
 #progressbar_look = "■◣ "
 #progressbar_look = "◈◆◇"
 
-progressbar_look = "▃▃▃"
+#progressbar_look = "▃▃▃"
+#progressbar_look = "━━━"
 
-user_interface = "classic"
-header_visibility = "yes"
-header_text_scrolling = "yes"
-header_window_color = "magenta"
+[library]
+#song_library_format = "{{%a - %t}|{%f}}{$R%l}"
+song_library_format = "{%n $5-$7 }{%t}|{%f}"
+empty_tag_color = "9"
 
-titles_visibility = "no"
-statusbar_visibility = "no"
-cyclic_scrolling = "no"
-lines_scrolled = "2"
-show_hidden_files_in_local_browser = "no"
-jump_to_now_playing_song_at_start = "yes"
-clock_display_seconds = "no"
+[global]
+#main_window_color = "default"
+main_window_color = "magenta"
+
+centered_cursor = "yes"
+enable_window_title = "yes"
+external_editor = "vim"
+song_window_title_format = " {%a} - {%t}"
+user-interface="classic"
+
+regular_expressions = "extended"
 display_volume_level = "no"
 display_bitrate = "yes"
 display_remaining_time = "no"
-regular_expressions = "extended"
-ignore_leading_the = "no"
-block_search_constraints_change_if_items_found = "yes"
+
+show_hidden_files_in_local_browser = "no"
+
 mouse_support = "yes"
 mouse_list_scroll_whole_page = "yes"
-external_editor = "vim"
-use_console_editor = "yes"
-colors_enabled = "yes"
-empty_tag_color = "black"
-state_line_color = "black"
-state_flags_color = "black"
-# main_window_color = 243
-# main_window_color = 210
-main_window_color = "magenta"
-# main_window_highlight_color = "white"
-#
-# set current_item_prefix = "$(white)$r"
-#current_item_suffix = "$/r$(end)"
-statusbar_color = white
-current_item_inactive_column_prefix = "$(blue)$r"
-current_item_inactive_column_suffix = "$/r$(end)"
-active_window_border = "blue"
 
-ask_before_clearing_playlists = "no"
-
-# Lyrics
-lyrics_fetchers = lyricwiki, azlyrics, genius, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
-follow_now_playing_lyrics = "yes"
-
-
-## notification
-#execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"
-execute_on_song_change = "~/.config/ncmpcpp/kitty_ncmpcpp_cover.sh &> /dev/null"
-
+#active_window_border = "blue"
