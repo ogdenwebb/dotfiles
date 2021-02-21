@@ -68,17 +68,23 @@ volume_color = "green"
 state_line_color = "9"
 
 [playlist]
+playlist_separate_albums = "no"
 # classic or columns
 playlist_display_mode = "columns"
 titles_visibility = "no" # disable column headers
 song_list_format = "$6%a $5%t "
 song_columns_list_format = "(3f)[239]{} (35)[blue]{a} (30)[magenta]{t|f}"
-now_playing_prefix = "$b"
-now_playing_suffix = "$/b"
-browser_playlist_prefix = "$1»$1 "
-selected_item_prefix = "$5"
-selected_item_suffix = "$9"
+now_playing_prefix = "$(3_01)"
+now_playing_suffix = $0
+#browser_playlist_prefix = "$1»$1 "
+browser_playlist_prefix = "$2L$9 "
+browser_display_mode = "columns"
+# selected_item_prefix = "$5"
+# selected_item_suffix = "$9"
+selected_item_prefix = "$(white)$b"
+selected_item_suffix = "$/b$(end)"
 ask_before_clearing_playlists = "no"
+search_engine_display_mode = "columns"
 
 [statusbar]
 statusbar_visibility = "yes"
@@ -120,7 +126,11 @@ centered_cursor = "yes"
 enable_window_title = "yes"
 external_editor = "vim"
 song_window_title_format = " {%a} - {%t}"
-user-interface="classic"
+# classic or alternative
+user-interface="alternative"
+alternative_header_first_line_format  = "{$b$2%a$9} {$5%t$9}"
+alternative_header_second_line_format = "{$3%b$9} {$4(%y)$9}"
+alternative_ui_separator_color        = "blue"
 
 regular_expressions = "extended"
 display_volume_level = "no"
@@ -133,3 +143,5 @@ mouse_support = "yes"
 mouse_list_scroll_whole_page = "yes"
 
 #active_window_border = "blue"
+
+follow_now_playing_lyrics = "yes"

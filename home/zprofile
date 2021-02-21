@@ -4,3 +4,5 @@ export LANGUAGE="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export NO_AT_BRIDGE=1
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=gasp"
+#export XDG_CURRENT_DESKTOP=sway
+#export GTK_USE_PORTAL=1

@@ -33,7 +33,15 @@ local dpi = xresources.apply_dpi
 local helpers = require("helpers")
 
 -- Dynamic layout & other stuff
--- local dynamic = require("dynamic")
+local dynamic = require("awful.layout.dynamic")
+
+--
+
+-- Tree-based tiling layout for Awesome Window Manager.
+-- local treetile = require("treetile")
+-- treetile.direction = "right"
+-- treetile.focusnew = true  
+-- treetile.direction = "right"
 
 -- }}}
 
@@ -84,12 +92,12 @@ browser      = "firefox-bin"
 file_manager = "spacefm"
 scrlocker    = "slock"
 
-
 -- TODO: gap_single_client
 awful.util.terminal = terminal
 awful.util.tagnames = { "1", "2", "3", "4", "5" }
 awful.layout.layouts = {
     awful.layout.suit.tile,
+    -- treetile,
     -- awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     -- awful.layout.suit.tile.top,
