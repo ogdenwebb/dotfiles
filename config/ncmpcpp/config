@@ -53,7 +53,7 @@ visualizer_output_name = "FIFO"
 # visualizer_sync_interval = "30"
 visualizer_in_stereo = "yes"
 # Available values: spectrum, wave.
-visualizer_type = "spectrum"
+# visualizer_type = "spectrum"
 # visualizer_color = 246,245,244,243,242,241,240,239,238,237,236,235
 # visualizer_look = "|○"
 visualizer_look = "●▮"
@@ -77,7 +77,7 @@ song_columns_list_format = "(3f)[239]{} (35)[blue]{a} (30)[magenta]{t|f}"
 now_playing_prefix = "$(3_01)"
 now_playing_suffix = $0
 #browser_playlist_prefix = "$1»$1 "
-browser_playlist_prefix = "$2L$9 "
+#browser_playlist_prefix = "$2L$9 "
 browser_display_mode = "columns"
 # selected_item_prefix = "$5"
 # selected_item_suffix = "$9"
@@ -138,6 +138,7 @@ display_bitrate = "yes"
 display_remaining_time = "no"
 
 show_hidden_files_in_local_browser = "no"
+show_duplicate_tags = no
 
 mouse_support = "yes"
 mouse_list_scroll_whole_page = "yes"
