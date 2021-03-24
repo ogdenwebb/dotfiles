@@ -1,3 +1,6 @@
+# Disable default system prompt
+# prompt off
+
 autoload -U +X promptinit && promptinit
 autoload -U +X compinit && compinit
 
@@ -28,9 +31,9 @@ PROMPT="%(?.%F{green}.%F{red}) %~ ❯%f  %f"
 
 
 # Colors input with use dircolors
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
+# if [ -x dircolors ]; then
+   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+# fi
 
 # if [ -f "/etc/dircolors" ]
 # then
@@ -46,7 +49,7 @@ alias ls='ls -F --color=auto --group-directories-first'
 alias mp='ncmpcpp'
 alias fm='spacefm'
 alias grep='grep --color=auto'
-alias vim='nvim'
+#alias vim='nvim'
 alias vimrc='nvim ~/.config/nvim/init.vim'
 # alias killall='pkill -x'
 

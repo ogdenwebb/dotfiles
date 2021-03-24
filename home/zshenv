@@ -10,6 +10,10 @@ typeset -gU cdpath fpath mailpath path
 export EDITOR="nvim"
 export BROWSER="firefox-bin-wayland"
 LS_COLORS=$LS_COLORS:'di=1;30:' ; export LS_COLORS
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/bin:/usr/sbin:/usr/local/bin:/opt:/usr/bin:/usr/sbin:/usr/local/bin:/opt:$HOME/.bin:$HOME/.nimble/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/dev/go/bin:/usr/lib/llvm/9/bin:/usr/lib/llvm/10/bin:/usr/lib/llvm/11/bin:$HOME/.luarocks/bin
+#export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/bin:/usr/sbin:/usr/local/bin:/opt:/usr/bin:/usr/sbin:/usr/local/bin:/opt:$HOME/.bin:$HOME/.nimble/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/dev/go/bin:/usr/lib/llvm/9/bin:/usr/lib/llvm/10/bin:/usr/lib/llvm/11/bin:$HOME/.luarocks/bin
+
 export GOPATH=$HOME/dev/go
+
+path+=("$HOME/.bin" "$HOME/.nimble/bin" "$HOME/.cargo/bin" "$HOME/dev/go/bin")
+export PATH
 
