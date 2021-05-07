@@ -1,22 +1,11 @@
-## Ensure that the D-Bus Communication System is running properly to fix
-## File management, authentication, and other essential system processes
-
-# TODO: ?
-# if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
-#     eval "$(dbus-launch --sh-syntax --exit-with-session)"
-# fi
-
-## Ensure that GTK themes are applied uniformly in the Desktop Environment
-
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+       eval `dbus-launch --sh-syntax --exit-with-session`
+fi
 
 # Fix font size in QT apllications
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
-## Where the default Home folders have not already been created, generate them
+# Possible fix Firefox startup glitch when using picom
+export MOZ_GTK_TITLEBAR_DECORATION=none
 
-if [ -x /usr/bin/xdg-user-dirs-update ]; then
-   /usr/bin/xdg-user-dirs-update
-fi
 
-source $HOME/.zshenv
