@@ -8,4 +8,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 # Possible fix Firefox startup glitch when using picom
 export MOZ_GTK_TITLEBAR_DECORATION=none
 
+# Enable EGL support for EGL in X11
+# export OBS_USE_EGL=1
+
 

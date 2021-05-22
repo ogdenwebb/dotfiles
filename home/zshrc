@@ -118,8 +118,8 @@ test -r /home/ogden/.opam/opam-init/init.zsh && . /home/ogden/.opam/opam-init/in
 # eval `opam config env`
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-# export SDKMAN_DIR="/home/ogden/.sdkman"
-# [[ -s "/home/ogden/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ogden/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/home/ogden/.sdkman"
+[[ -s "/home/ogden/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ogden/.sdkman/bin/sdkman-init.sh"
 
 # Load Rakubrew
 eval "$(/home/ogden/.rakubrew/bin/rakubrew init Zsh)"
