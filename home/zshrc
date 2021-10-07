@@ -1,3 +1,11 @@
+# Download Znap, if it's not there yet.
+[[ -f ~/.zsh/zsh-snap/znap.zsh ]] ||
+    git clone https://github.com/marlonrichert/zsh-snap.git ~/.zsh/zsh-snap
+
+# Znap setup
+zstyle ':znap:*' repos-dir ~/.zsh/plugins
+source ~/.zsh/zsh-snap/znap.zsh
+
 # Disable default system prompt
 # prompt off
 
@@ -27,7 +35,21 @@ unset SSH_ASKPASS
 #fi
 
 # Display a custom prompt
-PROMPT="%(?.%F{green}.%F{red}) %~ ❯%f  %f"
+# PROMPT="%(?.%F{green}.%F{red}) %~ ❯%f  %f"
+
+# `znap prompt` makes your prompt visible in less than 12ms!
+znap prompt sindresorhus/pure
+# znap prompt jackharrisonsherlock/common
+
+# `znap source` automatically downloads and activates your plugins.
+znap source  jocelynmallon/zshmarks
+
+# Aliases for zshmarks
+alias g="jump"
+alias s="bookmark"
+alias d="deletemark"
+alias p="showmarks"
+alias l="showmarks"
 
 
 # Colors input with use dircolors
@@ -46,11 +68,14 @@ PROMPT="%(?.%F{green}.%F{red}) %~ ❯%f  %f"
 
 # alias
 alias ls='ls -F --color=auto --group-directories-first'
+alias diff='diff --color'
 alias mp='ncmpcpp'
 alias fm='spacefm'
 alias grep='grep --color=auto'
-#alias vim='nvim'
+alias vim='nvim'
+
 alias vimrc='nvim ~/.config/nvim/init.vim'
+alias zshrc='nvim ~/.zshrc'
 # alias killall='pkill -x'
 
 # History

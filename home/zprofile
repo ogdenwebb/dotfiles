@@ -6,3 +6,5 @@ export NO_AT_BRIDGE=1
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=gasp"
 #export XDG_CURRENT_DESKTOP=sway
 #export GTK_USE_PORTAL=1
+#export XDG_CURRENT_DESKTOP=KDE
+
