@@ -14,7 +14,7 @@ Xft.lcdfilter: lcddefault
 Xft.hinting:   1
 Xft.hintstyle: hintfull
 
-! Xcursor.theme: jimmac
+Xcursor.theme: jimmac
 
 ! ------------------------------------------------------------------------------
 ! Import terminal colors
