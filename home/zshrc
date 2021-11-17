@@ -9,14 +9,43 @@ source ~/.zsh/zsh-snap/znap.zsh
 # Disable default system prompt
 # prompt off
 
+zmodload zsh/complist
+zmodload zsh/zle
+autoload -Uz add-zsh-hook
+autoload -Uz colors && colors
+
 autoload -U +X promptinit && promptinit
-autoload -U +X compinit && compinit
 
 # Autocompletion
-zstyle ':completion:*' menu select
-zstyle ':completion:*' use-cache true
-zstyle ':completion:*' rehash true
-setopt COMPLETE_ALIASES
+unsetopt menu_complete      # do not autoselect the first completion entry
+unsetopt flowcontrol        # disable start/stop flow control (^S/^Q)
+
+setopt auto_menu            # show completion menu on successive tab press
+setopt complete_in_word     # allow completion from within a word
+setopt always_to_end        # move cursor to the end of the word on completion
+setopt interactive_comments # allow comments
+setopt auto_pushd           # make cd push the old dir onto the stack
+setopt pushd_ignore_dups    # don't push multiple copies of the same dir
+setopt pushdminus           # exchange the meaning of +/- when used with a number to specify a dir in the stack
+setopt prompt_subst         # enable parameter expansion
+
+# zstyle ':completion:*' menu select
+# zstyle ':completion:*' use-cache true
+# zstyle ':completion:*' rehash true
+# setopt COMPLETE_ALIASES
+
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' list-colors
+zstyle ':completion:*' use-cache yes
+# zstyle ':completion:*' cache-path "$ZSH/cache"
+zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+
+autoload -U +X compinit && compinit
+# Enable Bash tab-completion
+autoload -U +X bashcompinit && bashcompinit
 
 ## Options ##
 compinit
@@ -26,6 +55,7 @@ setopt HIST_IGNORE_SPACE
 setopt CORRECTALL
 setopt AUTOCD
 setopt NO_BEEP
+
 
 unset GIT_ASKPASS
 unset SSH_ASKPASS
@@ -131,42 +161,9 @@ bindkey "^X^E" edit-command-line
 # bindkey -M viins '^p' history-incremental-pattern-search-backward
 # bindkey -M viins '^n' history-incremental-pattern-search-forward
 
-
-# Enable FZF
-
-# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,.cargo,.cache,.icons,.wine,.mix,.ghc,.ocp,.npm,.dbus,.local,.mozilla,.steam}/*" 2> /dev/null'
-
-# opam configuration
-test -r /home/ogden/.opam/opam-init/init.zsh && . /home/ogden/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-# OPAM configuration
-# . /home/ogden/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-# eval `opam config env`
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/ogden/.sdkman"
 [[ -s "/home/ogden/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ogden/.sdkman/bin/sdkman-init.sh"
 
 # Load Rakubrew
 eval "$(/home/ogden/.rakubrew/bin/rakubrew init Zsh)"
-
-# Emacs vterm
-vterm_printf(){
-    if [ -n "$TMUX" ]; then
-        # Tell tmux to pass the escape sequences through
-        # (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
-        printf "\ePtmux;\e\e]%s\007\e\\" "$1"
-    elif [ "${TERM%%-*}" = "screen" ]; then
-        # GNU screen (screen, screen-256color, screen-256color-bce)
-        printf "\eP\e]%s\007\e\\" "$1"
-    else
-        printf "\e]%s\e\\" "$1"
-    fi
-}
-
-function mypass {
-    ps axf | grep 'greenclip daemon' | grep -v grep | awk '{print $1}' | xargs kill -20
-    pass "$@" 
-    sleep 45
-    greenclip print ' '
-    ps axf | grep 'greenclip daemon' | grep -v grep | awk '{print $1}' | xargs kill -18
-}
