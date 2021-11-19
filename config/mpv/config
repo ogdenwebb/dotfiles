@@ -2,6 +2,9 @@
 # heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 save-position-on-quit=yes
 volume=100
+# Increase volume maximum
+volume-max=200
+
 alang=jpn,eng,rus
 slang=rus,eng
 
@@ -10,16 +13,20 @@ slang=rus,eng
 #cache-default=4000
 #cache=4000
 
-# Audio output
+## Audio output
 # ao=alsa
 ao=pulse
 
-# Video output
-# vo=vdpau
-#hwdec=vdpau
+## Video output
+#  o=vdpau
+# hwdec=vdpau
 hwdec=vaapi
 
-# subs
+# Autodetect decoder
+# hwdec=auto
+
+
+## Disabled built-in sub style
 no-sub-ass
 
 ## Interface font
@@ -32,3 +39,18 @@ sub-font-size=48
 
 ## Repeat
 loop-playlist=inf
+
+# use youtube-dl the best quality with up to 1080p resolution
+# you can add vp9 if your GPU doesn't have vp9 support [vcodec!=?vp9]
+ytdl-format=bestvideo[height<=?1080]+bestaudio/best
+
+# Quality tweaks
+profile=gpu-hq
+scale=ewa_lanczossharp
+cscale=ewa_lanczossharp
+video-sync=display-resample
+interpolation
+tscale=oversample
+
+# Resize window at startup
+#autofit-larger=40%x40%
