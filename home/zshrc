@@ -104,7 +104,7 @@ alias fm='spacefm'
 alias grep='grep --color=auto'
 alias vim='nvim'
 
-alias vimrc='nvim ~/.config/nvim/init.vim'
+alias vimrc='nvim ~/.config/nvim/init.lua'
 alias zshrc='nvim ~/.zshrc'
 # alias killall='pkill -x'
 
