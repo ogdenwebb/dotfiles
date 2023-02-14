@@ -2,7 +2,7 @@ configuration {
 	show-icons: true;
 	terminal: "kitty";
 	run-shell-command: "{terminal} -e {cmd}";
-	icon-theme: "Papirus";
+	icon-theme: "Flatery-Dark";
 	sidebar-mode: true;
 }
 
