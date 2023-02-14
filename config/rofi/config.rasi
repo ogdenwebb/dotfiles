@@ -1,0 +1,9 @@
+configuration {
+	show-icons: true;
+	terminal: "kitty";
+	run-shell-command: "{terminal} -e {cmd}";
+	icon-theme: "Papirus";
+	sidebar-mode: true;
+}
+
+@theme "theme.rasi"

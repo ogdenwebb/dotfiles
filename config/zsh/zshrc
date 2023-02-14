@@ -34,6 +34,11 @@ setopt prompt_subst         # enable parameter expansion
 # zstyle ':completion:*' rehash true
 # setopt COMPLETE_ALIASES
 
+# Keep home directory clean
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' list-colors
@@ -81,6 +86,8 @@ alias d="deletemark"
 alias p="showmarks"
 alias l="showmarks"
 
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+
 
 # Colors input with use dircolors
 # if [ -x dircolors ]; then
@@ -105,12 +112,11 @@ alias grep='grep --color=auto'
 alias vim='nvim'
 
 alias vimrc='nvim ~/.config/nvim/init.lua'
-alias zshrc='nvim ~/.zshrc'
+alias zshrc='nvim ~/.config/zsh/.zshrc'
 # alias killall='pkill -x'
 
 # History
 export HISTSIZE=3000
-export HISTFILE="$HOME/.zsh_history"
 export SAVEHIST=$HISTSIZE
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY

@@ -16,6 +16,7 @@ slang=rus,eng
 ## Audio output
 # ao=alsa
 ao=pulse
+#ao=pipewire
 
 ## Video output
 #  o=vdpau
