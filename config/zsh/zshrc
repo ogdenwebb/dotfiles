@@ -173,3 +173,4 @@ export SDKMAN_DIR="/home/ogden/.sdkman"
 
 # Load Rakubrew
 eval "$(/home/ogden/.rakubrew/bin/rakubrew init Zsh)"
+
