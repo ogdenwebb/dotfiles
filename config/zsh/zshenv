@@ -8,16 +8,12 @@ fi
 typeset -gU cdpath fpath mailpath path
 
 export EDITOR="nvim"
-export BROWSER="firefox-bin"
+export BROWSER="firefox"
 LS_COLORS=$LS_COLORS:'di=1;30:' ; export LS_COLORS
 #export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/bin:/usr/sbin:/usr/local/bin:/opt:/usr/bin:/usr/sbin:/usr/local/bin:/opt:$HOME/.bin:$HOME/.nimble/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/dev/go/bin:/usr/lib/llvm/9/bin:/usr/lib/llvm/10/bin:/usr/lib/llvm/11/bin:$HOME/.luarocks/bin
 
 export GOPATH=$HOME/dev/go
 
-# TODO:
-# TODO: update that
-path+=("$HOME/.bin" "$HOME/.nimble/bin" "$HOME/.cargo/bin" "$HOME/dev/go/bin" "$HOME/.local/bin")
-export PATH
 
 # Ensure our directories is configured properly
 if [[ -z "$XDG_CONFIG_HOME" ]]
@@ -52,6 +48,9 @@ export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvtd
 
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
+
+path+=("$HOME/.bin" "$NIMBLE_DIR/bin" "$CARGO_HOME/bin" "$HOME/dev/go/bin" "$HOME/.local/bin")
+export PATH
 
 #export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 
