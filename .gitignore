@@ -15,5 +15,4 @@ config/awesome/wallpapers
 .git/
 .hg/
 .hgignore
-emacs.d/
-elmax/
+config/tmux/plugins/
