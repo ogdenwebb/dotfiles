@@ -8,7 +8,7 @@
 * KDE (w/ picom)
 * Dock: Latte
 * Theme: Qoqir for anything; Materia Color in Plasma style
-* Main Editor: Emacs. [(config)](https://github.com/ogdenwebb/snug-emacs).
+* Main Editor: Emacs - [(config)](https://github.com/ogdenwebb/snug-emacs)
 * Icons: Flatery Dark
 * Cursor theme: Breeze Light
 * GUI Font: Roboto
