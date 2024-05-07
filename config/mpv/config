@@ -15,13 +15,17 @@ slang=rus,eng
 
 ## Audio output
 # ao=alsa
-ao=pulse
-#ao=pipewire
+#ao=pulse
+ao=pipewire
 
 ## Video output
-#  o=vdpau
-# hwdec=vdpau
-hwdec=vaapi
+#hwdec=vaapi
+# vo=gpu
+# Should be faster than vo=gpu
+vo=gpu-next
+#hwdec=vdpau
+hwdec=nvdec
+gpu-api=vulkan
 
 # Autodetect decoder
 # hwdec=auto
@@ -44,14 +48,6 @@ loop-playlist=inf
 # use youtube-dl the best quality with up to 1080p resolution
 # you can add vp9 if your GPU doesn't have vp9 support [vcodec!=?vp9]
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
-
-# Quality tweaks
-profile=gpu-hq
-scale=ewa_lanczossharp
-cscale=ewa_lanczossharp
-video-sync=display-resample
-interpolation
-tscale=oversample
 
 # Resize window at startup
 #autofit-larger=40%x40%
