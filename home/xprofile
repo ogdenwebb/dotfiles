@@ -3,7 +3,7 @@ if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
 fi
 
 # Fix font size in QT apllications
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
+# export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 # Possible fix Firefox startup glitch when using picom
 export MOZ_GTK_TITLEBAR_DECORATION=none
