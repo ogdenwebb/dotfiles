@@ -25,6 +25,7 @@ ao=pipewire
 vo=gpu-next
 #hwdec=vdpau
 hwdec=nvdec
+hwdec=auto-copy
 gpu-api=vulkan
 
 # Autodetect decoder
@@ -51,3 +52,6 @@ ytdl-format=bestvideo[height<=?1080]+bestaudio/best
 
 # Resize window at startup
 #autofit-larger=40%x40%
+#
+# Fix KWIN crash
+x11-bypass-compositor=no
