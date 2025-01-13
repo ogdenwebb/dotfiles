@@ -1,3 +1,12 @@
+# Move config away from home
+#export ZDOTDIR="$HOME/.config/zsh"
+export ZDOTDIR=${ZDOTDIR:-$HOME/.config/zsh}
+export ZSHRC_PATH="$ZDOTDIR/.zshrc"
+export ZPREZTORC_PATH="$ZDOTDIR/.zpreztorc"
+export ZPROFILE_PATH="$ZDOTDIR/.zprofile"
+export ZLOGIN_PATH="$ZDOTDIR/.zlogin"
+export ZLOGOUT_PATH="$ZDOTDIR/.zlogout"
+
 # Ensure locale settings are properly set-up.
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
@@ -56,3 +65,7 @@ export PATH
 
 # MAYBE
 #export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+
+## NVIDIA (until Wayland)
+GBM_BACKEND=nvidia-drm
+__GLX_VENDOR_LIBRARY_NAME=nvidia
