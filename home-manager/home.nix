@@ -74,7 +74,7 @@
   #  /etc/profiles/per-user/ogden/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
     BROWSER = "firefox";
   };
 
@@ -158,13 +158,20 @@
         "zdharma-continuum/fast-syntax-highlighting kind:defer"
         "zsh-users/zsh-autosuggestions kind:defer"
         "zsh-users/zsh-history-substring-search kind:defer"
-        # "zpm-zsh/bookmarks kind:defer"
-        # "jocelynmallon/zshmarks kind:defer"
 
         "mfaerevaag/wd kind:defer"
       ];
     };
 
+    initExtra = ''
+    bindkey "^p" history-beginning-search-backward
+    bindkey "^n" history-beginning-search-forward
+
+    # Edit command
+    autoload -z edit-command-line
+    zle -N edit-command-line
+    bindkey "^X^E" edit-command-line
+  '';
   };
 
   # Enable fastfetch
