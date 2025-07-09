@@ -22,11 +22,22 @@
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
+    pkgs.kdePackages.kget
+    pkgs.protontricks
+    pkgs.steamtinkerlaunch
+    pkgs.telegram-desktop
+    pkgs.yt-dlp
     pkgs.zsh-powerlevel10k
-    pkgs.tela-icon-theme
-    pkgs.tela-circle-icon-theme
-    pkgs.droidcam
-    pkgs.easyeffects
+
+    # Discord & tweaks
+    pkgs.legcord
+    pkgs.arrpc
+    pkgs.libunity # for notification badge
+
+    # pkgs.droidcam
+    # pkgs.easyeffects
+    pkgs.krita
+    pkgs.noto-fonts-color-emoji
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -163,7 +174,7 @@
       ];
     };
 
-    initExtra = ''
+    initContent = ''
     bindkey "^p" history-beginning-search-backward
     bindkey "^n" history-beginning-search-forward
 
