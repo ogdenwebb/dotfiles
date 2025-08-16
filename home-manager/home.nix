@@ -23,11 +23,14 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     pkgs.kdePackages.kget
+    pkgs.kdePackages.qt6ct
     pkgs.protontricks
     pkgs.steamtinkerlaunch
     pkgs.telegram-desktop
     pkgs.yt-dlp
     pkgs.zsh-powerlevel10k
+
+    pkgs.darkly
 
     # Discord & tweaks
     pkgs.legcord
@@ -37,7 +40,32 @@
     # pkgs.droidcam
     # pkgs.easyeffects
     pkgs.krita
+
     pkgs.noto-fonts-color-emoji
+    # pkgs.lora
+    # pkgs.pretendard
+    # pkgs.pretendard-std
+
+# TRY FONT
+    # pkgs.work-sans
+    pkgs.b612
+    pkgs.andika
+    pkgs.karla
+    pkgs.public-sans
+
+    # For Monster hunter meme
+    pkgs.cinzel
+    # MB for editors
+   pkgs.source-sans
+   pkgs.source-code-pro
+   pkgs.monaspace
+   pkgs.moralerspace
+
+    # pkgs.piper-tts
+    # pkgs.rhvoice
+
+    # JAVA
+    pkgs.jdk
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -87,6 +115,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     BROWSER = "firefox";
+    GOPATH = "$HOME/dev/go";
   };
 
   # PATH
@@ -201,4 +230,8 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Enable darkly theme
+  qt.style.package = with pkgs; [ darkly-qt5 darkly ];
+  qt.platformTheme.name = "qtct";
 }
