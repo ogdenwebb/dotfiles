@@ -20,8 +20,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
+    pkgs.android-tools
+
     pkgs.kdePackages.kget
     pkgs.kdePackages.qt6ct
     pkgs.protontricks
@@ -33,7 +33,7 @@
     pkgs.darkly
 
     # Discord & tweaks
-    pkgs.legcord
+    # pkgs.legcord
     pkgs.arrpc
     pkgs.libunity # for notification badge
 
@@ -46,7 +46,7 @@
     # pkgs.pretendard
     # pkgs.pretendard-std
 
-# TRY FONT
+    # TRY FONT
     # pkgs.work-sans
     pkgs.b612
     pkgs.andika
