@@ -2,6 +2,7 @@
 # heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 save-position-on-quit=yes
 volume=100
+
 # Increase volume maximum
 volume-max=200
 
@@ -14,25 +15,21 @@ slang=rus,eng
 #cache=4000
 
 ## Audio output
-# ao=alsa
-#ao=pulse
 ao=pipewire
 
 ## Video output
-#hwdec=vaapi
-# vo=gpu
 # Should be faster than vo=gpu
 vo=gpu-next
-#hwdec=vdpau
-hwdec=nvdec
-hwdec=auto-copy
-gpu-api=vulkan
 
 # Autodetect decoder
 # hwdec=auto
 
+hwdec=nvdec
+hwdec=auto-copy
+gpu-api=vulkan
 
-## Disabled built-in sub style
+
+## Disabled built-in sub styles
 no-sub-ass
 
 ## Interface font
