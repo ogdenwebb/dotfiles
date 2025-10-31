@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 
-# TODO: include zshenv and bindkey from zshrc
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -40,8 +39,11 @@
     # pkgs.droidcam
     # pkgs.easyeffects
     pkgs.krita
+    pkgs.inkscape
 
-    pkgs.noto-fonts-color-emoji
+    # pkgs.noto-fonts-color-emoji
+    # pkgs.noto-fonts-monochrome-emoji
+    # pkgs.joypixels
     # pkgs.lora
     # pkgs.pretendard
     # pkgs.pretendard-std
@@ -122,6 +124,7 @@
   home.sessionPath = [
     "$HOME/.local/bin"
     "$HOME/dev/go/bin"
+    "$HOME/.cargo/bin"
   ];
 
 
@@ -153,11 +156,15 @@
 
   programs.zsh = {
     enable = true;
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
+    setOptions = [
+      "autocd"
+      "HIST_IGNORE_DUPS"
+      "HIST_IGNORE_SPACE"
+    ];
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-
 
     # Use system powerlevel10k package
     plugins = [
@@ -204,10 +211,32 @@
     };
 
     initContent = ''
+    # Hotkeys
     bindkey "^p" history-beginning-search-backward
     bindkey "^n" history-beginning-search-forward
 
-    # Edit command
+    bindkey "^A" beginning-of-line
+    bindkey "^E" end-of-line
+    bindkey "^B" backward-char
+    bindkey "^F" forward-char
+
+    # MAYBE
+    bindkey "^D" delete-char-or-list
+    bindkey '^H' backward-delete-char
+    bindkey '^W' backward-kill-word
+    bindkey '^L' clear-screen
+    bindkey '^V' quoted-insert
+    bindkey "^T" transpose-chars
+    bindkey "^U" kill-line
+    bindkey "^J" backward-word
+    bindkey "^K" forward-word
+    bindkey '^R' history-incremental-search-backward
+    bindkey '^S' history-incremental-search-forward
+
+    # Delete key
+    bindkey "\e[3~" delete-char
+
+    # Edit command (in $EDITOR)
     autoload -z edit-command-line
     zle -N edit-command-line
     bindkey "^X^E" edit-command-line
