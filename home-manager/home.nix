@@ -24,7 +24,16 @@
     pkgs.kdePackages.kget
     pkgs.kdePackages.qt6ct
     pkgs.protontricks
-    pkgs.steamtinkerlaunch
+    # pkgs.steamtinkerlaunch
+    pkgs.faugus-launcher
+    # pkgs.gpu-screen-recorder
+    # pkgs.gpu-screen-recorder-gtk
+    
+    # For affinity
+    pkgs.wine
+    pkgs.winetricks
+    pkgs.dotnet-sdk
+
     pkgs.telegram-desktop
     pkgs.yt-dlp
     pkgs.zsh-powerlevel10k
@@ -37,7 +46,7 @@
     pkgs.libunity # for notification badge
 
     # pkgs.droidcam
-    # pkgs.easyeffects
+    pkgs.easyeffects
     pkgs.krita
     pkgs.inkscape
 
@@ -118,6 +127,8 @@
     EDITOR = "nvim";
     BROWSER = "firefox";
     GOPATH = "$HOME/dev/go";
+
+    CUDA_DISABLE_PERF_BOOST = 1;
   };
 
   # PATH
@@ -159,7 +170,7 @@
     dotDir = "${config.xdg.configHome}/zsh";
     setOptions = [
       "autocd"
-      "HIST_IGNORE_DUPS"
+      "HIST_IGNORE_ALL_DUPS"
       "HIST_IGNORE_SPACE"
     ];
     enableCompletion = true;
