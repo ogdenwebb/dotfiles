@@ -6,6 +6,9 @@ volume=100
 # Increase volume maximum
 volume-max=200
 
+audio-file-paths=**
+audio-file-auto=fuzzy
+
 alang=jpn,eng,rus
 slang=rus,eng
 
