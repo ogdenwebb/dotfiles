@@ -1,6 +1,10 @@
 local wezterm = require('wezterm')
 local config = wezterm.config_builder()
 
+-- Increase default window size
+config.initial_cols = 96
+config.initial_rows = 24
+
 -- Font settings
 config.font_size = 13
 config.line_height = 1.1
