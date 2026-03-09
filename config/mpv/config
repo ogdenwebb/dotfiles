@@ -32,16 +32,19 @@ hwdec=auto-copy
 gpu-api=vulkan
 
 
-## Disabled built-in sub styles
-no-sub-ass
-
 ## Interface font
 osd-font="Play"
 osd-font-size=28
 
+## Disabled built-in sub styles
+no-sub-ass
+embeddedfonts=no
+
 ## Subs font
 sub-font="Roboto"
+# sub-bold=yes
 sub-font-size=48
+sub-border-size=1
 
 ## Repeat
 loop-playlist=inf
