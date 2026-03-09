@@ -48,10 +48,11 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
-    open = true;
+    open = false;
     nvidiaSettings = true;
 
-    # package = config.boot.kernelPackages.nvidiaPackages.latest;
+    # latest
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
   
     # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
     #  version = "580.82.09";
@@ -76,30 +77,42 @@
     # };
   };
 
-  # for brithness control
-  powerManagement.enable = true;
+  # maybe
+
+  # Power and cpu management
+  # boot.kernelParams = [ "amd_pstate=guided" ];
+
+  powerManagement = {
+    enable = true;
+    # or ondemand
+    # cpuFreqGovernor = "schedutil";
+  };
 
   # Enable the X11 windowing system.
   services = {
     xserver = {
       enable = true;
       videoDrivers = ["nvidia"];
-
-      #desktopManager.cinnamon.enable = true;
-      #displayManager.lightdm.enable = true;
     };
     
     displayManager = {
-      sddm = {
-	package = lib.mkForce pkgs.kdePackages.sddm;
-        enable = true;
-        wayland = {
-	  enable = true;
-	  compositor = "kwin";
-	};
-	# extraPackages = [pkgs.catppuccin-sddm-corners];
-	theme = "catppuccin-sddm-corners";
+
+
+      # PLM: Plasma Login Manager
+      plasma-login-manager = {
+	enable = true;
       };
+      # SDDM for kde
+      # sddm = {
+      #   package = lib.mkForce pkgs.kdePackages.sddm;
+      #   enable = true;
+      #   wayland = {
+      #     enable = true;
+      #     compositor = "kwin";
+      #   };
+      #   # extraPackages = [pkgs.catppuccin-sddm-corners];
+      #   # theme = "catppuccin-sddm-corners";
+      # };
     };
 
     desktopManager.plasma6.enable = true;
@@ -107,7 +120,7 @@
     # desktopManager.lxqt.enable = true;
     # displayManager.defaultSession = "lxqt";
 
-    # enable flatpak (for OBS and plugins)
+    # enable flatpak
     flatpak.enable = true;
   };
 
@@ -116,15 +129,20 @@
   services.udev.packages = [pkgs.ddcutil];
   boot.kernelModules = ["i2c-dev" "ddcci_backlight" "nct6775" "ntsync"];
   
-  # Cache DNS & speed up download speed
+  services.irqbalance.enable = true;
+
+  # MAYBE: Cache DNS & speed up download speed
   # SEE: https://www.reddit.com/r/linux_gaming/comments/1pl0rxl/
+  services.resolved.enable = false;
+
   services.dnsmasq = {
     enable = true;
     resolveLocalQueries = false;
     settings = {
-      listen-address = "127.0.0.1";
-      no-resolv = true;
-      port = 0;
+      listen-address = "::1,127.0.0.1";
+      # no-resolv = true;
+      cache-size=10000;
+      # port = 0;
       server = [ "1.1.1.1" "1.0.0.1" ];
     };
   };
@@ -148,7 +166,10 @@
     }; 
   };
 
-  
+  # Control & overclock your GPU
+  systemd.packages = with pkgs; [ lact ];
+  systemd.services.lactd.wantedBy = ["multi-user.target"];
+
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -172,6 +193,22 @@
 
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
+
+    # extraConfig.pipewire = {
+    #   "11-resample-quality" = {
+    #     "stream.properties" = {
+    #       "resample.quality" = 10;
+    #     };
+    #   };
+    # };
+
+    configPackages = [
+      (pkgs.writeTextDir "share/pipewire/resample/11-quality.conf" ''
+        stream.properties = {
+          resample.quality = 10
+        }
+      '')
+    ];
   };
 
 
@@ -204,13 +241,21 @@
     capSysNice = true;
   };
 
-
-  programs.gamemode.enable = true;
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
 
-    package = pkgs.steam.override {
+    # Vanilla Steam
+    # package = pkgs.steam.override {
+    #   extraPkgs = (pkgs: with pkgs; [
+    #     gamemode
+    #     # additional packages...
+    #     # e.g. some games require python3
+    #   ]);
+    # };
+
+    # Millennium
+    package = pkgs.millennium-steam.override {
       extraPkgs = (pkgs: with pkgs; [
         gamemode
         # additional packages...
@@ -226,9 +271,12 @@
   programs.kdeconnect.enable = true;
   # programs.hyprland.enable = true;
 
-  nixpkgs.config.permittedInsecurePackages = [
-	  "electron-35.7.5" # for obsidian 1.8.10 and legcord
-  ];
+  # nixpkgs.config.permittedInsecurePackages = [
+  # 	  "electron-35.7.5" # for obsidian 1.8.10 and legcord
+  # ];
+
+  # for realtek r8168 kernel module
+  # nixpkgs.config.allowBroken = true;
 
 
   nixpkgs.overlays = [
@@ -245,11 +293,13 @@
             gsettings-desktop-schemas
             fuse3
             fuse
-	    xorg.libxshmfence
+	    libxshmfence
 	    libunwind
+	    gnutls
           ];
       };
     })
+
   ];
 
 
@@ -264,31 +314,50 @@
 	  };
   };
 
+  # MAYBE: environment.interactiveShellInit
+  programs.bash.shellAliases = {
+    l = "ls -alh";
+    ll = "ls -l";
+    ls = "ls --color=tty";
+    update-channels = "nix-channel --update";
+    update-flake = "cd /etc/nixos/ && nix flake update";
+    update-system = "nixos-rebuild switch --flake /etc/nixos/#default";
+    update-all = "update-channels && update-flake && update-system";
+  };
+
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+  # affinity-nix
+
   # MAAAAYBE
-  davinci-resolve
-  nvidia-vaapi-driver
+    davinci-resolve
+    nvidia-vaapi-driver
+
+    vulkan-tools
+    clinfo
+    pciutils
+    lm_sensors
+    lshw
 
     # System
-    # kitty
     appimage-run
-    lm_sensors
+    ethtool
+    jq
+    libunwind
     mesa-demos
     openssh
     openvpn
-    pciutils
-    rofi
     smartmontools
-    wezterm
     wget
-    jq
-    libunwind
+    kdiskmark
+
+    wezterm
+    rofi
 
     # boot
     efibootmgr
-    # scx.full
 
     # pulseaudio for tools
     pulseaudio
@@ -340,22 +409,22 @@
     qimgv
     mpc
     mpv
-    ncmpcpp
+    # ncmpcpp
 
     # Userland
     drive
     dropbox
     megasync
-    # telegram-desktop
     obsidian
-    legcord
     pass
     zathura
 
     # Fonts
-    #iosevka-bin
+    freetype
 
     # Tools
+    lact 
+
     fd
     htop
     ripgrep
@@ -364,6 +433,7 @@
     p7zip
     rar unrar
     unzip
+    zstd
 
     ncdu
 
@@ -371,9 +441,9 @@
 
     qbittorrent
     kdePackages.partitionmanager
-    catppuccin-sddm-corners
-    kdePackages.sddm-kcm
+    # kdePackages.sddm-kcm
     kdePackages.filelight
+    kdePackages.dolphin-plugins
   ];
 
 
@@ -427,6 +497,7 @@
 
 	  nerd-fonts._0xproto
           nerd-fonts.droid-sans-mono
+	  nerd-fonts.jetbrains-mono
 	];
 
 
@@ -437,34 +508,10 @@
     # okular
   ];
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "blender"
-    "cuda_cudart"
-    "cuda_cccl"
-    "cuda_nvcc"
-    "libnpp"
-    "libcublas"
-    "libcufft"
-
-    "davinci-resolve"
-
-    "dropbox"
-    "megasync"
-    "firefox-bin"
-    "firefox-bin-unwrapped"
-    "nvidia-x11"
-    "nvidia-settings"
-    "obsidian"
-    "steam"
-    "steam-original"
-    "steam-unwrapped"
-    "steam-run" 
-
-    "rar"
-    "unrar"
-  ];
+  nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
+    auto-optimise-store = true;
     # enable flakes support
     experimental-features = [ "nix-command" "flakes" ];
 

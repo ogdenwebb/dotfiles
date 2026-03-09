@@ -19,13 +19,19 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.iperf
+
     pkgs.android-tools
+    pkgs.qdl
 
     pkgs.kdePackages.kget
     pkgs.kdePackages.qt6ct
     pkgs.protontricks
+    pkgs.protonplus
+    pkgs.cabextract # for winenetricks/heroic
+    pkgs.heroic
     # pkgs.steamtinkerlaunch
-    pkgs.faugus-launcher
+    # pkgs.faugus-launcher
     # pkgs.gpu-screen-recorder
     # pkgs.gpu-screen-recorder-gtk
     
@@ -36,20 +42,23 @@
 
     pkgs.telegram-desktop
     pkgs.yt-dlp
+    # pkgs.ncmpcpp
     pkgs.zsh-powerlevel10k
 
     pkgs.darkly
 
     # Discord & tweaks
-    # pkgs.legcord
-    pkgs.arrpc
+    pkgs.legcord
+    # pkgs.arrpc
     pkgs.libunity # for notification badge
 
     # pkgs.droidcam
     pkgs.easyeffects
-    pkgs.krita
+    # pkgs.krita
     pkgs.inkscape
 
+    pkgs.nerd-fonts.symbols-only
+    pkgs.font-awesome
     # pkgs.noto-fonts-color-emoji
     # pkgs.noto-fonts-monochrome-emoji
     # pkgs.joypixels
@@ -198,7 +207,7 @@
       vim = "nvim";
 
       diff = "diff --color";
-      mp = "ncmpcpp";
+      mp = "rmpc";
       grep = "grep --color=auto";
 
       # zshmarks plugin
@@ -254,6 +263,9 @@
   '';
   };
 
+  # Enable dircolors support in shells
+  programs.dircolors.enable = true;
+
   # Enable fastfetch
   programs.fastfetch = {
       enable = true;
@@ -274,4 +286,5 @@
   # Enable darkly theme
   qt.style.package = with pkgs; [ darkly-qt5 darkly ];
   qt.platformTheme.name = "qtct";
+
 }

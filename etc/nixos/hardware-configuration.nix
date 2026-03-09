@@ -12,11 +12,45 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = with config.boot.kernelPackages; [ zenpower ];
+  # boot.extraModulePackages = with config.boot.kernelPackages; [ zenergy cpupower r8168 ];
+  # Asus B550 TUF Gaming
+  boot.extraModulePackages = with config.boot.kernelPackages; [ zenergy cpupower r8125];
   boot.loader.systemd-boot.enable = true;
+
+  boot.blacklistedKernelModules = [ "r8169" ];
+
+  boot.kernel.sysctl = {
+    # Update kernel buffer to 64M
+    #"net.core.wmem_max" = 67108864;
+    # "net.core.rmem_max" = 67108864;
+    "net.core.rmem_max" = 134217728;
+    "net.core.wmem_max" = 134217728;
+    "vm.dirty_bytes" = 268435456;
+    "vm.dirty_background_bytes" = 134217728;
+
+    # Set TCP buffer limit to 32M
+    "net.ipv4.tcp_wmem" = "10240 87380 33554432";
+    "net.ipv4.tcp_rmem" = "10240 87380 33554432";
+
+    "net.ipv4.tcp_congestion_control" = "bbr";
+    "net.core.default_qdisc" = "fq";
+  };
 
   # Disable IPv6
   # networking.enableIPv6 = false;
+  # "pcie_aspm=off"
+  boot.kernelParams = [ 
+    "initcall_blacklist=acpi_cpufreq_init"
+    "amd_pstate=active"
+    "amd_pstate.shared_mem=1"
+
+    # Required to make OpenCL (and Davinci Resolve) work
+    # https://github.com/NixOS/nixpkgs/issues/325378#issuecomment-2212732797
+    # https://github.com/NixOS/nixpkgs/issues/324252#issuecomment-2205385051
+    "nvidia.NVreg_EnableGpuFirmware=0"
+    "nvidia.NVreg_RestrictProfilingToAdminUsers=0"
+  ];
+
   # boot.kernelParams = ["ipv6.disable=1" "nvidia_drm.modeset=1"];
   # boot.kernel.sysctl."net.ipv6.conf.all.disable_ipv6" = true;
 
@@ -29,8 +63,16 @@
       fsType = "ext4";
     };
 
+  # old-home
+  # fileSystems."/home" =
+  #   { device = "/dev/disk/by-uuid/94bdb842-147b-4ad3-8687-ab7fd1143eff";
+  #     fsType = "ext4";
+  #   };
+
+
+  # Samsung 500 GB
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/94bdb842-147b-4ad3-8687-ab7fd1143eff";
+    { device = "/dev/disk/by-uuid/e5183b41-fe36-46e8-9ca9-791fc20660d1";
       fsType = "ext4";
     };
 

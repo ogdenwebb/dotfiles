@@ -2,35 +2,60 @@
   description = "Nixos config flake";
 
   inputs = {
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos";
-    # nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    # nix-warez.url = "github:nix-community/nix-warez";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
-
-    # home-manager = {
-    #   url = "github:nix-community/home-manager";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
   };
 
-  outputs = { self, nixpkgs, blender-bin, ... }@inputs: {
+  outputs = { self, nixpkgs, blender-bin, affinity-nix, millennium, ... }@inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = {inherit inputs;};
+      specialArgs = { inherit inputs; };
+
       modules = [
         ./configuration.nix
-	# Enable home-manager
-        # inputs.home-manager.nixosModules.default
 
-	({config, pkgs, ...}: {
-	 nixpkgs.overlays = [ blender-bin.overlays.default ];
-         # This line can either be here or in configuration.nix
-	 environment.systemPackages = with pkgs; [ blender_4_3 ];
-	 }) 
+        ({ config, pkgs, ... }:
+          let
+            system = "x86_64-linux";
+          in {
+            nixpkgs.overlays = [
+              blender-bin.overlays.default
+              inputs.millennium.overlays.default
 
+              # Overlay to wrap affinity v3 with zstd in PATH
+	      (final: prev: {
+	       affinity-v3 =
+	       affinity-nix.packages.x86_64-linux.v3.overrideAttrs (old: {
+			       nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ final.makeWrapper ];
+
+			       postFixup = (old.postFixup or "") + ''
+# Ensure zstd tools (unzstd) are always available to winetricks/tar
+			       if [ -x "$out/bin/affinity-v3" ]; then
+			       wrapProgram "$out/bin/affinity-v3" \
+			       --prefix PATH : ${final.zstd}/bin
+			       fi
+
+# If it also ships winetricks as a separate entry, wrap it too (harmless if absent)
+			       if [ -x "$out/bin/winetricks" ]; then
+			       wrapProgram "$out/bin/winetricks" \
+			       --prefix PATH : ${final.zstd}/bin
+			       fi
+			       '';
+			       });
+	       })
+
+              
+            ];
+
+            environment.systemPackages = with pkgs; [
+              # blender_4_3
+              affinity-v3
+            ];
+          })
       ];
     };
   };
 }
+
