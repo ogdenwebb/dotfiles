@@ -2,32 +2,31 @@
 
 ![Artix](https://i.imgur.com/9x1TJka.png)
 
-### Current workspace (2023)
+### Current workspace (Spring 2026)
 
 #### Workspace
 
-- **Distro:** Artix (w/ OpenRC) + Paru
-- **DE:** KDE (w/ picom)
-- **Dock:** Latte
-- **Kernel:** Zen
+- **Distro:** NixOS Unstable
+- **DE:** KDE
 
 #### Theme
 
-- **Theme:** Qoqir for anything; Materia Color in Plasma style
-- **Icons:** Flatery Dark
-- **Cursor:** Breeze Light
+- **Theme:** Qoqir for anything
+- **Plasma Style:** Materia Color
+- **Application Style:** Darkly
+- **Icons:** Gruvbox Plus Dark
+- **Cursor:** Qogir-Dark
 
 #### Fonts
 
-- **GUI Font:** Roboto
-- **Terminal/Coding Font:** D2Coding
+- **GUI Font:** Public Sans
+- **Terminal/Coding Font:** JetBrains Mono, D2Coding
 
 #### Applications
 
-- **Audio:** mpd + ncmpcpp, pipewire
+- **Audio:** mpd + rmpc, pipewire
 - **FM:** Dolphin
 - **Image viewer:** qimgv
 - **Main Editor:** Emacs - [(config)](https://github.com/ogdenwebb/snug-emacs)
-- **Terminal:** Kitty
+- **Terminal:** wezterm
 - **Video:** mpv
-
