@@ -18,74 +18,55 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    pkgs.iperf
+  home.packages = with pkgs; [
+    iperf
 
-    pkgs.android-tools
-    pkgs.qdl
+    android-tools
+    qdl
 
-    pkgs.kdePackages.kget
-    pkgs.kdePackages.qt6ct
-    pkgs.protontricks
-    pkgs.protonplus
-    pkgs.cabextract # for winenetricks/heroic
-    pkgs.heroic
-    # pkgs.steamtinkerlaunch
-    # pkgs.faugus-launcher
-    # pkgs.gpu-screen-recorder
-    # pkgs.gpu-screen-recorder-gtk
-    
+    kdePackages.kget
+    kdePackages.qt6ct
+    protontricks
+    protonplus
+
     # For affinity
-    pkgs.wine
-    pkgs.winetricks
-    pkgs.dotnet-sdk
+    wine
+    winetricks
+    dotnet-sdk
 
-    pkgs.telegram-desktop
-    pkgs.yt-dlp
-    # pkgs.ncmpcpp
-    pkgs.zsh-powerlevel10k
+    telegram-desktop
+    yt-dlp
+    zsh-powerlevel10k
 
-    pkgs.darkly
+    darkly
 
     # Discord & tweaks
-    pkgs.legcord
-    # pkgs.arrpc
-    pkgs.libunity # for notification badge
+    legcord
 
-    # pkgs.droidcam
-    pkgs.easyeffects
-    # pkgs.krita
-    pkgs.inkscape
+    # droidcam
+    easyeffects
+    # krita
+    inkscape
 
-    pkgs.nerd-fonts.symbols-only
-    pkgs.font-awesome
-    # pkgs.noto-fonts-color-emoji
-    # pkgs.noto-fonts-monochrome-emoji
-    # pkgs.joypixels
-    # pkgs.lora
-    # pkgs.pretendard
-    # pkgs.pretendard-std
+    nerd-fonts.symbols-only
+    font-awesome
 
     # TRY FONT
-    # pkgs.work-sans
-    pkgs.b612
-    pkgs.andika
-    pkgs.karla
-    pkgs.public-sans
+    b612
+    andika
+    karla
+    public-sans
 
-    # For Monster hunter meme
-    pkgs.cinzel
-    # MB for editors
-   pkgs.source-sans
-   pkgs.source-code-pro
-   pkgs.monaspace
-   pkgs.moralerspace
-
-    # pkgs.piper-tts
-    # pkgs.rhvoice
+   # For Monster hunter meme
+   # cinzel
+   # MB for editors
+   source-sans
+   source-code-pro
+   monaspace
+   moralerspace
 
     # JAVA
-    pkgs.jdk
+    # jdk
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
