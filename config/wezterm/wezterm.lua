@@ -10,6 +10,9 @@ config.font_size = 13
 config.line_height = 1.1
 config.font = wezterm.font("JetBrains Mono Medium")
 
+-- supress warnings
+-- config.warn_about_missing_glyphs=false
+
 -- Colors
 config.colors = {
     cursor_bg = "white",
@@ -45,6 +48,7 @@ config.skip_close_confirmation_for_processes_named = {
     'pwsh.exe',
     'powershell.exe',
     'ncmpcpp',
+    'rmpc',
 }
 
 return config
