@@ -39,6 +39,7 @@
   # Disable IPv6
   # networking.enableIPv6 = false;
   # "pcie_aspm=off"
+
   boot.kernelParams = [ 
     "initcall_blacklist=acpi_cpufreq_init"
     "amd_pstate=active"
@@ -49,10 +50,12 @@
     # https://github.com/NixOS/nixpkgs/issues/324252#issuecomment-2205385051
     "nvidia.NVreg_EnableGpuFirmware=0"
     "nvidia.NVreg_RestrictProfilingToAdminUsers=0"
+    "ipv6.disable=1"
   ];
 
+  boot.kernel.sysctl."net.ipv6.conf.all.disable_ipv6" = true;
+
   # boot.kernelParams = ["ipv6.disable=1" "nvidia_drm.modeset=1"];
-  # boot.kernel.sysctl."net.ipv6.conf.all.disable_ipv6" = true;
 
   # Enable periodic trim
   # TODO: okay, when it will run? On stratup/shutdown? Or during working system? D:

@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
       # # Run unpatched binaries on Nix/NixOS  
       # ./nix-alien.nix
+      # TODO:
+      # ./system-specialisation.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -55,40 +57,36 @@
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   
     # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    #  version = "580.82.09";
+    #   version = "595.58.03";
 
-      # detect hash version (replace step by step
-      # sha256_64bit = lib.fakeHash;
-      # sha256_aarch64 = lib.fakeHash;
-      # openSha256 = lib.fakeHash;
-      # settingsSha256 = lib.fakeHash;
-      # persistencedSha256 = lib.fakeHash;
+    #   # detect hash version (replace step by step
+    #   # sha256_64bit = lib.fakeHash;
+    #   # sha256_aarch64 = lib.fakeHash;
+    #   # openSha256 = lib.fakeHash;
+    #   # settingsSha256 = lib.fakeHash;
+    #   # persistencedSha256 = lib.fakeHash;
 
 
-    #  # Replace with the hashes nix gives you
-    #  sha256_64bit = "sha256-Puz4MtouFeDgmsNMKdLHoDgDGC+QRXh6NVysvltWlbc=";
-    #   # sha256_aarch64 = "sha256-um53cr2Xo90VhZM1bM2CH4q9b/1W2YOqUcvXPV6uw2s=";
+    # #  # Replace with the hashes nix gives you
+    #   sha256_64bit = "sha256-jA1Plnt5MsSrVxQnKu6BAzkrCnAskq+lVRdtNiBYKfk=";
     #   sha256_aarch64 = lib.fakeHash;
-    #   openSha256 = "sha256-um53cr2Xo90VhZM1bM2CH4q9b/1W2YOqUcvXPV6uw2s=";
-    #   settingsSha256 = "sha256-um53cr2Xo90VhZM1bM2CH4q9b/1W2YOqUcvXPV6uw2s=";
+    #   openSha256 = "sha256-jA1Plnt5MsSrVxQnKu6BAzkrCnAskq+lVRdtNiBYKfk=";
+    #   settingsSha256 = "sha256-2vLF5Evl2D6tRQJo0uUyY3tpWqjvJQ0/Rpxan3NOD3c=";
     #   persistencedSha256 = lib.fakeHash;
 
-    #   # persistencedSha256 = lib.fakeSha256;
+    # #   # persistencedSha256 = lib.fakeSha256;
     # };
   };
 
   # maybe
 
-  # Power and cpu management
-  # boot.kernelParams = [ "amd_pstate=guided" ];
-
+  # Power and CPU management
   powerManagement = {
     enable = true;
-    # or ondemand
     # cpuFreqGovernor = "schedutil";
   };
 
-  # Enable the X11 windowing system.
+  # Setup desktop
   services = {
     xserver = {
       enable = true;
@@ -116,8 +114,6 @@
     };
 
     desktopManager.plasma6.enable = true;
-    # desktopManager.cinnamon.enable = true;
-    # desktopManager.lxqt.enable = true;
     # displayManager.defaultSession = "lxqt";
 
     # enable flatpak
@@ -166,6 +162,12 @@
     }; 
   };
 
+  # Manage Razer devices
+  hardware.openrazer = {
+    enable = true;
+    users = [ "ogden" ];
+  };
+
   # Control & overclock your GPU
   systemd.packages = with pkgs; [ lact ];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
@@ -179,8 +181,8 @@
 
   # Enable sound.
   # hardware.pulseaudio.enable = true;
-  # OR
 
+  # Pipewire
   # rtkit is optional but recommended
   security.rtkit.enable = true;
   services.pipewire = {
@@ -231,10 +233,8 @@
   #   ];
   };
 
-  # for waydroid
-  # virtualisation.waydroid.enable = true;
-  # networking.firewall.interfaces."enp34s0".allowedTCPPorts = [ 67 53 ];
 
+  # Firefox browser
   programs.firefox.enable = true;
   programs.gamescope = {
     enable = true;
@@ -244,6 +244,12 @@
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
+
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+
+    protontricks.enable = true;
 
     # Vanilla Steam
     # package = pkgs.steam.override {
@@ -258,14 +264,13 @@
     package = pkgs.millennium-steam.override {
       extraPkgs = (pkgs: with pkgs; [
         gamemode
+	gamescope-wsi
         # additional packages...
         # e.g. some games require python3
+	# noto-fonts
       ]);
     };
 
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
   programs.kdeconnect.enable = true;
@@ -277,7 +282,6 @@
 
   # for realtek r8168 kernel module
   # nixpkgs.config.allowBroken = true;
-
 
   nixpkgs.overlays = [
     (self: super: {
@@ -322,36 +326,59 @@
     update-channels = "nix-channel --update";
     update-flake = "cd /etc/nixos/ && nix flake update";
     update-system = "nixos-rebuild switch --flake /etc/nixos/#default";
+    update-boot = "nixos-rebuild boot --flake /etc/nixos/#default";
     update-all = "update-channels && update-flake && update-system";
   };
 
+  # Use NeoVim as default editor
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  # affinity-nix
-
-  # MAAAAYBE
+    
+    # Creative Studio
+    audacity
     davinci-resolve
-    nvidia-vaapi-driver
+    krita
 
-    vulkan-tools
+
+    # Disk & storage management
+    smartmontools
+    kdiskmark
+    ncdu
+    kdePackages.partitionmanager
+    kdePackages.filelight
+    kdePackages.dolphin-plugins
+
+    # Stress-test, tests and benchmarks
+    stress-ng
+    furmark
+
+
+    # Sensors and system info
     clinfo
-    pciutils
     lm_sensors
     lshw
+    pciutils
+    vulkan-tools
+
+    # Networking and tools
+    ethtool
+    openssh
+    openvpn
+    wget
 
     # System
     appimage-run
-    ethtool
     jq
     libunwind
     mesa-demos
-    openssh
-    openvpn
-    smartmontools
-    wget
-    kdiskmark
 
     wezterm
     rofi
@@ -359,7 +386,7 @@
     # boot
     efibootmgr
 
-    # pulseaudio for tools
+    # Audio, media
     pulseaudio
     lxqt.pavucontrol-qt
 
@@ -367,7 +394,6 @@
     git
     xsel
     wl-clipboard
-    neovim 
     emacs
 
     gcc
@@ -402,19 +428,24 @@
     protonup-ng
     protonup-qt
 
+    # Manage Razer devices
+    razergenie
+
     # Media
     playerctl
 
+    nvidia-vaapi-driver
     ffmpeg
     qimgv
     mpc
     mpv
     # ncmpcpp
 
-    # Userland
+    # Cloud storage
     drive
     dropbox
     megasync
+
     obsidian
     pass
     zathura
@@ -425,25 +456,21 @@
     # Tools
     lact 
 
+    # Find, locate, grep
     fd
-    htop
     ripgrep
     file
     tree
+
+    htop
+
+    # Archieve and compression
     p7zip
     rar unrar
     unzip
     zstd
 
-    ncdu
-
-    audacity
-
     qbittorrent
-    kdePackages.partitionmanager
-    # kdePackages.sddm-kcm
-    kdePackages.filelight
-    kdePackages.dolphin-plugins
   ];
 
 
@@ -501,6 +528,7 @@
 	];
 
 
+  # Disable unused KDE packages
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     elisa
     kate
@@ -508,8 +536,10 @@
     # okular
   ];
 
+  # Allow all packages with proprietary licenses
   nixpkgs.config.allowUnfree = true;
 
+  # Tweak Nix package manager and setup binary cache
   nix.settings = {
     auto-optimise-store = true;
     # enable flakes support
@@ -517,6 +547,14 @@
 
     # To speed up system upgrade
     download-buffer-size = 524288000; # 500 MiB
+
+    substituters = [
+      "https://cache.nixos.org/"
+      "https://cache.garnix.io"
+    ];
+    trusted-public-keys = [
+      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+    ];
 
     # MAYBE: Setting up CUDA Binary Cache
     # substituters = [
@@ -565,10 +603,12 @@
   #
   services.scx = {
     enable = true;
-    scheduler = "scx_lavd";
-    extraArgs = [
-      "--performance"
-    ];
+    # scheduler = "scx_lavd";
+    # extraArgs = [
+    #   "--performance"
+    # ];
+    # scx_cake
+    scheduler = "scx_cake";
   };
 
   # Enable the OpenSSH daemon.

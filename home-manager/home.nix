@@ -26,7 +26,8 @@
 
     kdePackages.kget
     kdePackages.qt6ct
-    protontricks
+
+    # Steam & Proton
     protonplus
 
     # For affinity
