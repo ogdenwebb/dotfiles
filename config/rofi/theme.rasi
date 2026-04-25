@@ -8,7 +8,8 @@
 @import "ocean-colors.rasi"
 
 #configuration {
-    font:							"Roboto Medium 11";
+    /* font:							"Roboto Medium 11"; */
+    font:							"Public Sans SemiBold 11";
     show-icons:                     true;
     icon-theme:                     "Papirus";
     display-drun:                   "";
@@ -43,7 +44,7 @@
     padding:                        0.30% 1% 0% -0.5%;
     background-color:               @background-alt;
     text-color:                     @foreground;
-    font:							"Roboto Mono 12";
+    font:							"JetBrains Mono 12";
 }
 
 #entry {

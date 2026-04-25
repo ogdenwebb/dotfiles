@@ -7,7 +7,8 @@
 /* global settings and color variables */
 * {
 
-    font: "Roboto 12";
+    // font: "Roboto 12";
+    // font: "Public Sans SemiBold 11";
 
     fg-color: #e6e6e8;
     bg-color: #383e3f;
