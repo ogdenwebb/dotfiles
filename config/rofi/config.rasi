@@ -2,7 +2,8 @@ configuration {
 	show-icons: true;
 	terminal: "kitty";
 	run-shell-command: "{terminal} -e {cmd}";
-	icon-theme: "Flatery-Dark";
+	// icon-theme: "Flatery-Dark";
+	icon-theme: "Grubox Plus Dark";
 	sidebar-mode: true;
 }
 
