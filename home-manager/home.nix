@@ -16,6 +16,8 @@
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
+  fonts.fontconfig.enable = true;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -30,7 +32,7 @@
     # Steam & Proton
     protonplus
 
-    # For affinity
+    # MAYBE: For Affinity
     wine
     winetricks
     dotnet-sdk
@@ -39,6 +41,7 @@
     yt-dlp
     zsh-powerlevel10k
 
+    # Better application style for KDE
     darkly
 
     # Discord & tweaks
@@ -49,7 +52,11 @@
     # krita
     inkscape
 
+
+    # FONTS
     nerd-fonts.symbols-only
+    nerd-fonts.lilex
+
     font-awesome
 
     # TRY FONT
@@ -58,22 +65,20 @@
     karla
     public-sans
 
-   # For Monster hunter meme
-   # cinzel
-   # MB for editors
-   source-sans
-   source-code-pro
-   monaspace
-   moralerspace
+    # For Monster hunter meme
+    # cinzel
+    # MB for editors
+    source-sans
+    source-code-pro
+    monaspace
+    moralerspace
+
+    # For Rofi to run processes nicely
+    # Mostly needed to make separated instances in KDE System Monitor
+    runapp
 
     # JAVA
     # jdk
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your

@@ -34,6 +34,9 @@
 
     "net.ipv4.tcp_congestion_control" = "bbr";
     "net.core.default_qdisc" = "fq";
+
+    # Reduce swap priorty, the defaut value is 60
+    "vm.swappiness" = 10;
   };
 
   # Disable IPv6

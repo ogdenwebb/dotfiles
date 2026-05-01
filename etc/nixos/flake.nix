@@ -39,7 +39,7 @@
 
             environment.systemPackages = with pkgs; [
               blender_5_0
-              # affinity-v3
+              affinity-v3
             ];
 
 	    programs.gpu-screen-recorder-ui.enable = true;

@@ -163,10 +163,10 @@
   };
 
   # Manage Razer devices
-  hardware.openrazer = {
-    enable = true;
-    users = [ "ogden" ];
-  };
+  # hardware.openrazer = {
+  #   enable = true;
+  #   users = [ "ogden" ];
+  # };
 
   # Control & overclock your GPU
   systemd.packages = with pkgs; [ lact ];
@@ -303,6 +303,17 @@
           ];
       };
     })
+  (final: prev: {
+    kdePackages = prev.kdePackages.overrideScope (kde-final: kde-prev: {
+      discover = kde-prev.discover.overrideAttrs (old: {
+        buildInputs = builtins.filter (pkg: pkg != prev.fwupd) old.buildInputs;
+
+        cmakeFlags = (old.cmakeFlags or []) ++ [
+          "-DDISABLE_FWUPD=ON"
+        ];
+      });
+    });
+  })
 
   ];
 
@@ -317,6 +328,15 @@
 			  '';
 	  };
   };
+
+  # Setup custom prompt for Root user
+  programs.starship.enable = true;
+
+  programs.bash.shellInit = ''
+    if [ "$USER" = "root" ]; then
+      eval "$(${pkgs.starship}/bin/starship init bash)"
+    fi
+  '';
 
   # MAYBE: environment.interactiveShellInit
   programs.bash.shellAliases = {
@@ -429,7 +449,7 @@
     protonup-qt
 
     # Manage Razer devices
-    razergenie
+    # razergenie
 
     # Media
     playerctl
