@@ -77,6 +77,12 @@
     # Mostly needed to make separated instances in KDE System Monitor
     runapp
 
+    # Spell checking and dictionaries
+    nuspell
+    hunspellDicts.en-us
+    hunspellDicts.ru-ru
+
+
     # JAVA
     # jdk
 
@@ -235,7 +241,8 @@
     bindkey '^V' quoted-insert
     bindkey "^T" transpose-chars
     bindkey "^U" kill-line
-    bindkey "^J" backward-word
+    # conflicts with Vterm
+    # bindkey "^J" backward-word
     bindkey "^K" forward-word
     bindkey '^R' history-incremental-search-backward
     bindkey '^S' history-incremental-search-forward
@@ -256,6 +263,18 @@
   # Enable fastfetch
   programs.fastfetch = {
       enable = true;
+  };
+
+# Use Emacs with some extra packages
+  programs.emacs = {
+    enable = true;
+    package =
+      (pkgs.emacsPackagesFor pkgs.emacs).emacsWithPackages
+      (epkgs: [
+       # myModule
+       epkgs.vterm
+       epkgs.jinx
+      ]);
   };
 
   # Custom Rofi

@@ -414,7 +414,7 @@
     git
     xsel
     wl-clipboard
-    emacs
+    # emacs
 
     gcc
     (pkgs.python3.withPackages (python-pkgs: with python-pkgs; [
