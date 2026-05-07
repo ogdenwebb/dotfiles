@@ -5,6 +5,7 @@
   # manage.
   home.username = "ogden";
   home.homeDirectory = "/home/ogden";
+  xdg.enable = true;
   xdg.configHome = "/home/ogden/.config/";
 
   # This value determines the Home Manager release that your configuration is
@@ -31,6 +32,7 @@
 
     # Steam & Proton
     protonplus
+    nero-umu
 
     # MAYBE: For Affinity
     wine
@@ -131,6 +133,16 @@
     GOPATH = "$HOME/dev/go";
 
     CUDA_DISABLE_PERF_BOOST = 1;
+
+    # Respect XDG user directories
+    XDG_DOWNLOAD_DIR = "$HOME/Downloads";
+    XDG_TEMPLATES_DIR = "$HOME/Templates";
+    XDG_PUBLICSHARE_DIR = "$HOME/";
+    XDG_DOCUMENTS_DIR = "$HOME/Documents";
+    XDG_MUSIC_DIR = "$HOME/Music";
+    XDG_PICTURES_DIR = "$HOME/Pictures";
+    XDG_PROJECTS_DIR = "$HOME/Projects";
+    XDG_VIDEOS_DIR = "$HOME/Videos";
   };
 
   # PATH
@@ -196,6 +208,8 @@
     shellAliases = {
       ls = "ls -F --color=auto --group-directories-first";
       ll = "ls -l --color=auto";
+      dff = "df -h -t ext4 -t vfat";
+
       update = "sudo nixos-rebuild switch";
       vim = "nvim";
 
@@ -269,7 +283,7 @@
   programs.emacs = {
     enable = true;
     package =
-      (pkgs.emacsPackagesFor pkgs.emacs).emacsWithPackages
+      (pkgs.emacsPackagesFor pkgs.emacs-pgtk).emacsWithPackages
       (epkgs: [
        # myModule
        epkgs.vterm
