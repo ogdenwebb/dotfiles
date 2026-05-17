@@ -22,13 +22,24 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    crystal-dock
+
+    terminal-colors
     iperf
+    tinyxxd # drop-in replacement of ViM hex dump utility
+    perlPackages.FileMimeInfo
 
     android-tools
     qdl
 
     kdePackages.kget
     kdePackages.qt6ct
+    klassy
+
+    # KDE applets & widgets
+    kurve
+    kara
+    plasmusic-toolbar
 
     # Steam & Proton
     protonplus
@@ -84,6 +95,10 @@
     hunspellDicts.en-us
     hunspellDicts.ru-ru
 
+    # clojure test
+    # clojure
+    # leiningen
+    # swift
 
     # JAVA
     # jdk
@@ -291,6 +306,32 @@
       ]);
   };
 
+  # enable Emacs daemon
+  services.emacs.enable = true;
+
+  # programs.obs-studio = {
+  #   enable = true;
+
+  #   # optional Nvidia hardware acceleration
+  #   package = (
+  #     pkgs.obs-studio.override {
+  #       cudaSupport = true;
+  #     }
+  #   );
+
+  #   plugins = with pkgs.obs-studio-plugins; [
+  #     wlrobs
+  #     obs-backgroundremoval
+  #     obs-pipewire-audio-capture
+  #     # obs-vaapi #optional AMD hardware acceleration
+  #     # obs-gstreamer
+
+  #     # input-overlay
+  #     obs-tuna
+  #     obs-vkcapture
+  #   ];
+  # };
+
   # Custom Rofi
   # programs.rofi = {
   #   enable = true;
@@ -299,6 +340,33 @@
   #     (rofi-calc.override { rofi-unwrapped = rofi-wayland-unwrapped; })
   #   ];
   # };
+
+  programs.cava = {
+    enable = true;
+    settings = {
+      general.framerate = 60;
+      input.method = "pipewire";
+      smoothing.noise_reduction = 88;
+      # color = {
+      #   background = "'#000000'";
+      #   foreground = "'#FFFFFF'";
+      # };
+    };
+  };
+
+  # when needed
+  # nixpkgs.config.allowUnfree = true;
+
+  # programs.vscode = {
+  #   enable = true;
+  #   profiles.default.extensions = with pkgs.vscode-extensions; [
+  #     # dracula-theme.theme-dracula
+  #     vscodevim.vim
+  #     yzhang.markdown-all-in-one
+  #     betterthantomorrow.calva
+  #   ];
+  # };
+
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

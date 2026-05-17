@@ -14,9 +14,39 @@
       # ./system-specialisation.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = { 
+    # Use the systemd-boot EFI boot loader.
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+
+    # Boot animation
+    plymouth = {
+      enable = true;
+      theme = "rings";
+      themePackages = with pkgs; [
+        # By default we would install all themes
+        (adi1090x-plymouth-themes.override {
+          selected_themes = [ "rings" ];
+        })
+      ];
+    };
+
+    # Enable "Silent boot"
+    consoleLogLevel = 3;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "udev.log_level=3"
+      "systemd.show_status=auto"
+    ];
+
+    # Hide the OS choice for bootloaders.
+    # It's still possible to open the bootloader list by pressing any key
+    # It will just not appear on screen unless a key is pressed
+    loader.timeout = 0;
+  };
+
+
 
   networking = {
 	  hostName = "joy"; # Define your hostname.
@@ -262,13 +292,13 @@
 
     # Millennium
     package = pkgs.millennium-steam.override {
-      extraPkgs = (pkgs: with pkgs; [
-        gamemode
-	gamescope-wsi
-        # additional packages...
-        # e.g. some games require python3
+	    extraPkgs = (pkgs: with pkgs; [
+			    gamemode
+			    gamescope-wsi
+	       # additional packages...
+	       # e.g. some games require python3
 	# noto-fonts
-      ]);
+	    ]);
     };
 
   };
@@ -375,6 +405,7 @@
     kdePackages.partitionmanager
     kdePackages.filelight
     kdePackages.dolphin-plugins
+    kdePackages.kwindowsystem
 
     # Stress-test, tests and benchmarks
     stress-ng
@@ -427,8 +458,16 @@
       pyqt6
     ]))
 
+    # Golang
     go
-    gopls
+    gopls # lsp server
+    delve # debugger
+    gotools # constains godoc, goimports and other tools
+    gore # go repl
+    gotests # Automatically generate Go test 
+    gomodifytags # Go tool to modify struct field tags 
+    golangci-lint # Fast linters Runner for Go
+    golangci-lint-langserver # Language server for golangci-lint
 
     rustc
     rustfmt
@@ -643,6 +682,11 @@
   #  options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
   #'';
   security.polkit.enable = true;
+
+  # docker
+  # virtualisation.docker = {
+  #   enable = true;
+  # };
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 27015 27036 ];
