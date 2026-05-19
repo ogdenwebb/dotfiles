@@ -22,8 +22,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    crystal-dock
-
     terminal-colors
     iperf
     tinyxxd # drop-in replacement of ViM hex dump utility
@@ -146,6 +144,7 @@
     EDITOR = "nvim";
     BROWSER = "firefox";
     GOPATH = "$HOME/dev/go";
+    GOMODCACHE = "$HOME/dev/go/cache";
 
     CUDA_DISABLE_PERF_BOOST = 1;
 
@@ -249,6 +248,7 @@
         "zsh-users/zsh-history-substring-search kind:defer"
 
         "mfaerevaag/wd kind:defer"
+        "zsh-users/zsh-completions"
       ];
     };
 
