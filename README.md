@@ -1,6 +1,6 @@
 # Another dotfiles repo #
 
-![Artix](https://i.imgur.com/9x1TJka.png)
+![NixOS](https://i.postimg.cc/L5Mm2Nmc/Desk-May-2026.png)
 
 ### Current workspace (Spring 2026)
 
