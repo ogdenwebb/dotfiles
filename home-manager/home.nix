@@ -26,6 +26,10 @@
     iperf
     tinyxxd # drop-in replacement of ViM hex dump utility
     perlPackages.FileMimeInfo
+    inxi
+
+    difftastic
+    tree-sitter-grammars.tree-sitter-qmljs
 
     android-tools
     qdl
@@ -298,7 +302,7 @@
   programs.emacs = {
     enable = true;
     package =
-      (pkgs.emacsPackagesFor pkgs.emacs-pgtk).emacsWithPackages
+      (pkgs.emacsPackagesFor pkgs.emacs).emacsWithPackages
       (epkgs: [
        # myModule
        epkgs.vterm
@@ -306,8 +310,15 @@
       ]);
   };
 
+  # Helix editor
+  programs.helix.enable = true;
+
   # enable Emacs daemon
-  services.emacs.enable = true;
+  services.emacs = {
+    enable = true;
+    client.enable = true;
+    startWithUserSession = "graphical";
+  };
 
   # programs.obs-studio = {
   #   enable = true;
