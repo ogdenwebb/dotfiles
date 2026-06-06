@@ -10,6 +10,7 @@ config/awesome/freedesktop
 config/awesome/lain
 config/awesome/themes
 config/awesome/wallpapers
+config/fontconfig/
 *.log
 *.elc
 .git/

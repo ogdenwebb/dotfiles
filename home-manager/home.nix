@@ -22,42 +22,46 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    ###
     terminal-colors
     iperf
     tinyxxd # drop-in replacement of ViM hex dump utility
     perlPackages.FileMimeInfo
     inxi
+    libinput
 
     difftastic
     tree-sitter-grammars.tree-sitter-qmljs
 
-    android-tools
-    qdl
-
+    # KDE related
     kdePackages.kget
     kdePackages.qt6ct
+
+    # Better application & window styles for KDE
+    darkly
     klassy
+
+    # Cursors
+    oreo-cursors-plus
+    layan-cursors
 
     # KDE applets & widgets
     kurve
     kara
     plasmusic-toolbar
+    plasma-panel-colorizer
 
     # Steam & Proton
     protonplus
     nero-umu
 
     # MAYBE: For Affinity
-    wine
-    winetricks
-    dotnet-sdk
+    # wine
+    # winetricks
+    # dotnet-sdk
 
     telegram-desktop
-    yt-dlp
     zsh-powerlevel10k
-
-    # Better application style for KDE
-    darkly
 
     # Discord & tweaks
     legcord
@@ -67,6 +71,9 @@
     # krita
     inkscape
 
+    yt-dlp
+    twitch-chat-downloader
+    video2x
 
     # FONTS
     nerd-fonts.symbols-only
@@ -237,6 +244,11 @@
 
       # zshmarks plugin
       g = "wd";
+
+      # home-manager
+      hm-flake = "nix flake update --flake ~/.config/home-manager";
+      hm-build = "home-manager switch --flake ~/.config/home-manager/#ogden";
+      hm-update = "hm-flake && hm-build";
     };
 
     history.size = 3000;
@@ -298,7 +310,19 @@
       enable = true;
   };
 
-# Use Emacs with some extra packages
+  # Use Zed editor
+  programs.zed-editor.enable = true;
+
+  # # Use chromium fork
+  # programs.chromium = {
+  #   enable = true;
+  #   package = pkgs.helium;
+  # };
+  
+  # Helix editor
+  programs.helix.enable = true;
+
+  # Use Emacs with some extra packages
   programs.emacs = {
     enable = true;
     package =
@@ -310,16 +334,14 @@
       ]);
   };
 
-  # Helix editor
-  programs.helix.enable = true;
-
-  # enable Emacs daemon
+  # Enable Emacs daemon suited for GUI
   services.emacs = {
     enable = true;
     client.enable = true;
     startWithUserSession = "graphical";
   };
 
+  # OBS with extra features and plugins
   # programs.obs-studio = {
   #   enable = true;
 
@@ -379,11 +401,10 @@
   # };
 
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
   # Enable darkly theme
   qt.style.package = with pkgs; [ darkly-qt5 darkly ];
   qt.platformTheme.name = "qtct";
 
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 }
