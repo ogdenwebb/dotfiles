@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -22,6 +22,11 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+
+# NOTE: Maaaybe
+    inputs.zen-browser.packages.${system}.default
+    inputs.helium.packages.${system}.default
+
     ###
     terminal-colors
     iperf
@@ -31,6 +36,7 @@
     libinput
 
     difftastic
+    rmlint
     tree-sitter-grammars.tree-sitter-qmljs
 
     # KDE related
@@ -59,12 +65,13 @@
     # wine
     # winetricks
     # dotnet-sdk
-
+    
+    # Socil & messaging
+    mailspring # email client
     telegram-desktop
-    zsh-powerlevel10k
+    legcord # Advanced Discord client
 
-    # Discord & tweaks
-    legcord
+    zsh-powerlevel10k
 
     # droidcam
     easyeffects
@@ -310,6 +317,17 @@
       enable = true;
   };
 
+  # Custom client for YouTube
+  programs.freetube = {
+      enable = true;
+      settings = {
+        allowDashAv1Formats = true;
+        baseTheme = "catppuccinMocha";
+        checkForUpdates = false;
+        defaultQuality = "1080";
+      };
+  };
+
   # Use Zed editor
   programs.zed-editor.enable = true;
 
@@ -387,6 +405,11 @@
     };
   };
 
+  # # Thunderbird - email client
+  # programs.thunderbird = {
+  #   enable = true;
+  # };
+  #
   # when needed
   # nixpkgs.config.allowUnfree = true;
 

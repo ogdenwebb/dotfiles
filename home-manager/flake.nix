@@ -9,24 +9,31 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # solaar = {
-    #   url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
-    #   #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.7.tar.gz"; # uncomment line for solaar version 1.1.19
-    #   #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  # outputs = { nixpkgs, home-manager, solaar, ... }: {
-  outputs = { nixpkgs, home-manager, ... }@inputs: {
+  outputs = inputs@ { 
+    nixpkgs, 
+    home-manager, 
+    zen-browser, 
+    helium, 
+    ... 
+  } : {
     homeConfigurations.ogden = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          system = "x86_64-linux";
-        };
+      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      extraSpecialArgs = {inherit inputs;};
 
-        modules = [
-          ./home.nix
-        ];
-      };
+      modules = [
+        ./home.nix
+      ];
+    };
   };
 }
