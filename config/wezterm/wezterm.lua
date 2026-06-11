@@ -26,9 +26,9 @@ config.color_scheme = 'Neon Night (Gogh)'
 config.hide_tab_bar_if_only_one_tab = true
 
 config.window_padding = {
-    left   = 0,
+    left   = 10,
     right  = 0,
-    top    = 0,
+    top    = 8,
     bottom = 0,
 }
 
