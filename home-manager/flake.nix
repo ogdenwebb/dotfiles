@@ -18,6 +18,13 @@
       url = "github:schembriaiden/helium-browser-nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    appgrid.url = "github:xarbit/plasma6-applet-appgrid";
   };
 
   outputs = inputs@ { 
@@ -25,6 +32,8 @@
     home-manager, 
     zen-browser, 
     helium, 
+    appgrid, 
+    nix-index-database,
     ... 
   } : {
     homeConfigurations.ogden = home-manager.lib.homeManagerConfiguration {
@@ -33,6 +42,7 @@
 
       modules = [
         ./home.nix
+        nix-index-database.homeModules.default
       ];
     };
   };

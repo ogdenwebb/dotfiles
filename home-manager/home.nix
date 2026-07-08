@@ -1,5 +1,6 @@
 { config, pkgs, inputs, ... }:
 
+
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -21,11 +22,11 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+  #
   home.packages = with pkgs; [
-
-# NOTE: Maaaybe
-    inputs.zen-browser.packages.${system}.default
-    inputs.helium.packages.${system}.default
+    inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
+    inputs.helium.packages.${stdenv.hostPlatform.system}.default
+    inputs.appgrid.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     ###
     terminal-colors
@@ -34,6 +35,10 @@
     perlPackages.FileMimeInfo
     inxi
     libinput
+    mtr # monitor network
+
+    # btop
+    btop-cuda
 
     difftastic
     rmlint
@@ -42,6 +47,12 @@
     # KDE related
     kdePackages.kget
     kdePackages.qt6ct
+    # deps for KDE Dolphin add-on
+    # see: https://github.com/giuseppebenigno/kde-service-menu-reimage
+    imagemagick
+    jhead
+    kdePackages.kdialog
+    libwebp
 
     # Better application & window styles for KDE
     darkly
@@ -67,7 +78,7 @@
     # dotnet-sdk
     
     # Socil & messaging
-    mailspring # email client
+    # mailspring # email client
     telegram-desktop
     legcord # Advanced Discord client
 
@@ -412,6 +423,11 @@
   #
   # when needed
   # nixpkgs.config.allowUnfree = true;
+    nixpkgs.overlays = [
+      (final: _prev: {
+       pnpm_10_29_2 = final.pnpm_10;
+       })
+    ];
 
   # programs.vscode = {
   #   enable = true;
