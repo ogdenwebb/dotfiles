@@ -24,36 +24,27 @@
   # environment.
   #
   home.packages = with pkgs; [
-    inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
-    inputs.helium.packages.${stdenv.hostPlatform.system}.default
+    # inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
+    # inputs.helium.packages.${stdenv.hostPlatform.system}.default
     inputs.appgrid.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     ###
     terminal-colors
-    iperf
     tinyxxd # drop-in replacement of ViM hex dump utility
-    perlPackages.FileMimeInfo
     inxi
     libinput
-    mtr # monitor network
 
-    # btop
+    # Monitoring
     btop-cuda
+    # mtr
 
     difftastic
-    rmlint
+    rmlint # remove duplicates in file system
     tree-sitter-grammars.tree-sitter-qmljs
 
     # KDE related
     kdePackages.kget
     kdePackages.qt6ct
-    # deps for KDE Dolphin add-on
-    # see: https://github.com/giuseppebenigno/kde-service-menu-reimage
-    imagemagick
-    jhead
-    kdePackages.kdialog
-    libwebp
-
     # Better application & window styles for KDE
     darkly
     klassy
@@ -63,20 +54,14 @@
     layan-cursors
 
     # KDE applets & widgets
-    kurve
-    kara
+    kurve # Audio visualizer widget
+    kara # Desktop/workspace pages
     plasmusic-toolbar
     plasma-panel-colorizer
 
     # Steam & Proton
     protonplus
-    nero-umu
 
-    # MAYBE: For Affinity
-    # wine
-    # winetricks
-    # dotnet-sdk
-    
     # Socil & messaging
     # mailspring # email client
     telegram-desktop
@@ -84,11 +69,10 @@
 
     zsh-powerlevel10k
 
-    # droidcam
-    easyeffects
     # krita
     inkscape
 
+    easyeffects
     yt-dlp
     twitch-chat-downloader
     video2x
@@ -100,18 +84,11 @@
     font-awesome
 
     # TRY FONT
-    b612
-    andika
-    karla
     public-sans
 
-    # For Monster hunter meme
-    # cinzel
     # MB for editors
     source-sans
     source-code-pro
-    monaspace
-    moralerspace
 
     # For Rofi to run processes nicely
     # Mostly needed to make separated instances in KDE System Monitor
@@ -121,14 +98,6 @@
     nuspell
     hunspellDicts.en-us
     hunspellDicts.ru-ru
-
-    # clojure test
-    # clojure
-    # leiningen
-    # swift
-
-    # JAVA
-    # jdk
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -194,8 +163,6 @@
     "$HOME/dev/go/bin"
     "$HOME/.cargo/bin"
   ];
-
-
 
   # Services
   services.mpd = {
@@ -342,12 +309,6 @@
   # Use Zed editor
   programs.zed-editor.enable = true;
 
-  # # Use chromium fork
-  # programs.chromium = {
-  #   enable = true;
-  #   package = pkgs.helium;
-  # };
-  
   # Helix editor
   programs.helix.enable = true;
 
@@ -416,11 +377,6 @@
     };
   };
 
-  # # Thunderbird - email client
-  # programs.thunderbird = {
-  #   enable = true;
-  # };
-  #
   # when needed
   # nixpkgs.config.allowUnfree = true;
     nixpkgs.overlays = [

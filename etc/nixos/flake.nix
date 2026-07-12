@@ -6,17 +6,20 @@
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
     affinity-nix.url = "github:mrshmllow/affinity-nix";
-    # millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     # pin version until its fix
     # millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix&rev=e2c66a276e579ee73c5151b01897bf63503aa12c";
     # ??? not working
-    millennium.url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
+    # millennium.url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
 
     # patches
     nixpkgs-patch-gpurec-bump = {
-      url = "https://github.com/NixOS/nixpkgs/pull/369574.diff";
+      # url = "https://github.com/NixOS/nixpkgs/pull/369574.diff";
+      # new PR
+      url = "https://github.com/NixOS/nixpkgs/pull/519117.diff";
       flake = false;
     };
+
   };
 
   outputs = { self, nixpkgs, nixpkgs-patcher, blender-bin, affinity-nix, millennium, ... }@inputs: {
@@ -46,7 +49,16 @@
               affinity-v3
             ];
 
-	    programs.gpu-screen-recorder-ui.enable = true;
+	    # programs.gpu-screen-recorder-ui.enable = true;
+	    programs.gpu-screen-recorder = {
+              enable = true;
+
+              ui = {
+                # package = pkgs.gpu-screen-recorder-ui; specify custom package if needed
+                # notifPackage = pkgs.gpu-screen-recorder-notification; specify custom package if needed
+                enable = true;
+                };
+             };
           })
       ];
     };

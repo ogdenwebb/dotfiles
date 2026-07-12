@@ -4,6 +4,8 @@
 
 { config, lib, pkgs, ... }:
 
+
+
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -22,13 +24,15 @@
     # Boot animation
     plymouth = {
       enable = true;
-      theme = "rings";
-      themePackages = with pkgs; [
-        # By default we would install all themes
-        (adi1090x-plymouth-themes.override {
-          selected_themes = [ "rings" ];
-        })
-      ];
+      theme = "tribar";
+
+      # theme = "rings";
+    #   themePackages = with pkgs; [
+    #     # By default we would install all themes
+    #     (adi1090x-plymouth-themes.override {
+    #       selected_themes = [ "rings" ];
+    #     })
+    #   ];
     };
 
     # Enable "Silent boot"
@@ -36,8 +40,10 @@
     initrd.verbose = false;
     kernelParams = [
       "quiet"
+      "splash"
       "udev.log_level=3"
       "systemd.show_status=auto"
+      "nvidia-drm.modeset=1"
     ];
 
     # Hide the OS choice for bootloaders.
@@ -73,6 +79,12 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
+  # RAS logging daemon
+  hardware.rasdaemon = {
+    enable = true;
+    # testing = true;
+  };
+
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
@@ -87,25 +99,26 @@
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   
     # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    #   version = "595.58.03";
-
-    #   # detect hash version (replace step by step
-    #   # sha256_64bit = lib.fakeHash;
-    #   # sha256_aarch64 = lib.fakeHash;
-    #   # openSha256 = lib.fakeHash;
-    #   # settingsSha256 = lib.fakeHash;
-    #   # persistencedSha256 = lib.fakeHash;
-
-
-    # #  # Replace with the hashes nix gives you
-    #   sha256_64bit = "sha256-jA1Plnt5MsSrVxQnKu6BAzkrCnAskq+lVRdtNiBYKfk=";
+    #   version = "590.48.01";
+    #
+    #   # detect hash version (replace step by step)
+    #   sha256_64bit = "sha256-ueL4BpN4FDHMh/TNKRCeEz3Oy1ClDWto1LO/LWlr1ok=";
     #   sha256_aarch64 = lib.fakeHash;
-    #   openSha256 = "sha256-jA1Plnt5MsSrVxQnKu6BAzkrCnAskq+lVRdtNiBYKfk=";
-    #   settingsSha256 = "sha256-2vLF5Evl2D6tRQJo0uUyY3tpWqjvJQ0/Rpxan3NOD3c=";
+    #   openSha256 = "sha256-ueL4BpN4FDHMh/TNKRCeEz3Oy1ClDWto1LO/LWlr1ok=";
+    #   settingsSha256 = "sha256-NWsqUciPa4f1ZX6f0By3yScz3pqKJV1ei9GvOF8qIEE=";
     #   persistencedSha256 = lib.fakeHash;
-
-    # #   # persistencedSha256 = lib.fakeSha256;
+    #
+    # #
+    # #  # Replace with the hashes nix gives you
+    # #   sha256_64bit = "sha256-jA1Plnt5MsSrVxQnKu6BAzkrCnAskq+lVRdtNiBYKfk=";
+    # #   sha256_aarch64 = lib.fakeHash;
+    # #   openSha256 = "sha256-jA1Plnt5MsSrVxQnKu6BAzkrCnAskq+lVRdtNiBYKfk=";
+    # #   settingsSha256 = "sha256-2vLF5Evl2D6tRQJo0uUyY3tpWqjvJQ0/Rpxan3NOD3c=";
+    # #   persistencedSha256 = lib.fakeHash;
+    # #
+    # # #   # persistencedSha256 = lib.fakeSha256;
     # };
+    #
   };
 
   # maybe
@@ -130,17 +143,7 @@
       plasma-login-manager = {
 	enable = true;
       };
-      # SDDM for kde
-      # sddm = {
-      #   package = lib.mkForce pkgs.kdePackages.sddm;
-      #   enable = true;
-      #   wayland = {
-      #     enable = true;
-      #     compositor = "kwin";
-      #   };
-      #   # extraPackages = [pkgs.catppuccin-sddm-corners];
-      #   # theme = "catppuccin-sddm-corners";
-      # };
+
     };
 
     desktopManager.plasma6.enable = true;
@@ -198,6 +201,9 @@
   #   users = [ "ogden" ];
   # };
 
+  # Manage Logitech devices
+  services.ratbagd.enable = true;
+
   # Control & overclock your GPU
   systemd.packages = with pkgs; [ lact ];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
@@ -253,7 +259,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ogden = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "video" "usb" "pipewire" "gamemode"];
+    extraGroups = [ "wheel" "audio" "video" "usb" "pipewire" "gamemode" "plugdev"];
     shell = pkgs.zsh;
     # try to use zsh without NixOS module (built-in)
     ignoreShellProgramCheck = true;
@@ -266,14 +272,17 @@
 
   # Firefox browser
   programs.firefox.enable = true;
+
+  # Enable gamescope
   programs.gamescope = {
     enable = true;
     capSysNice = true;
   };
 
+  # Steam
   programs.steam = {
     enable = true;
-    gamescopeSession.enable = true;
+    # gamescopeSession.enable = true;
 
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
@@ -294,7 +303,7 @@
     package = pkgs.millennium-steam.override {
 	    extraPkgs = (pkgs: with pkgs; [
 			    gamemode
-			    gamescope-wsi
+			    # gamescope-wsi
 	       # additional packages...
 	       # e.g. some games require python3
 	# noto-fonts
@@ -318,6 +327,7 @@
       mpv = super.mpv.override {
         scripts = [ 
 	  self.mpvScripts.mpris
+	  self.mpvScripts.cut
 	];
       };
       appimage-run = super.appimage-run.override {
@@ -333,6 +343,7 @@
           ];
       };
     })
+    # Disabled fwupd (not using this package anyway) engine to avoid hungs in KDE Discover 
   (final: prev: {
     kdePackages = prev.kdePackages.overrideScope (kde-final: kde-prev: {
       discover = kde-prev.discover.overrideAttrs (old: {
@@ -344,11 +355,8 @@
       });
     });
   })
-
   ];
 
-
-  # nixpkgs.config.cudaSupport = true;
 
   environment.shells = with pkgs; [ bash zsh ];
   environment = {
@@ -388,15 +396,17 @@
     vimAlias = true;
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # Need to auto unlock kwallet during login
+  security.pam.services.login.kwallet = { 
+    enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     
     # Creative Studio
     audacity
     davinci-resolve
     krita
-
 
     # Disk & storage management
     smartmontools
@@ -406,17 +416,18 @@
     kdePackages.filelight
     kdePackages.dolphin-plugins
     kdePackages.kwindowsystem
+    kdePackages.kwallet-pam
 
     # Stress-test, tests and benchmarks
     stress-ng
-    furmark
-
+    # furmark
 
     # Sensors and system info
     clinfo
     lm_sensors
     lshw
     pciutils
+    usbutils
     vulkan-tools
 
     # Networking and tools
@@ -427,15 +438,33 @@
 
     # System
     appimage-run
+    freetype
     jq
     libunwind
     mesa-demos
+    htop
 
     wezterm
     rofi
 
     # boot
     efibootmgr
+
+
+    # Tools
+    lact 
+
+    # Find, locate, grep
+    fd
+    ripgrep
+    file
+    tree
+
+    # Archieve and compression
+    p7zip
+    rar unrar
+    unzip
+    zstd
 
     # Audio, media
     pulseaudio
@@ -458,6 +487,31 @@
       pyqt6
     ]))
 
+    # GAMING
+    mangohud
+    protonup-ng
+    protonup-qt
+
+    # Media
+    playerctl
+
+    nvidia-vaapi-driver
+    ffmpeg
+    qimgv
+    mpc
+    mpv
+
+    # Cloud storage
+    drive
+    dropbox
+    megasync
+
+    obsidian
+    pass
+
+    qbittorrent
+
+
     # Golang
     go
     gopls # lsp server
@@ -469,6 +523,7 @@
     golangci-lint # Fast linters Runner for Go
     golangci-lint-langserver # Language server for golangci-lint
 
+    # Rust lang
     rustc
     rustfmt
     rust-analyzer
@@ -481,56 +536,8 @@
     # nim
     # nimlsp
     # nimble
-
-    # GAMING
-    mangohud
-    protonup-ng
-    protonup-qt
-
-    # Manage Razer devices
-    # razergenie
-
-    # Media
-    playerctl
-
-    nvidia-vaapi-driver
-    ffmpeg
-    qimgv
-    mpc
-    mpv
-    # ncmpcpp
-
-    # Cloud storage
-    drive
-    dropbox
-    megasync
-
-    obsidian
-    pass
-    zathura
-
-    # Fonts
-    freetype
-
-    # Tools
-    lact 
-
-    # Find, locate, grep
-    fd
-    ripgrep
-    file
-    tree
-
-    htop
-
-    # Archieve and compression
-    p7zip
-    rar unrar
-    unzip
-    zstd
-
-    qbittorrent
   ];
+  
 
 
   # FONTS
@@ -545,18 +552,11 @@
 	  dejavu_fonts
 	  fira
 	  fira-code
-	  # gentium # TODO: test
-	  # liberation_ttf
 	  noto-fonts
 	  noto-fonts-cjk-sans
 	  # office-code-pro
 	  open-sans
 	  roboto
-	  # roboto-slab
-	  # zilla-slab
-	  # ubuntu-classic
-	  # ubuntu-sans
-	  # ubuntu-sans-mono
 
 	  # emoji
 	  noto-fonts-color-emoji
@@ -564,22 +564,12 @@
 	  # CJK fonts
 	  ipafont
 
-	  # new
 	  ibm-plex
 	  inter
-	  # geist-font
-	  # go-font
 	  lato
-	  # rubik
-	  # cantarell-fonts
-	  # source-sans-pro
 
           # EXTRA
 	  poppins
-	  # lexend
-	  # borg-sans-mono
-	  # work-sans
-	  # karla
 
 	  nerd-fonts._0xproto
           nerd-fonts.droid-sans-mono
@@ -592,7 +582,6 @@
     elisa
     kate
     gwenview
-    # okular
   ];
 
   # Allow all packages with proprietary licenses
@@ -610,18 +599,14 @@
     substituters = [
       "https://cache.nixos.org/"
       "https://cache.garnix.io"
+      # CUDA
+      "https://cuda-maintainers.cachix.org"
     ];
     trusted-public-keys = [
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+      # CUDA
+      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
     ];
-
-    # MAYBE: Setting up CUDA Binary Cache
-    # substituters = [
-    #   "https://cuda-maintainers.cachix.org"
-    # ];
-    # trusted-public-keys = [
-    #   "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
-    # ];
   };
 
   # nix-ld
@@ -644,6 +629,8 @@
 	util-linux
 	xz
 	systemd
+
+	# Try to fix mailspring
     ];
   };
 

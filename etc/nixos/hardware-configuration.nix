@@ -10,7 +10,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
   boot.kernelModules = [ "kvm-amd" ];
   # boot.extraModulePackages = with config.boot.kernelPackages; [ zenergy cpupower r8168 ];
   # Asus B550 TUF Gaming
@@ -53,10 +53,10 @@
     # https://github.com/NixOS/nixpkgs/issues/324252#issuecomment-2205385051
     "nvidia.NVreg_EnableGpuFirmware=0"
     "nvidia.NVreg_RestrictProfilingToAdminUsers=0"
-    "ipv6.disable=1"
+    # "ipv6.disable=1"
   ];
 
-  boot.kernel.sysctl."net.ipv6.conf.all.disable_ipv6" = true;
+  # boot.kernel.sysctl."net.ipv6.conf.all.disable_ipv6" = true;
 
   # boot.kernelParams = ["ipv6.disable=1" "nvidia_drm.modeset=1"];
 
