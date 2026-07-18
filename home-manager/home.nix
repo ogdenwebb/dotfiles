@@ -25,8 +25,8 @@
   #
   home.packages = with pkgs; [
     # inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
-    # inputs.helium.packages.${stdenv.hostPlatform.system}.default
-    inputs.appgrid.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.helium.packages.${stdenv.hostPlatform.system}.default
+    #inputs.appgrid.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     ###
     terminal-colors
@@ -50,8 +50,7 @@
     klassy
 
     # Cursors
-    oreo-cursors-plus
-    layan-cursors
+    # oreo-cursors-plus
 
     # KDE applets & widgets
     kurve # Audio visualizer widget
@@ -74,8 +73,7 @@
 
     easyeffects
     yt-dlp
-    twitch-chat-downloader
-    video2x
+    # twitch-chat-downloader
 
     # FONTS
     nerd-fonts.symbols-only
