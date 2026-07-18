@@ -414,6 +414,7 @@
     ncdu
     kdePackages.partitionmanager
     kdePackages.filelight
+    # KDE tools
     kdePackages.dolphin-plugins
     kdePackages.kwindowsystem
     kdePackages.kwallet-pam
@@ -504,7 +505,7 @@
     # Cloud storage
     drive
     dropbox
-    megasync
+    # megasync
 
     obsidian
     pass
@@ -524,11 +525,11 @@
     golangci-lint-langserver # Language server for golangci-lint
 
     # Rust lang
-    rustc
-    rustfmt
-    rust-analyzer
-    cargo
-    cargo-binstall
+    # rustc
+    # rustfmt
+    # rust-analyzer
+    # cargo
+    # cargo-binstall
 
     # Dev testing
     # clang
@@ -598,12 +599,12 @@
 
     substituters = [
       "https://cache.nixos.org/"
-      "https://cache.garnix.io"
+      "https://cache.forall.systems"
       # CUDA
       "https://cuda-maintainers.cachix.org"
     ];
     trusted-public-keys = [
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+      "cache.forall.systems:5PmD7QO4MSF8YgyRZtkSGXRDo96H3bybIf2SsQh8ScI="
       # CUDA
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
     ];
@@ -629,8 +630,6 @@
 	util-linux
 	xz
 	systemd
-
-	# Try to fix mailspring
     ];
   };
 
