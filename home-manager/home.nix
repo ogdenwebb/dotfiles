@@ -45,9 +45,16 @@
     # KDE related
     kdePackages.kget
     kdePackages.qt6ct
+    haruna
+
     # Better application & window styles for KDE
     darkly
     klassy
+
+    # Google Drive integration for KDE
+    kdePackages.kaccounts-providers
+    kdePackages.kaccounts-integration
+    kdePackages.kio-gdrive
 
     # Cursors
     # oreo-cursors-plus
@@ -96,6 +103,13 @@
     nuspell
     hunspellDicts.en-us
     hunspellDicts.ru-ru
+
+
+    # Backup saves
+    ludusavi
+
+    # JAVA
+    jre
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your

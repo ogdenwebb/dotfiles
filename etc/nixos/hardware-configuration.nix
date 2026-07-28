@@ -8,7 +8,12 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Linux Kernel
+  # MAYBE: 7.1.0+ has FPS isssue in games
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  # CachyOS kernel
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
+
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
   boot.kernelModules = [ "kvm-amd" ];

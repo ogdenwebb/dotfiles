@@ -490,8 +490,8 @@
 
     # GAMING
     mangohud
-    protonup-ng
-    protonup-qt
+    # protonup-ng
+    # protonup-qt
 
     # Media
     playerctl
@@ -599,14 +599,20 @@
 
     substituters = [
       "https://cache.nixos.org/"
+      # Affinity-nix
       "https://cache.forall.systems"
       # CUDA
       "https://cuda-maintainers.cachix.org"
+      # CachyOS Kernels
+      "https://attic.xuyh0120.win/lantian"
     ];
     trusted-public-keys = [
+      # Affinity-nix
       "cache.forall.systems:5PmD7QO4MSF8YgyRZtkSGXRDo96H3bybIf2SsQh8ScI="
       # CUDA
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+      # CachyOS Kernels
+      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
     ];
   };
 
