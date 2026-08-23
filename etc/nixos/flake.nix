@@ -20,12 +20,9 @@
       flake = false;
     };
 
-    # CachyOS Kernel
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
-
   };
 
-  outputs = { self, nixpkgs, nixpkgs-patcher, blender-bin, affinity-nix, millennium, nix-cachyos-kernel, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-patcher, blender-bin, affinity-nix, millennium, ... }@inputs: {
     # nixosConfigurations.default = nixpkgs.lib.nixosSystem {
     # PATH: with nixpkgs-patcher
     nixosConfigurations.default = nixpkgs-patcher.lib.nixosSystem {
@@ -45,15 +42,6 @@
               blender-bin.overlays.default
               inputs.millennium.overlays.default
 	      affinity-nix.overlays.default
-
-	      # Use the exact nixpkgs revision as defined in this repo to ensure binary cache hits.
-              nix-cachyos-kernel.overlays.pinned
-
-              # Alternatively, use nixpkgs from your environment, nixpkgs.config will apply.
-              # Note: may not hit binary cache; kernel will need to be built locally.
-              # nix-cachyos-kernel.overlays.default
-
-              # NOTE: Only use one of the two overlays!
             ];
 
             environment.systemPackages = with pkgs; [
