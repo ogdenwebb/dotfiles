@@ -1,0 +1,49 @@
+sys-kernel/installkernel refind dracut
+
+# FONTS
+media-libs/freetype harfbuzz brotli
+x11-libs/cairo X
+
+media-fonts/nerdfonts lilex jetbrainsmono 0xproto d2coding droidsansmono
+media-fonts/iosevka iosevka-aile iosevka-etoile iosevka-ss10
+
+>=media-libs/opencv-4.12.0-r1 contrib contribdnn features2d video_cards_intel
+>=x11-libs/wxGTK-3.2.8.1-r2 keyring
+# media-sound/audacity ffmpeg opus
+
+dev-util/vulkan-tools cube
+
+# DM: Display Manager
+sys-auth/seatd elogind
+sys-libs/zlib minizip
+sys-libs/ncurses -gpm
+
+kde-plasma/kwin lock
+kde-plasma/kwin-x11 lock
+
+# Because doc pulls webkit :/
+media-sound/easyeffects -doc
+media-sound/deep-filter ladspa
+# media-video/mpv nvenc
+media-gfx/qimgv kde opencv
+media-video/pipewire pipewire-alsa ffmpeg extra
+>=media-libs/libvpx-1.16.0 postproc
+media-video/ffmpeg cuda-clang chromium nvenc opencl vaapi opus svt-av1 ladspa lame openssl vpx x265 libplacebo -gnutls
+gui-capture/gpu-screen-recorder nvidia
+
+>=app-crypt/mit-krb5-1.22.2-r2 -cpu_flags_x86_aes
+>=dev-libs/libsodium-1.0.22 -cpu_flags_x86_aes
+dev-libs/libdbusmenu -gtk gtk3
+
+app-emulation/wine-vanilla opencl ffmpeg
+app-emulation/wine-staging opencl ffmpeg
+# media-plugins/gst-plugins-meta ffmpeg opus libass lame vaapi
+
+net-misc/aria2 adns ssh metalink xmlrpc
+dev-util/bpftool caps
+
+app-editors/zed-bin -claude-agent-acp-plus -claude-agent-acp-tui
+net-vpn/cloudflare-warp -gui
+
+dev-python/pyqt6 quick webchannel
+media-gfx/krita fftw

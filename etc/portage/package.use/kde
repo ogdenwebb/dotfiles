@@ -1,0 +1,15 @@
+kde-plasma/powerdevil brightness-control
+kde-plasma/ksystemstats networkmanager
+kde-plasma/plasma-vault networkmanager
+kde-plasma/plasma-workspace networkmanager
+>=net-dns/avahi-0.9_rc3 mdnsresponder-compat
+
+kde-plasma/discover -firmware
+kde-plasma/plasma-meta discover
+kde-apps/filelight
+# kde-frameworks/kdnssd minimal
+media-sound/cantata cddb musicbrainz replaygain mtp streaming
+
+gui-apps/sddm-gentoo-config kwin
+kde-apps/dolphin semantic-desktop
+kde-frameworks/kfilemetadata ffmpeg

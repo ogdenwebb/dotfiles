@@ -1,0 +1,22 @@
+media-fonts/nerdfonts::guru
+media-fonts/dejavu
+media-fonts/iosevka
+media-fonts/noto
+media-fonts/noto-emoji
+
+# media-fonts/fira-mono
+media-fonts/fira-sans
+media-fonts/fira-code
+
+media-fonts/ibm-plex
+
+# Source family
+media-fonts/source-sans
+media-fonts/source-code-pro
+media-fonts/source-han-sans
+media-fonts/source-serif
+
+
+media-fonts/noto-cjk
+# media-fonts/mix-mplus-ipa
+media-fonts/ipaex

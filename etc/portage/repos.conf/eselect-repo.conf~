@@ -1,0 +1,43 @@
+# created by eselect-repo
+[gentoo]
+location = /var/db/repos/gentoo
+
+[guru]
+location = /var/db/repos/guru
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/guru.git
+
+[steam-overlay]
+location = /var/db/repos/steam-overlay
+sync-type = git
+sync-uri = https://github.com/anyc/steam-overlay.git
+
+[spikyatlinux]
+location = /var/db/repos/spikyatlinux
+sync-type = git
+sync-uri = https://github.com/spikyatlinux/ebuilds_for_gentoo.git
+
+[gentoo-zh]
+location = /var/db/repos/gentoo-zh
+sync-type = git
+sync-uri = https://github.com/gentoo-zh/overlay.git
+
+[xarblu-overlay]
+location = /var/db/repos/xarblu-overlay
+sync-type = git
+sync-uri = https://github.com/xarblu/xarblu-overlay.git
+
+[nadevko]
+location = /var/db/repos/nadevko
+sync-type = git
+sync-uri = https://codeberg.org/nadevko/ebuild-repo.git
+
+
+[local]
+location = /var/db/repos/local
+
+
+[bentoo]
+location = /var/db/repos/bentoo
+sync-type = git
+sync-uri = https://github.com/lucascouts/bentoo.git

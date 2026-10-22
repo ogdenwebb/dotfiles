@@ -1,0 +1,83 @@
+# Base system
+
+sys-kernel/gentoo-kernel-bin ~amd64
+virtual/dist-kernel ~amd64
+=sys-kernel/zenpower5-9999::local **
+
+dev-util/clinfo
+app-text/tldr
+
+x11-drivers/nvidia-drivers ~amd64
+sys-apps/lact
+
+gui-apps/gtkgreet ~amd64
+
+x11-terms/wezterm ~amd64
+app-office/obsidian ~amd64
+
+# Dev/Editors/Code
+app-editors/emacs ~amd64
+# app-editors/neovim ~amd64
+=app-editors/neovim-0.12.5-r2
+dev-lua/luv
+dev-libs/tree-sitter-markdown-inline ~amd64
+media-fonts/nerdfonts ~amd64
+media-fonts/monaspace
+
+=app-editors/zed-bin-1.24.2
+dev-util/claude-agent-acp-plus
+dev-util/claude-agent-acp-tui
+
+gui-libs/scenefx ~amd64
+gui-wm/mangowm ~amd64
+
+# IM
+net-im/telegram-desktop-bin ~amd64
+net-im/legcord-bin ~amd64
+
+# KDE Related
+gui-apps/klassy ~amd64
+kde-misc/darkly ~amd64
+kde-misc/kara ~amd64
+kde-misc/plasma-panel-colorizer ~amd64
+
+x11-themes/qogir-icon-theme
+
+# GAMING // STEAM // PROTON
+media-libs/imgui    ~amd64
+media-libs/implot   ~amd64
+games-util/gamemode ~amd64
+games-util/mangohud ~amd64
+
+games-util/ProtonUp-Qt ~amd64
+games-util/protonup ~amd64
+games-util/protonplus
+games-util/protonup-rs
+
+games-util/r2modman-bin
+app-emulation/wine-staging
+
+# MEDIA/Audio/Video
+media-sound/deep-filter
+media-sound/easyeffects ~amd64
+media-libs/webrtc-audio-processing ~amd64
+media-sound/mpd-mpris ~amd64
+mpv-plugin/mpv-mpris ~amd64
+media-sound/rmpc ~amd64
+media-gfx/qimgv ~amd64
+media-sound/audacity-bin
+
+# VIDEO EDITING & VIDEO CAPTURE
+media-video/davinci-resolve ~amd64
+media-libs/nvidia-vaapi-driver
+gui-capture/gpu-screen-recorder-ui ~amd64
+
+www-client/helium-bin ~amd64
+media-gfx/krita
+
+net-misc/dropbox ~amd64
+net-misc/megatools
+net-misc/megacmd
+
+net-misc/freetube-bin
+net-vpn/cloudflare-warp

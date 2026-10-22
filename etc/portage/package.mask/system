@@ -1,0 +1,6 @@
+>=app-emulation/wine-staging-11.17
+=media-video/davinci-resolve-21.1.0 # wrong checksym for some reason 
+>media-gfx/krita-6.0.4 # BIG: because it's 200 mb sources to compile
+
+# overlay
+virtual/dist-kernel::xarblu-overlay

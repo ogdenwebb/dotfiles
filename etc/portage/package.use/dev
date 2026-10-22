@@ -1,0 +1,4 @@
+sys-devel/gcc ada d lto objc objc++ pgo jit
+app-editors/emacs harfbuzz imagemagick tree-sitter jit
+
+dev-lang/rust-bin rust-analyzer

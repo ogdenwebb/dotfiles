@@ -1,0 +1,11 @@
+app-misc/terminal-colors
+
+media-sound/playerctl
+net-misc/yt-dlp
+
+# Spell checking
+app-text/nuspell
+
+gui-apps/qt6ct
+
+app-shells/bash-completion
