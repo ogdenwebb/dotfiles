@@ -108,7 +108,7 @@ alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 # alias
 alias ls='ls -F --color=auto --group-directories-first'
 alias diff='diff --color'
-alias mp='ncmpcpp'
+alias mp='rmpc'
 alias fm='spacefm'
 alias grep='grep --color=auto'
 alias vim='nvim'

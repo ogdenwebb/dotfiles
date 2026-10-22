@@ -1,11 +1,11 @@
 # Move config away from home
 #export ZDOTDIR="$HOME/.config/zsh"
-export ZDOTDIR=${ZDOTDIR:-$HOME/.config/zsh}
-export ZSHRC_PATH="$ZDOTDIR/.zshrc"
-export ZPREZTORC_PATH="$ZDOTDIR/.zpreztorc"
-export ZPROFILE_PATH="$ZDOTDIR/.zprofile"
-export ZLOGIN_PATH="$ZDOTDIR/.zlogin"
-export ZLOGOUT_PATH="$ZDOTDIR/.zlogout"
+#export ZDOTDIR=${ZDOTDIR:-$HOME/.config/zsh}
+# export ZSHRC_PATH="$ZDOTDIR/.zshrc"
+# export ZPREZTORC_PATH="$ZDOTDIR/.zpreztorc"
+# export ZPROFILE_PATH="$ZDOTDIR/.zprofile"
+# export ZLOGIN_PATH="$ZDOTDIR/.zlogin"
+# export ZLOGOUT_PATH="$ZDOTDIR/.zlogout"
 
 # Ensure locale settings are properly set-up.
 if [[ -z "$LANG" ]]; then
@@ -38,7 +38,7 @@ fi
 
 # Home clean up
 export XDG_STATE_HOME="$HOME/.local/state"
-export ZDOTDIR="$HOME"/.config/zsh
+# export ZDOTDIR="$HOME"/.config/zsh
 
 export NIMBLE_DIR="$XDG_DATA_HOME"/nimble
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
@@ -58,7 +58,7 @@ export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvtd
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
 
-path+=("$HOME/.bin" "$NIMBLE_DIR/bin" "$CARGO_HOME/bin" "$HOME/dev/go/bin" "$HOME/.local/bin")
+path+=("$HOME/.bin" "$NIMBLE_DIR/bin" "$CARGO_HOME/bin" "$HOME/dev/go/bin" "$HOME/.local/bin" "$HOME.local/share/cargo/bin")
 export PATH
 
 #export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
