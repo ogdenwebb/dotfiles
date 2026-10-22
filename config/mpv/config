@@ -27,7 +27,7 @@ vo=gpu-next
 # Autodetect decoder
 # hwdec=auto
 
-hwdec=nvdec
+# hwdec=nvdec
 hwdec=auto-copy
 gpu-api=vulkan
 
