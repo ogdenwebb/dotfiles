@@ -17,3 +17,8 @@ config/fontconfig/
 .hg/
 .hgignore
 config/tmux/plugins/
+/etc/portage/gnupg/
+/etc/portage/make.profile/
+/etc/portage/savedconfig/
+/etc/portage/postsync.d/
+/etc/portage/profile/
